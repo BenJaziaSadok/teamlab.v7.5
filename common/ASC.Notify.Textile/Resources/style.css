@@ -1,0 +1,101 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+h1   
+{
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+h2
+{
+    color: #333333;
+	font-size: 16px;
+	font-weight: bold;	
+}
+
+h3
+{
+    color: #333333;
+	font-size: 14px;
+	font-weight: bold;	
+}
+
+p
+{
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 20px;
+    word-wrap: break-word !important;
+}
+ol li, ul li {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+a, p a
+{
+    color: #0078BD !important;
+    word-wrap: break-word !important;
+}
+
+strong
+{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;    
+}
+
+.footer
+{
+    margin-top: 40px;
+    color: #a3a3a3;
+    font-size: 11px;
+}
+
+td
+{
+	padding: 6px;
+	margin: 0;
+}
+
+.edit_request
+{
+	border-collapse: collapse; 
+	width: 100%;
+}
+
+.edit_request_column
+{
+	color: rgb(130, 135, 141); 
+	font-size: 12px;
+	text-align: left;
+}
+
+.edit_request_title
+{
+	text-align: right; 
+	font-weight: bold;
+}
+
+.edit_request_data
+{
+	border: 1px solid #D1D1D1;
+}
+
+a:-webkit-any-link {
+    color: #0078BD;
+    word-wrap: break-word !important;
+}

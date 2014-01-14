@@ -1,0 +1,192 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@imagepathlink:'/usercontrols/users/userprofile/css/images/';
+.invite
+{
+    padding-top:10px;
+}
+
+#accountLinks
+{
+    text-align:left;
+}
+
+#accountLinks ul
+{
+    margin:0px;
+    padding:0;
+    list-style:none;
+    display:inline-block;
+}
+
+#accountLinks .label
+{
+    display: none;
+}
+
+#accountLinks li
+{
+  vertical-align:middle;
+    height:35px;
+    line-height:35px;
+    padding-left:40px;
+    background-position:left center;
+    background-repeat:no-repeat;
+}
+#accountLinks li.facebook
+{
+    background:url('@{imagepathlink}acc_facebook.png');
+    background-position:left center;
+    background-repeat:no-repeat;
+}
+#accountLinks li.linkedin
+{
+    background:url('@{imagepathlink}acc_linkedin.png');
+    background-position:left center;
+    background-repeat:no-repeat;
+}
+#accountLinks li.openid
+{
+    background:url('@{imagepathlink}acc_google.png');
+    background-position:left center;
+    background-repeat:no-repeat;
+}
+
+#accountLinks li.twitter
+{
+    background:url('@{imagepathlink}acc_twitter.png');
+    background-position:left center;
+    background-repeat:no-repeat;
+}
+
+#accountLinks li a
+{
+    margin:5px;
+}
+
+/* ------------------ */
+#social #accountLinks
+{
+    text-align:center;
+    display:block;
+}
+
+#social #accountLinks .info
+{
+    float:left;
+    height:24px;
+    line-height:24px;
+vertical-align:middle;
+    text-align:right;
+    width:50%;
+}
+
+#social #accountLinks ul
+{
+    padding:0;
+    list-style:none;
+    display:inline-block;
+    margin:0;
+    text-align:left;
+    
+}
+
+#social #accountLinks li
+{
+      height:24px;
+    line-height:24px;
+    padding-left:0px;
+    float:left;
+}
+
+#social #accountLinks li a
+{
+    display:block;
+    width:24px;
+    height:24px;
+    margin:0 0 0 6px;
+    text-indent:-10000px;
+    position:relative;
+}
+
+#social #accountLinks li a span.linked
+{
+    display:block;
+    position:absolute;
+    width:16px;
+    height:16px;
+    background:url('@{imagepathlink}acc_linked.png');
+    bottom:0px;
+    right:0px;
+}
+
+
+#social #accountLinks li .facebook
+{
+    background:url('@{imagepathlink}acc_facebook_small.png');
+}
+
+#social #accountLinks li .linkedin
+{
+    background:url('@{imagepathlink}acc_linkedin_small.png');
+}
+
+#social #accountLinks li .openid
+{
+    background:url('@{imagepathlink}acc_google_small.png') center left no-repeat;
+}
+
+#social #accountLinks li .twitter
+{
+    background:url('@{imagepathlink}acc_twitter_small.png');
+}
+
+/******************************************\
+    Login with ThirdParty
+\******************************************/
+.login-with-label {
+    margin: 10px 0;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+.social-login #accountLinks li{
+    float: left;
+    height: 118px;
+    line-height: 118px;
+    padding-left: 0;
+}
+.social-login #accountLinks li a {
+    background-color: transparent;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: block;
+    height: 118px;
+    margin: 0 5px;
+    outline: medium none;
+    position: relative;
+    text-indent: -10000px;
+    width: 118px;
+}
+.social-login li .facebook {
+    background: url("@{imagepathlink}facebook-button.png");
+}
+.social-login li .linkedin {
+    background: url("@{imagepathlink}linkedin-button.png");
+}
+.social-login li .openid {
+    background: url("@{imagepathlink}google-button.png");
+}
+.social-login li .twitter {
+    background: url("@{imagepathlink}twitter-button.png");
+}

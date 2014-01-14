@@ -1,0 +1,256 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+DealListView: custom contactSelector filter
+*******************************************************************************/
+#selector_contactSelectorForFilter{
+    display: inline-block;
+    margin: 1px 0 0 0;
+}
+#selector_contactSelectorForFilter > div{
+    margin: 0 !important;
+}
+#selectorContent_contactSelectorForFilter_0{
+    margin: 0 !important;
+    width: 250px;
+}
+#selectorContent_contactSelectorForFilter_0 table td{
+    border: 0 none;
+}
+#infoContent_contactSelectorForFilter_0 > table{
+    line-height: 12px;
+}
+#infoContent_contactSelectorForFilter_0 > table .splitter{
+    display: inline-block;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#infoContent_contactSelectorForFilter_0 > table .crm-editLink{
+    position: relative;
+    top: -4px;
+}
+#selectorContent_contactSelectorForFilter_0 .textEdit{
+    height:14px;
+    font-size: 12px;
+}
+#searchImg_contactSelectorForFilter_0,
+#loaderImg_contactSelectorForFilter_0,
+#selectorContent_contactSelectorForFilter_0 > table .crossButton{
+    height: 14px;
+}
+
+#dealsAdvansedFilter div.advansed-filter-container div.advansed-filter-filters div.filter-item-custom-contact span.selector-wrapper{
+    max-width: 260px;
+}
+
+/*******************************************************************************
+DealListView
+*******************************************************************************/
+#dealTable>tbody>tr{
+    height: 50px;
+}
+#dealList tfoot td:first-child{
+    vertical-align: top;
+}
+#dealList tfoot td{
+    padding-bottom: 0px;
+}
+#dealList td > span, #dealList td.dealBidValue > div > span, #dealList td.dealTitle > div > a{
+    line-height: 14px;
+}
+#dealList td.dealTitle > div{
+    padding: 4px 0;
+    max-width: 400px;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+#dealList td.dealBidValue > div{
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#dealList td.dealBidValue > div{
+    text-align: right;
+}
+#dealListTotal dt{
+    float: left;
+}
+#dealFilterContainer {
+    display:none;
+}
+#dealButtonsPanel{
+    display: none;
+    margin-bottom: 15px;
+}
+#dealList .showTotalAmount{
+    display: none;
+}
+#dealList .showTotalAmount, #dealList .showTotalAmount:hover, #dealList .showTotalAmount:active{
+    color: #666666;
+}
+#showMoreDealsButtons{
+    display:inline-block;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+#divForDealPager{
+    display: inline-block;
+    clear: right;
+}
+#totalDealsOnPage{
+    margin-right: 20px;
+}
+#dealHeaderMenu {
+    display: block;
+    width: auto;
+}
+/*******************************************************************************
+DealActionView.ascx
+*******************************************************************************/
+#crm_dealMakerDialog .deal_info{
+    margin-top:5px;
+    width: 700px;
+}
+#crm_dealMakerDialog .crm-actionButtonsBlock{
+    min-width: 770px;
+}
+@media all and (max-width: 1200px) {
+    #crm_dealMakerDialog .deal_info {
+        width: 670px;
+    }
+    #crm_dealMakerDialog .crm-actionButtonsBlock{
+        min-width: 670px;
+    }
+}
+
+#crm_dealMakerDialog .deal_info dt.headerToggleBlock {
+    margin: 24px 0 8px;
+}
+#crm_dealMakerDialog .deal_info dl dt{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+#crm_dealMakerDialog .deal_info dl dd{
+    clear: both;
+    width: 100%;
+}
+#crm_dealMakerDialog .deal_info dl input[type="checkbox"] {
+    margin: 0 2px 0 0;
+    vertical-align: middle;
+}
+#crm_dealMakerDialog .deal_info dl #dealMilestone {
+    max-width: 670px;
+}
+
+/*******************************************************************************
+DealDetailsView.ascx
+*******************************************************************************/
+
+#DealTabs {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#dealProfile {
+    margin-top: -15px;
+}
+#dealProfile tr.headerToggleBlock {}
+#membersDealSelectorsContainer{
+    width: 98%;
+}
+#membersDealSelectorsContainer > div{
+    margin-bottom: 4px;
+    position: relative;
+}
+#membersDealSelectorsContainer .delete_member {
+    background: url("../images/icons.png") 0 -280px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin: 2px;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    width: 16px;
+}
+#membersDealSelectorsContainer .add_new_member{
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+#selector_dealClientSelector .contactSelector-item.hasMembers .crm-addNewLink{
+    display: none;
+}
+#dealParticipantPanel{
+    display: none;
+    margin-bottom: 16px;
+    width: 500px;
+}
+
+/*******************************************************************************
+ExchangeRateView
+*******************************************************************************/
+#totalAmountContent, #convertRateContent, #exchangeRateContent {
+    height: 416px;
+}
+#totalAmountContent, #exchangeRateContent {
+    margin-top: 10px;
+}
+#ExchangeRateTabs {
+
+}
+#totalOnPage{
+    display: none;
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+#totalOnPage td{
+    vertical-align: top;
+}
+#ratesTable{
+   table-layout:fixed;
+}
+#ratesTable td{
+    text-align: right;
+}
+
+#conversionResult, #conversionRate,  #introducedAmount {
+    padding-left: 10px;
+    text-align: left;
+}
+#convertAmount {
+    margin-top: 10px;
+}
+#amount, #fromCurrency, #toCurrency {
+    width: 100%
+}
+#convertRateContent dt {
+    margin: 10px 0 5px 0;
+}
+#convertRateContent table {
+   float: right;
+   min-width: 250px;
+}
+/*******************************************************************************
+*******************************************************************************/
+
+/* <filter: my-contact> */
+
+div.advansed-filter-container div.advansed-filter-filters div.filter-item.filter-item-custom-contact .daterange-selector{display:inline-block;}
+
+/* </filter: custom-contact> */

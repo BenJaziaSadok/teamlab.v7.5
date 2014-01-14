@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE61703B-2BF8-4553-8CB6-8741E8E94DC8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASC.Web.Community.Wiki</RootNamespace>
+    <AssemblyName>ASC.Web.Community.Wiki</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TrunkDir>..\..\..\..\..\..\..\</TrunkDir>
+    <RedDir Condition=" '$(RedDir)' == '' ">$(TrunkDir)redistributable\asc\</RedDir>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxPro.2, Version=9.2.17.1, Culture=neutral, PublicKeyToken=4735ae9824c7d3ec, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\third-party\Web\AjaxPro.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASC.Api, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.Api.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASC.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASC.Core.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.Core.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASC.Data.Storage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.Data.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="ASC.FullTextIndex, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.FullTextIndex.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASC.Web.Community, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.Web.Community.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASC.Web.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.Web.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ASC.Web.Studio, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\asc\ASC.Web.Studio.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.6.3.29869, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\third-party\Web\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.3.9.1, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\redistributable\third-party\HtmlAgilityPack\HtmlAgilityPack.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\images\WikiLogo32.png" />
+    <Content Include="Default.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\PageDictionary.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Extentions.cs" />
+    <Compile Include="Common\WikiBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\WikiObjectsSecurityObject.cs" />
+    <Compile Include="Common\WikiModuleSettings.cs" />
+    <Compile Include="Common\WikiSearchHandler.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Diff.aspx.cs">
+      <DependentUpon>Diff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Diff.aspx.designer.cs">
+      <DependentUpon>Diff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListCategories.aspx.cs">
+      <DependentUpon>ListCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListCategories.aspx.designer.cs">
+      <DependentUpon>ListCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListFiles.aspx.cs">
+      <DependentUpon>ListFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListFiles.aspx.designer.cs">
+      <DependentUpon>ListFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListPages.aspx.cs">
+      <DependentUpon>ListPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListPages.aspx.designer.cs">
+      <DependentUpon>ListPages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageHistoryList.aspx.cs">
+      <DependentUpon>PageHistoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageHistoryList.aspx.designer.cs">
+      <DependentUpon>PageHistoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Wiki.Master.cs">
+      <DependentUpon>Wiki.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Wiki.Master.designer.cs">
+      <DependentUpon>Wiki.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WikiModule.cs" />
+    <Compile Include="Code\ActionHelper.cs" />
+    <Compile Include="Code\BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\Constants.cs" />
+    <Compile Include="Code\Diff.cs" />
+    <Compile Include="Code\HtmlWikiUtil.cs" />
+    <Compile Include="Code\HtmlWikiUtil_Wiki2Html.cs.cs" />
+    <Compile Include="Code\PageNameUtil.cs" />
+    <Compile Include="Code\Patterns\WikiPatternResource.Designer.cs">
+      <DependentUpon>WikiPatternResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CustomToolNamespace>ASC.Web.UserControls.Wiki.Patterns</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Code\Patterns\WikiPatternsResource.Designer.cs">
+      <DependentUpon>WikiPatternsResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Code\WikiEngine.cs" />
+    <Compile Include="Code\WikiManager.cs" />
+    <Compile Include="Code\WikiNotifySource.cs" />
+    <Compile Include="Code\WikiStrExtentions.cs" />
+    <Compile Include="Code\WikiSubscriptionManager.cs" />
+    <Compile Include="Code\IVersioned.cs" />
+    <Compile Include="Code\Category.cs" />
+    <Compile Include="Code\BaseDao.cs" />
+    <Compile Include="Code\CommentDao.cs" />
+    <Compile Include="Code\FileDAO.cs" />
+    <Compile Include="Code\File.cs" />
+    <Compile Include="Code\IWikiObjectOwner.cs" />
+    <Compile Include="Code\Page.cs" />
+    <Compile Include="Code\Comment.cs" />
+    <Compile Include="Code\PageDAO.cs" />
+    <Compile Include="Code\CategoryDao.cs" />
+    <Compile Include="Handlers\WikiFileHandler.cs">
+    </Compile>
+    <Compile Include="Handlers\WikiSection.cs" />
+    <Compile Include="Resources\WikiResource.Designer.cs">
+      <DependentUpon>WikiResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\WikiUCResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WikiUCResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\EditFile.ascx.cs">
+      <DependentUpon>EditFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\EditFile.ascx.designer.cs">
+      <DependentUpon>EditFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\EditPage.ascx.cs">
+      <DependentUpon>EditPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\EditPage.ascx.designer.cs">
+      <DependentUpon>EditPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\FileUploader.aspx.cs">
+      <DependentUpon>FileUploader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\FileUploader.aspx.designer.cs">
+      <DependentUpon>FileUploader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\ListFiles.ascx.cs">
+      <DependentUpon>ListFiles.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\ListFiles.ascx.designer.cs">
+      <DependentUpon>ListFiles.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\ListPages.ascx.cs">
+      <DependentUpon>ListPages.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\ListPages.ascx.designer.cs">
+      <DependentUpon>ListPages.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\MiniToolbar.ascx.cs">
+      <DependentUpon>MiniToolbar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\MiniToolbar.ascx.designer.cs">
+      <DependentUpon>MiniToolbar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\ViewFile.ascx.cs">
+      <DependentUpon>ViewFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\ViewFile.ascx.designer.cs">
+      <DependentUpon>ViewFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WikiUC\ViewPage.ascx.cs">
+      <DependentUpon>ViewPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WikiUC\ViewPage.ascx.designer.cs">
+      <DependentUpon>ViewPage.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\Css\wikicss.css" />
+    <Content Include="App_Themes\Default\Css\filetype_style.css" />
+    <Content Include="App_Themes\Default\Css\wikicssprint.css" />
+    <Content Include="App_Themes\Default\images\Page.png" />
+    <Content Include="App_Themes\Default\images\WikiLogo16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\images\filetype\file_image.png" />
+    <Content Include="App_Themes\Default\images\filetype\file_mpg.png" />
+    <Content Include="App_Themes\Default\images\filetype\file_na.png" />
+    <Content Include="App_Themes\Default\images\filetype\file_ppt.png" />
+    <Content Include="App_Themes\Default\images\filetype\file_sound.png" />
+    <Content Include="App_Themes\Default\images\filetype\file_txt.png" />
+    <Content Include="App_Themes\Default\images\filetype\file_xls.png" />
+    <Content Include="App_Themes\Default\images\filetype\file_zip.png" />
+    <Content Include="WikiUC\EditFile.ascx" />
+    <Content Include="WikiUC\EditPage.ascx" />
+    <Content Include="WikiUC\ListFiles.ascx" />
+    <Content Include="WikiUC\ListPages.ascx" />
+    <Content Include="WikiUC\MiniToolbar.ascx" />
+    <Content Include="WikiUC\ViewFile.ascx" />
+    <Content Include="WikiUC\ViewPage.ascx" />
+    <Content Include="WikiUC\FileUploader.aspx" />
+    <Content Include="Diff.aspx" />
+    <Content Include="ListCategories.aspx" />
+    <Content Include="PageHistoryList.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="ListFiles.aspx" />
+    <Content Include="ListPages.aspx" />
+    <Content Include="Wiki.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Code\Patterns\WikiPatternResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WikiPatternResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Code\Patterns\WikiPatternsResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>WikiPatternsResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>ASC.Web.UserControls.Wiki.Patterns</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="App_Themes\Default\images\WikiLogo150.png" />
+    <Content Include="Content\external.png">
+    </Content>
+    <Content Include="Content\file_icon.gif">
+    </Content>
+    <Content Include="Content\lock_icon.gif">
+    </Content>
+    <Content Include="Content\mail_icon.gif">
+    </Content>
+    <Content Include="Content\main.css">
+    </Content>
+    <Content Include="Content\Anchor.png">
+    </Content>
+    <Content Include="Content\Bold.png">
+    </Content>
+    <Content Include="Content\Box.png">
+    </Content>
+    <Content Include="Content\BR.png">
+    </Content>
+    <Content Include="Content\Code.png">
+    </Content>
+    <Content Include="Content\Comment.png">
+    </Content>
+    <Content Include="Content\Escape.png">
+    </Content>
+    <Content Include="Content\File.png">
+    </Content>
+    <Content Include="Content\H1.png">
+    </Content>
+    <Content Include="Content\H2.png">
+    </Content>
+    <Content Include="Content\H3.png">
+    </Content>
+    <Content Include="Content\H4.png">
+    </Content>
+    <Content Include="Content\HR.png">
+    </Content>
+    <Content Include="Content\Image.png">
+    </Content>
+    <Content Include="Content\Italic.png">
+    </Content>
+    <Content Include="Content\Link.png">
+    </Content>
+    <Content Include="Content\NoBr.png">
+    </Content>
+    <Content Include="Content\NoWiki.png">
+    </Content>
+    <Content Include="Content\PageLink.png">
+    </Content>
+    <Content Include="Content\Pre.png">
+    </Content>
+    <Content Include="Content\SpecialTags.png">
+    </Content>
+    <Content Include="Content\Striked.png">
+    </Content>
+    <Content Include="Content\Subscript.png">
+    </Content>
+    <Content Include="Content\Superscript.png">
+    </Content>
+    <Content Include="Content\Symbol.png">
+    </Content>
+    <Content Include="Content\Underlined.png">
+    </Content>
+    <EmbeddedResource Include="Resources\WikiResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WikiResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>ASC.Web.UserControls.Wiki.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WikiUCResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WikiUCResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>ASC.Web.UserControls.Wiki.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Content Include="Scripts\EditPage.js" />
+    <Content Include="Content\enlarge.png">
+    </Content>
+    <EmbeddedResource Include="Code\Patterns\wiki_patterns.xml">
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="BeforeBuild">
+    <Exec Command="taskkill /F /IM w3wp.exe" IgnoreExitCode="true" ContinueOnError="true" Condition=" '$(KillAsp)' == '' " />
+  </Target>
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="@(IntermediateAssembly)" DestinationFolder="$(RedDir)" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(DocFileItem)" DestinationFiles="@(FinalDocFile-&gt;'$(RedDir)%(FileName)%(Extension)')" SkipUnchangedFiles="true" Condition="'$(_DocumentationFileProduced)'=='true'" />
+    <Copy SourceFiles="@(IntermediateSatelliteAssembliesWithTargetPath)" DestinationFiles="@(IntermediateSatelliteAssembliesWithTargetPath-&gt;'$(RedDir)%(Culture)\$(TargetName).resources.dll')" SkipUnchangedFiles="true" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4729</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != '' And Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets')" />
+</Project>

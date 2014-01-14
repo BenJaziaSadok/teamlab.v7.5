@@ -1,0 +1,1427 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+   CSS Reset
+*******************************************************************************/
+dl, dt, dd{
+    padding: 0px;
+    margin: 0px;
+}
+textarea {
+    margin: 0;
+}
+
+/*******************************************************************************
+   For planshet overflow: scroll
+*******************************************************************************/
+.mobile-overflow {
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-touch-callout: none;
+}
+/*******************************************************************************
+*******************************************************************************/
+.display-none {
+    display: none !important;
+}
+.tableBase tr:hover{
+    background-color: #F2F2F2 !important;
+}
+.tableBase tr.selectedRow{
+    background-color: #FAFAFA;
+}
+
+.tooltip{
+    line-height: 20px;
+    min-width: 300px;
+    max-width: 420px;
+}
+
+.tooltip .tooltipTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 3px 0 -6px 1px;
+}
+.tooltip .tooltipTable>tbody>tr>td {
+    vertical-align: top;
+}
+.tooltip p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tooltip div.param {
+    color: #9CA0A4;
+}
+.tooltip div.param, .tooltip div.value{
+    line-height: 16px;
+    margin-bottom: 9px;
+}
+.crm-hidden{
+    display: none;
+}
+a.gray_linkHeaderLightMedium, a.gray_linkHeaderLightMedium:visited {
+    color: #83888D !important;
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+a.red_linkHeaderLightMedium, a.red_linkHeaderLightMedium:visited {
+    color: #CC3333 !important;
+    font-family: Arial,sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.crm-requiredField{
+    color: #DF1B1B;
+    font-weight: normal;
+    padding-left: 2px;
+}
+.crm-deleteLink{
+    background: url("../images/icons.png") 0 -280px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+.crm-editLink{
+    background: url("../images/icons.png") 0 -257px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+.crm-addNewLink{
+    background: url( "../images/icons.png" ) 0 -235px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration: none;
+}
+.crm-acceptLink{
+    background: url("../images/icons.png") 0 -60px no-repeat  transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+.crm-rejectLink{
+    background: url("../images/icons.png") 0 -44px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+.crm-showMoreLink, .crm-showMoreLink:hover{
+    border-bottom: 2px dotted;
+    color: #83888D;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+.crm-loadingLink, .crm-loadingLink:hover{
+    background: url("../images/loading_background.gif") no-repeat scroll left center transparent;
+    color: #83888D;
+    cursor: default;
+    font-weight: bold;
+    padding-left: 20px;
+    text-decoration:none;
+}
+.crm-watermarked{
+    color: #AAAAAA;
+}
+.crm-email, .crm-phone, .crm-address{
+    display: inline-block;
+    padding: 0 0 0 20px;
+    position: relative;
+}
+.crm-email {
+    cursor: pointer;
+}
+.crm-email:after {
+    background: url("../images/icons.png") 0 -495px no-repeat  transparent;
+    content: " ";
+    display: block;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+}
+.crm-phone:after {
+    background: url("../images/icons.png") 0 -475px no-repeat  transparent;
+    content: " ";
+    display: block;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+}
+.crm-address:after {
+    background: url("../images/icons.png") 0 -455px no-repeat  transparent;
+    content: " ";
+    display: block;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+}
+
+.crm-withGrayPlus{
+    border-bottom: 1px dotted;
+    clear: both;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+.crm-withGrayPlus:after{
+    background: url( "../images/icons.png" ) no-repeat scroll 0 -735px transparent;
+    content: " ";
+    cursor: pointer;
+    display: block;
+    height: 14px;
+    right: -16px;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    width: 14px;
+}
+
+.crm-exportToCsvLink, .crm-exportToCsvLink:hover, .crm-exportToCsvLink:visited{
+    cursor: pointer;
+    position: relative;
+    margin-left:16px;
+}
+.crm-exportToCsvLink:after{
+    background: url( "../images/csv_16.png" ) no-repeat scroll 0 0 transparent;
+    content: " ";
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    left: -18px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+.crm-exportToCsvLink img{
+    margin-left: 3px;
+}
+.crm-importLink, .crm-importLink:hover{
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    margin: 3px 4px 3px 20px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: underline;
+}
+.crm-importLink:after{
+    background: url( "../images/import_16.png" ) no-repeat scroll 0 0 transparent;
+    color: #333333;
+    content: " ";
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    left: 10px;
+    margin-left: -30px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+
+.crm-actionButtonsBlock {
+    margin-top: 32px;
+}
+.crm-actionProcessInfoBlock {
+    margin-top: 28px;
+    display: none;
+}
+
+select.disabled {
+    background-color: #EFEFEF;
+    color: #666562;
+}
+label.crm-private-lock{
+    background: url("../images/icons.png") 1px -176px no-repeat transparent;
+    display: inline-block;
+    height: 16px;
+    margin-top: -4px;
+    vertical-align: middle;
+    width: 16px;
+}
+
+label.crm-addBtn{
+    background: url("../images/icons.png") 0 -735px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+label.crm-deleteBtn{
+    background: url("../images/icons.png") 0 -620px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+
+/*******************************************************************************
+Table for profile card
+*******************************************************************************/
+
+.crm-detailsTable {
+    width: 100%;
+    margin-top: 15px;
+}
+.crm-detailsTable > tbody > tr {
+    height: 25px;
+}
+.crm-detailsTable > tbody > tr > td {
+    vertical-align: top;
+    padding: 3px 0;
+}
+.crm-detailsTable tr.headerToggleBlock { }
+dd.underHeaderBase {
+    height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 0;
+}
+
+/*******************************************************************************
+Button with a triangle (arrow down) on the right
+*******************************************************************************/
+.crm-withArrowDown {
+    margin: 0 20px 0 0;
+    position: relative;
+}
+.crm-withArrowDown:after {
+    background: url("../images/arrow_down.gif") no-repeat scroll 0 0 transparent;
+    content: " ";
+    display: block;
+    height: 4px;
+    margin-top: -2px;
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    width: 7px;
+}
+/*******************************************************************************
+*******************************************************************************/
+dl.baseForm dt{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+a.attachLink, a.attachLink:active, a.attachLink:hover, a.attachLink:visited{
+    display: inline-block;
+    font-weight: normal;
+    font-size: 12px;
+    vertical-align: middle;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    margin: 3px 4px 3px 20px;
+}
+a.attachLink:after{
+    background: url( "../images/icons.png" ) 0 -432px no-repeat;
+    content: " ";
+    display: block; /* reduce the damage in FF3.0 */
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    margin-left: -30px;
+    left: 10px;
+    height: 16px;
+    width: 16px;
+}
+.selectedUser, .selectedGroup {
+    float: left;
+    padding: 0 10px 7px 0;
+    white-space: nowrap;
+}
+.selectedUser img, .selectedGroup img {
+    margin: 0px 4px -2px 0px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+.selectedUser img:nth-child(odd), .selectedGroup img:nth-child(odd) {
+    display: inline;
+}
+.selectedUser img:nth-child(even), .selectedGroup img:nth-child(even) {
+    display:none;
+}
+.private-panel-container {
+    padding: 10px 10px 0;
+}
+.crm-clearFilterButton {
+    border-bottom: 1px dotted;
+    clear: both;
+    cursor: pointer;
+    position: relative;
+    margin-left:18px;
+    text-decoration: none !important;
+}
+.crm-clearFilterButton:after {
+    background: url( "../images/icons.png" ) -1px -21px no-repeat transparent;
+    content: " ";
+    cursor: pointer;
+    display: block;
+    height: 16px;
+    left: -18px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+.border-panel {
+    background-color: #FFFFFF;
+    border: 1px solid #BBD5E9;
+}
+
+/*******************************************************************************
+containers for batch deleting elements
+*******************************************************************************/
+.containerForListBatchDelete{
+    border: 1px solid #D1D1D1;
+    line-height: 20px;
+    margin: 15px 0;
+    max-height: 300px;
+    padding: 0 15px 15px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+dt.listForBatchDelete{
+    float: left;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: right;
+    width: 70px;
+}
+dd.listForBatchDelete{
+    padding: 15px 0 0 80px;
+}
+dd.listForBatchDelete label{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 350px;
+}
+dd.listForBatchDelete label input {
+    vertical-align: middle;
+}
+/*******************************************************************************
+ContactInfoCard.ascx
+*******************************************************************************/
+.crm-contactInfoCard {
+    padding: 10px;
+    max-width: 360px;
+    min-width: 250px;
+    z-index: 9999999;
+}
+.crm-contactInfoCard > a {
+    clear: left;
+    float: left;
+    margin-bottom: 10px; 
+    width: 82px;
+}
+.crm-contactInfoCardImg {
+    border: 1px solid #C7C7C7;
+    display: block;
+}
+.crm-peopleInfoCardLink {
+    background: url( "../images/people_icon.png" ) no-repeat scroll left center transparent;
+}
+.crm-companyInfoCardLink:after {
+    background: url( "../images/icons.png" ) -1px -98px no-repeat transparent;
+    content: " ";
+    display: block;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+}
+.crm-companyInfoCardLink {
+    position: relative;
+}
+.crm-peopleInfoCardLink, .crm-companyInfoCardLink {
+    display: inline-block;
+    padding: 0 0 0 17px;
+    max-width: 700px;
+    line-height: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+.crm-contactInfoCard .infoCardContent {
+    margin-left: 95px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.crm-contactInfoCard ul {
+    padding-left:0;
+    display: inline-block;
+    margin-top: 8px;
+}
+.crm-contactInfoCard ul > li {
+    list-style: none;
+    clear: both;
+    margin-bottom: 10px;
+}
+.crm-contactInfoCard ul > li > .crm-phone,
+.crm-contactInfoCard ul > li > .crm-email {
+    float: left;
+}
+.crm-contactInfoCard ul > li > .crm-phone,
+.crm-contactInfoCard ul > li > .crm-email,
+.crm-contactInfoCard ul > li > .crm-address {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*******************************************************************************
+TagView.ascx
+*******************************************************************************/
+#tagContainer {
+    display:inline-block;
+}
+#tagContainer input.textEdit{
+    height: 17px;
+}
+#tagContainer span.tag_item a.delete_tag {
+    cursor: pointer;
+    display: none;
+    margin-top: -8px;
+    width: 9px;
+    height: 16px;
+    position: absolute;
+    right: 11px;
+    background: url( "../images/icons.png" ) 0 -576px no-repeat transparent;
+    top: 50%;
+}
+#tagContainer span.tag_item:hover a.delete_tag,
+#tagContainer span.tag_item.tag_hover a.delete_tag,
+#tagContainer span.tag_item a.delete_tag:hover {
+    display: inline-block;
+}
+
+#tagContainer span.tag_item {
+    display: inline-block;
+    padding: 2px 24px 2px 12px;
+    margin: 0 2px 4px 0;
+    position: relative;
+    background: url( "../images/icons.png" ) right -595px no-repeat #E9E9E9;
+}
+.addTagDialog.studio-action-panel {
+    padding-bottom: 20px;
+}
+.addTagDialog.studio-action-panel ul.dropdown-content {
+    max-width: 200px;
+    max-height: 200px;
+    overflow: auto;
+}
+.addTagDialog .h_line {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-width: 180px;
+}
+.addTagDialog input {
+    border: 1px solid #C7C7C7;
+    float: left;
+}
+.addTagDialog input:focus {
+    border: 1px solid #3186AF;
+}
+#addNewTag {
+    clear: both;
+    line-height: 20px;
+}
+#addThisTag {
+    float: left;
+    margin-left: 5px;
+}
+#tagContainer .clear {
+    clear: both;
+    display: block;
+    height: 1px;
+    line-height: 1px;
+    overflow: hidden;
+}
+#tagContainer .adding_tag_loading {
+    display:none;
+    vertical-align: middle;
+    margin-left: -3px;
+    width: 12px;
+    height: 12px;
+}
+
+/*******************************************************************************
+Navigation panel with page navigator
+*******************************************************************************/
+
+.crm-navigationPanel {
+    width: 100%;
+    margin-top: 20px;
+}
+.crm-navigationPanel .tl-combobox .combobox-title .inner-text {
+    color: #666666;
+    border-bottom: 1px dotted #666666;
+}
+.crm-navigationPanel .tl-combobox {
+    background: url("../images/icons.png") right -647px no-repeat transparent;
+    vertical-align: middle;
+    margin-bottom: 1px;
+}
+
+/*******************************************************************************
+File Uploader css style
+*******************************************************************************/
+.pm_deleteLinkCSSClass {
+    background:url("../images/icons.png") 0 -620px no-repeat transparent;
+    cursor:pointer;
+    height:16px;
+    width:16px;
+    display:inline-block;
+    text-decoration:none !important;
+}
+.pm_loadingCSSClass {
+    background:url("../images/loader_small.gif") no-repeat scroll center center transparent;
+    cursor:default;
+    height:24px;
+    width:24px;
+    display:inline-block;
+    margin-top:2px;
+    margin-left:-5px;
+    text-decoration:none !important;
+}
+.pm_completeCSSClass {
+    background:url("../images/icons.png") 0 -80px no-repeat transparent;
+    cursor:default;
+    height:12px;
+    width:12px;
+    display:inline-block;
+    margin-top:2px;
+    text-decoration:none !important;
+}
+.pm_overAllProcessBarCssClass {
+    height:8px;
+    width:100%;
+    border: 1px solid #d1d1d1;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    margin-top:10px;
+}
+.pm_overAllProcessBarCssClass div {
+    height:8px;
+    background:url("../images/icons.png") 0 -715px repeat-x !important;
+}
+.pm_uploadIcon {
+    background: url(../images/icons.png) 0 -670px no-repeat transparent;
+    height: 32px;
+    width: 32px;
+}
+#task_uploadContainer, #message_uploadContainer, #history_uploadContainer {
+    margin: 10px 0 0 0;
+    max-height: 120px;
+    width: 100%;
+    overflow: auto;
+}
+*+html #task_uploadContainer table, *+html #message_uploadContainer table, *+html #history_uploadContainer table {
+    width:507px !important;
+    z-index:290;
+}
+
+a.pm_upload_btn {
+    cursor:pointer;
+    float: left;
+    position: absolute !important;
+    margin: -5px 0px 0 13px;
+}
+
+*html a.pm_upload_btn {margin: -5px 0px 0 13px !important}
+*+html a.pm_upload_btn {margin: -5px 0px 0 13px !important}
+#asc_fileuploaderSWFContainer{position:static !important;}
+.swfupload
+{
+    width:130px !important;
+    height:20px !important;
+    position: absolute !important;
+}
+/*******************************************************************************
+CategorySelector.ascx
+*******************************************************************************/
+
+.categorySelector-selector-container {
+    border: 1px solid #C7C7C7;
+    height: 20px;
+    padding-left: 5px;
+}
+.categorySelector-selector {
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    width: 18px;
+    background: url("../images/icons.png") 1px -148px no-repeat transparent;
+}
+
+.categorySelector-categoriesContainer {
+    background-color: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    display: none;
+    max-height: 200px;
+    margin-top: -1px;
+    position: absolute;
+    width: 235px;
+    z-index: 100;
+}
+.categorySelector-category {
+    height: auto;
+    min-height: 35px;
+    position: relative;
+    z-index: 100;
+}
+.categorySelector-category:hover {
+    background-color: #F2F2F2;
+    cursor:pointer;
+}
+.categorySelector-categoryFocused {
+    background-color: #DEDEDE;
+}
+.categorySelector-categories {
+    border-right: 1px solid #C7C7C7;
+    display: block;
+    max-height: 200px;
+    overflow: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.categorySelector-categories label.event_category,
+.categorySelector-categories label.task_category {
+    float: left;
+}
+.activityData label.event_category {
+    vertical-align: middle;
+    margin-right: -4px;
+}
+
+
+label.event_category {
+    background-image: url("../images/event_categories.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    padding: 4px;
+}
+label.event_category.event_category_call {
+    background-position:  0 0;
+}
+label.event_category.event_category_call.hover,
+label.event_category.event_category_call.active {
+    background-position: -28px 0;
+}
+label.event_category.event_category_email {
+    background-position:  0 -28px;
+}
+label.event_category.event_category_email.hover,
+label.event_category.event_category_email.active {
+    background-position:  -28px -28px;
+}
+label.event_category.event_category_close {
+    background-position:  0 -56px;
+}
+label.event_category.event_category_close.hover,
+label.event_category.event_category_close.active {
+    background-position:  -28px -56px;
+}
+label.event_category.event_category_meeting {
+    background-position:  0 -84px;
+}
+label.event_category.event_category_meeting.hover,
+label.event_category.event_category_meeting.active {
+    background-position:  -28px -84px;
+}
+label.event_category.event_category_attach_file {
+    background-position:  0 -112px;
+}
+label.event_category.event_category_attach_file.hover,
+label.event_category.event_category_attach_file.active {
+    background-position:  -28px -112px;
+}
+
+label.event_category.event_category_note {
+    background-position:  0 -140px;
+}
+label.event_category.event_category_note.hover,
+label.event_category.event_category_note.active {
+    background-position:  -28px -140px;
+}
+
+
+label.task_category {
+    background-image: url("../images/task_categories.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    padding: 4px;
+}
+label.task_category.task_category_call {
+    background-position:  0 0;
+}
+label.task_category.task_category_call.hover,
+label.task_category.task_category_call.active {
+    background-position: -28px 0;
+}
+label.task_category.task_category_deal {
+    background-position:  0 -28px;
+}
+label.task_category.task_category_deal.hover,
+label.task_category.task_category_deal.active {
+    background-position: -28px -28px;
+}
+label.task_category.task_category_demo {
+    background-position:  0 -56px;
+}
+label.task_category.task_category_demo.hover,
+label.task_category.task_category_demo.active {
+    background-position: -28px -56px;
+}
+label.task_category.task_category_email {
+    background-position:  0 -84px;
+}
+label.task_category.task_category_email.hover,
+label.task_category.task_category_email.active {
+    background-position: -28px -84px;
+}
+label.task_category.task_category_fax {
+    background-position:  0 -112px;
+}
+label.task_category.task_category_fax.hover,
+label.task_category.task_category_fax.active {
+    background-position: -28px -112px;
+}
+label.task_category.task_category_follow_up {
+    background-position:  0 -140px;
+}
+label.task_category.task_category_follow_up.hover,
+label.task_category.task_category_follow_up.active {
+    background-position: -28px -140px;
+}
+label.task_category.task_category_lunch {
+    background-position:  0 -168px;
+}
+label.task_category.task_category_lunch.hover,
+label.task_category.task_category_lunch.active {
+    background-position: -28px -168px;
+}
+label.task_category.task_category_meeting {
+    background-position:  0 -196px;
+}
+label.task_category.task_category_meeting.hover,
+label.task_category.task_category_meeting.active {
+    background-position: -28px -196px;
+}
+label.task_category.task_category_note {
+    background-position:  0 -224px;
+}
+label.task_category.task_category_note.hover,
+label.task_category.task_category_note.active {
+    background-position: -28px -224px;
+}
+label.task_category.task_category_ship {
+    background-position:  0 -252px;
+}
+label.task_category.task_category_ship.hover,
+label.task_category.task_category_ship.active {
+    background-position: -28px -252px;
+}
+label.task_category.task_category_social_networks {
+    background-position:  0 -280px;
+}
+label.task_category.task_category_social_networks.hover,
+label.task_category.task_category_social_networks.active {
+    background-position: -28px -280px;
+}
+label.task_category.task_category_thank_you {
+    background-position:  0 -308px;
+}
+label.task_category.task_category_thank_you.hover,
+label.task_category.task_category_thank_you.active {
+    background-position: -28px -308px;
+}
+
+
+/*******************************************************************************
+ContactSelector.ascx
+*******************************************************************************/
+
+.contactSelector-inputContainer input {
+    border: medium none;
+    outline: medium none;
+    padding: 0;
+    width: 100% !important;
+}
+.contactSelector-inputContainer input:focus {
+    border: medium none !important;
+    outline: medium none !important;
+    padding: 0;
+    width: 100% !important;
+}
+.noMatches {
+    background: #FFFFCC;
+    display: none;
+    position: absolute;
+    z-index: 10;
+}
+
+.contactSelector-inputContainer label.crossButton {
+    background: url("../images/icons.png") 0 -760px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+.contactSelector-inputContainer label.searchButton {
+    background: url("../images/icons.png") 0 -785px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+
+.ui-autocomplete .ui-menu-item:last-child {
+    border-bottom: medium none !important;
+}
+.buttonsContainer {
+    display: inline-block;
+    left: 100%;
+    min-width: 16px;
+    padding: 2px;
+    position: absolute;
+    top: 0;
+}
+.contactSelector-item .crm-addNewLink {
+    display: none;
+}
+.contactSelector-item.withPlus .crm-addNewLink {
+    display: inline-block;
+}
+/*******************************************************************************
+AdvansedFilter.ascx
+*******************************************************************************/
+.colorFilterItem {
+   padding-left: 25px !important;
+   position: relative;
+}
+.colorFilterItem:before {
+    border: 1px solid #8E908F;
+    content: " ";
+    display: block;
+    height: 11px;
+    left: 5px;
+    margin-top: -6px;
+    position: absolute;
+    top: 50%;
+    width: 11px;
+    z-index: 0;
+}
+.custom-combobox.colorFilterItem {
+    max-width: 140px !important;
+}
+.color_0:before {
+    background: none repeat scroll 0 0 #ffffff;
+}
+.color_e34603:before{
+    background: none repeat scroll 0 0 #e34603;
+}
+.color_f88e14:before{
+    background: none repeat scroll 0 0 #f88e14;
+}
+.color_ffb403:before{
+    background: none repeat scroll 0 0 #ffb403;
+}
+.color_9fbb4c:before{
+    background: none repeat scroll 0 0 #9fbb4c;
+}
+.color_288e31:before{
+    background: none repeat scroll 0 0 #288e31;
+}
+.color_4cbb78:before{
+    background: none repeat scroll 0 0 #4cbb78;
+}
+.color_0797ba:before{
+    background: none repeat scroll 0 0 #0797ba;
+}
+.color_1d5f99:before{
+    background: none repeat scroll 0 0 #1d5f99;
+}
+.color_4c76bb:before{
+    background: none repeat scroll 0 0 #4c76bb;
+}
+.color_3552d2:before{
+    background: none repeat scroll 0 0 #3552d2;
+}
+.color_473388:before{
+    background: none repeat scroll 0 0 #473388;
+}
+.color_884cbb:before{
+    background: none repeat scroll 0 0 #884cbb;
+}
+.color_cb59ba:before{
+    background: none repeat scroll 0 0 #cb59ba;
+}
+.color_ca3083:before{
+    background: none repeat scroll 0 0 #ca3083;
+}
+.color_e24e78:before{
+    background: none repeat scroll 0 0 #e24e78;
+}
+.color_bf0036:before{
+    background: none repeat scroll 0 0 #bf0036;
+}
+
+/*******************************************************************************
+new colors!!!
+*******************************************************************************/
+.color_f48454:before{
+    background: none repeat scroll 0 0 #f48454;
+}
+.color_ffb45e:before{
+    background: none repeat scroll 0 0 #ffb45e;
+}
+.color_ffd267:before{
+    background: none repeat scroll 0 0 #ffd267;
+}
+.color_b7d269:before{
+    background: none repeat scroll 0 0 #b7d269;
+}
+.color_6bbd72:before{
+    background: none repeat scroll 0 0 #6bbd72;
+}
+.color_77cf9a:before{
+    background: none repeat scroll 0 0 #77cf9a;
+}
+.color_6ac6dd:before{
+    background: none repeat scroll 0 0 #6ac6dd;
+}
+.color_4682b6:before{
+    background: none repeat scroll 0 0 #4682b6;
+}
+.color_6a9ad2:before{
+    background: none repeat scroll 0 0 #6a9ad2;
+}
+.color_8a98d8:before{
+    background: none repeat scroll 0 0 #8a98d8;
+}
+.color_7e6eb2:before{
+    background: none repeat scroll 0 0 #7e6eb2;
+}
+.color_b58fd6:before{
+    background: none repeat scroll 0 0 #b58fd6;
+}
+.color_d28cc8:before{
+    background: none repeat scroll 0 0 #d28cc8;
+}
+.color_e795c1:before{
+    background: none repeat scroll 0 0 #e795c1;
+}
+.color_f2a9be:before{
+    background: none repeat scroll 0 0 #f2a9be;
+}
+.color_df7895:before{
+    background: none repeat scroll 0 0 #df7895;
+}
+
+/*******************************************************************************
+HistoryView.ascx
+*******************************************************************************/
+.tl-combobox .default-field {
+  display:none;
+}
+
+#historyBlock .details-menu {
+    z-index:101;
+    table-layout: inherit;
+}
+#historyBlock .details-menu td {
+    display: inline-block;
+}
+#historyBlock textarea {
+    width:100%;
+    height:100px;
+    margin-top:10px;
+    resize:none;
+}
+#eventLinkToPanel .tl-combobox {
+    margin-bottom: 1px;
+    vertical-align:middle;
+}
+.empty-select{display:none;}
+
+
+#historyBlock table td.title {
+    width: 100%;
+    padding-left: 0;
+}
+#historyBlock table td.title div {
+    max-width: 800px;
+    overflow: hidden;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+}
+#historyBlock table td.entityPlace, table td.activityData {
+    white-space: nowrap;
+}
+#historyBlockOptions { }
+.viewSwitcherItem, .viewSwithcerSelectedItem {
+    height: 15px;
+    padding: 0 9px;
+}
+#eventsList, #eventsFilterContainer {
+    display:none;
+}
+#eventsList {
+    min-height: 200px;
+}
+#showMoreEventsButtons {
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-bottom: 2px;
+}
+#mailHistoryEventPanel .messageContent {
+    max-width: 700px;
+    max-height: 410px;
+    margin: 8px 0;
+    overflow: auto;
+}
+
+#mailHistoryEventPanel .importance {
+    height: 22px;
+    width: 22px;
+}
+
+
+#mailHistoryEventPanel .importance .icon-unimportant,
+#mailHistoryEventPanel .importance .icon-important{
+    margin: 3px;
+    background-image: url("http://cdn.teamlab.com/studio/tag/nct.7.4.4/addons/mail/app_themes/default/images/icons.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    margin-top: 3px;
+    width: 15px;
+}
+
+#mailHistoryEventPanel .importance .icon-unimportant {
+    background-position: 0 0;
+}
+#mailHistoryEventPanel .importance .icon-important {
+    background-position: 0 -15px;
+}
+
+#mailHistoryEventPanel .messageHeader .headTitle {
+    margin-bottom: 8px;
+}
+#mailHistoryEventPanel .messageHeader .head {
+    border-top: 1px solid #D7D8DC;
+    background-color: #F2F2F2;
+    padding: 3px 0;
+}
+#mailHistoryEventPanel .messageHeader .head .row {
+    padding-left: 17px;
+    height: auto;
+    line-height: 27px;
+    min-height: 27px;
+    min-width: 700px;
+    padding-right: 8px;
+}
+
+#mailHistoryEventPanel .messageHeader .head .row label {
+    color: #83888D;
+    float: left;
+    width: 55px;
+}
+#mailHistoryEventPanel .messageHeader .head .from:hover,
+#mailHistoryEventPanel .messageHeader .head .to:hover {
+    border-bottom: 1px solid;
+}
+#mailHistoryEventPanel .messageHeader .head .row .value a {
+    color: #000000;
+    cursor: pointer;
+    outline: medium none;
+    text-decoration: none;
+}
+/*******************************************************************************
+    Progress
+*******************************************************************************/
+.progress-container {
+    margin-top: 16px;
+}
+.progress-container .percent {
+    color: #333333;
+    float: right;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: right;
+    width: 50px;
+}
+.progress-container .progress-wrapper {
+    border-radius: 5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius: 5px;
+    background-color: #E8F2F7;
+    border: 1px solid #E8F2F7;
+    height: 16px;
+    overflow: hidden;
+    text-align: center;
+}
+.progress-container .progress-wrapper .progress {
+    background: url("../images/back-progress-light-big.png") repeat-x;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    height: inherit;
+}
+/*******************************************************************************
+ContactSelectorAutocomplete
+*******************************************************************************/
+/*ul*/
+.ui-autocomplete {
+    max-height: 212px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-touch-callout: none;
+}
+.ui-corner-all {
+    border-radius: 2px 2px 2px 2px !important;
+}
+.ui-widget-content {
+    background-color: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    color: #333333;
+}
+/*li*/
+.ui-autocomplete .ui-menu-item {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D1D1D1;
+    list-style: none outside none;
+}
+/*a*/
+.ui-autocomplete .ui-menu-item  .ui-state-focus {
+    background-color: #EDF6FD !important;
+    background-image: none !important;
+    border: none !important;
+    margin: 0px !important;
+    padding: 3px !important;
+}
+.ui-autocomplete  .ui-menu-item  a,
+.ui-autocomplete .ui-menu-item  a:hover {
+    color: black !important;
+    display: block !important;
+    padding: 3px !important;
+    text-decoration: none !important;
+    margin: 0px !important;
+}
+
+/********************************************************************************
+Import From CSV
+********************************************************************************/
+#importFromCSVSteps dt {
+    color: #3186AF;
+    float: left;
+    font-family: Verdana;
+    font-size: 46px;
+    font-weight: bold;
+    padding-right: 5px;
+    margin: -10px 0 0;
+}
+#importFromCSVSteps dd {
+    margin-left: 44px;
+}
+#importFromCSVSteps td.missing {
+    background-color: #FFFFCC;
+}
+#importFromCSVSteps dd .import_button,
+#importFromCSVSteps dd .edit_button {
+    margin: 0 0 10px 15px;
+    position: relative;
+}
+#removingDuplicatesBehaviorPanel label {
+    vertical-align: middle;
+    line-height: 20px;
+}
+#removingDuplicatesBehaviorPanel label>input {
+    display: inline-block;
+    margin-top: -1px;
+    vertical-align: middle;
+}
+#importFromCSVSteps dd .import_button:after {
+    background: url( "../images/import.png" ) no-repeat scroll 0 0 transparent;
+    content: " ";
+    display: block;
+    height: 13px;
+    left: -15px;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    width: 13px;
+}
+
+#importFromCSVSteps dd .edit_button:after {
+    background: url("../images/icons.png") 0 -305px no-repeat transparent;
+    content: " ";
+    color: #333333;
+    display: block; 
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    left: -16px;
+    height: 14px;
+    width: 14px;
+}
+
+#importFromCSVSteps .content-info-import {
+    width:700px;
+}
+@media all and (max-width: 1200px) {
+    #importFromCSVSteps .content-info-import {
+        width:650px;
+    }
+}
+
+#columnMapping {
+    margin-top: 16px;
+}
+.crm-pageHeader {
+    display: inline-block;
+    white-space: nowrap;
+}
+.crm-pageHeaderText {
+    max-width: 600px;
+    overflow: hidden;
+    white-space: nowrap;
+    float:left;
+}
+
+.mainContainerClass .containerHeaderBlock .privateMark {
+    background: url("../images/icons.png") 0 -200px no-repeat transparent;
+    width: 24px;
+    height: 24px;
+}
+#importFromCSVSteps .tl-combobox {
+    background: url("../images/icons.png") right -647px no-repeat transparent;
+    margin-bottom: 1px;
+    vertical-align: middle;
+}
+
+#importFromCSVSteps  .tl-combobox .combobox-title .inner-text {
+    border-bottom: 1px dotted #666666;
+    color: #666666;
+}
+#ignoreFirstRow {
+    vertical-align: middle;
+}
+
+#importFromCSVSteps .contactManager-selectorContent {
+    margin-top: 10px;
+}
+
+/*******************************************************************************
+   Dashboard for empty list contacts
+*******************************************************************************/
+.dashboard-center-box .content .module-block {    
+    margin-left: 28px;
+    width: 214px;
+}
+
+.dashboard-center-box .content .module-block .img.contacts {
+    background-image: url("../images/contacts.png");
+}
+.dashboard-center-box .content .module-block .img.sales {
+    background-image: url("../images/sales.png");
+}
+.dashboard-center-box .content .module-block .img.customize {
+    background-image: url("../images/customize.png");
+}
+.dashboard-center-box .content .module-block .img.integration {
+    background-image: url("../images/integration.png");
+}
+
+/*******************************************************************************
+   datepicker button
+*******************************************************************************/
+#eventCategorySelector{
+    width: 180px;
+}
+button.ui-datepicker-trigger,
+button.ui-datepicker-trigger:active,
+button.ui-datepicker-trigger:hover {
+    background: url("../images/icons.png") 2px 0 no-repeat #ffffff;
+    cursor: pointer;
+    height: 18px;
+    border: 0 none;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-left: -24px;
+    width: 23px;
+}
+/*******************************************************************************
+   Styles for min-width 1024px
+*******************************************************************************/
+@media all and (max-width: 1200px) {
+    #contactTable .main-info-contact .contactTitle {
+        max-width:450px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #contactTable .contact-info-contact {
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

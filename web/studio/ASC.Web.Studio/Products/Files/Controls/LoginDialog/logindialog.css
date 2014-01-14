@@ -1,0 +1,95 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.block-auth {
+    display: none;
+}
+.block-auth .block-overlay {
+    background-color: #aaa;
+    cursor: default;
+    height: 100%;
+    left: 0;
+    opacity: 0.2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 666;
+}
+.block-dialog {
+    background-color: #f4f4f4;
+    height: 240px;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -120px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    width: 400px;
+    z-index: 667;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px #c4c4c4;
+    -webkit-box-shadow: 5px 5px 5px #c4c4c4;
+    box-shadow: 5px 5px 5px #c4c4c4;
+}
+.block-dialog>.social-login {
+    padding: 20px;
+}
+.block-auth .login-with-label {
+    color: #333;
+    font-size: 12px;
+    margin: 0;
+}
+.block-auth #accountLinks {
+    padding-top: 20px;
+    text-align: center;
+}
+.block-auth .social-login #accountLinks li {
+    height: 60px;
+}
+.block-auth .social-login #accountLinks li a {
+    background-image: url("images/icons.png");
+    margin: 0 16px;
+    height: 60px;
+    width: 64px;
+}
+.block-auth .social-login #accountLinks li .facebook {
+    background-position: -67px 0;
+}
+.block-line {
+    border: 1px solid #d1d1d1;
+    border-bottom-color: #fff;
+    width: 100%;
+}
+.close {
+    background-color: #fafafa;
+    border: 1px solid #aaa;
+    color: #333;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 13px;
+    margin: 15px 155px;
+    padding: 4px 24px 5px;
+    position: fixed;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+
+    background-image: -webkit-gradient(linear, 0 top, 100% top, from(#fff), to(#f5f5f5));
+    background-image: -webkit-linear-gradient(left, color-stop(#fff 0), color-stop(#f5f5f5 100%));
+    background-image: -moz-linear-gradient(left, #fff 0, #f5f5f5 100%);
+    background-image:  linear-gradient(to right, #fff 0, #f5f5f5 100%);
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(#fff),argb(#f5f5f5)));
+}

@@ -1,0 +1,32 @@
+﻿<%@ Assembly Name="ASC.Web.Studio" %>
+<%@ Assembly Name="ASC.Web.People" %>
+<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masters/BaseTemplate.master" CodeBehind="PeopleBaseTemplate.master.cs" Inherits="ASC.Web.People.Masters.PeopleBaseTemplate" %>
+<%@ Import Namespace="ASC.Data.Storage" %>
+<%@ Register TagPrefix="sc" Namespace="ASC.Web.Studio.Controls.Common" Assembly="ASC.Web.Studio" %>
+
+<asp:Content ID="HeaderContent" ContentPlaceHolderID="HeaderContent" runat="server">
+</asp:Content>
+
+<asp:Content ID="_PageContent" ContentPlaceHolderID="PageContent" runat="server">
+    <sc:Container ID="_commonContainer" runat="server">
+        <Header>
+        </Header>
+        <Body>
+            <asp:ContentPlaceHolder ID="PeoplePageContent" runat="server" />
+        </Body>
+    </sc:Container>
+</asp:Content>
+
+<asp:Content ID="_sidePanel" ContentPlaceHolderID="SidePanel" runat="server">
+    <asp:PlaceHolder ID="_sideHolder" runat="server" />
+    <div id="peopleSidepanel">
+        <asp:PlaceHolder ID="_sidepanelHolder" runat="server" />
+    </div>
+    <asp:ContentPlaceHolder ID="PeopleSidePanel" runat="server" />
+    <div class="display-block">
+        <asp:PlaceHolder ID="ControlHolder" runat="server" />
+    </div>
+</asp:Content>
+
+<asp:Content ID="clientTemplatesResourcesPlaceHolder" ContentPlaceHolderID="clientTemplatesResourcesPlaceHolder" runat="server">
+</asp:Content>

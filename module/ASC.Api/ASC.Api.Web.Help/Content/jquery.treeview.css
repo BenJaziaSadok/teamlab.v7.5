@@ -1,0 +1,54 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.treeview ul {
+	margin-top: 4px;
+}
+
+.treeview .hitarea {
+	height: 16px;
+	width: 16px;
+	margin-left: -16px;
+	float: left;
+	cursor: pointer;
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+.treeview li { 
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+}
+
+
+
+#treecontrol { margin: 1em 0; display: none; }
+.treeview .hover { color: #3d4a6b; cursor: pointer; }
+.treeview li.collapsable { background: url(images/tree-open.png) no-repeat 0px 8px; }
+.treeview li.expandable { background: url(images/tree-closed.png) no-repeat 0px 8px; }
+.treeview .expandable-hitarea { background-position: -80px -3px; }
+
+
+
+
+
+

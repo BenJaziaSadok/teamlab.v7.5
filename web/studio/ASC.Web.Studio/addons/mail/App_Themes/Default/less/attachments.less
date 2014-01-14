@@ -1,0 +1,120 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@import "settings.less";
+
+.attachment_drag_highlight {
+  background-color: #E0FFE0;
+}
+
+.progress-color {
+  background: #439CCD;
+  background: linear-gradient(top,#57aedf,#439CCD 50%,#3B95C6 51%,#237faf);
+  background: -o-linear-gradient(top,#57aedf,#439CCD 50%,#3B95C6 51%,#237faf);
+  background: -moz-linear-gradient(top,#57aedf,#439CCD 50%,#3B95C6 51%,#237faf);
+  background: -webkit-linear-gradient(top,#57aedf,#439CCD 50%,#3B95C6 51%,#237faf);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#57aedf', EndColorStr='#237faf')";
+}
+
+#editMessagePageFooter
+{
+    .attachments_list
+    {
+        .row
+        {
+            .delete_icon
+            {
+                width: 16px;
+                padding-left: @message-spliter-width;
+
+                .delete_attachment
+                {
+                    background: url("@{base-icon-sprite-url}") -20px 0 no-repeat;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+            .file_info
+            {
+                width: @message-head-row-height * 15;
+
+                .file-name
+                {
+                    max-width: @message-head-row-height * 12;
+                }
+
+                .fullSizeLabel
+                {
+                    max-width: @message-head-row-height * 3;
+                }
+            }
+
+            .attachment-progress
+            {
+                padding-left: @message-spliter-width;
+                width: 100px;
+                display: inline-block;
+                vertical-align: top;
+
+                .fu-progress-cell
+                {
+                    text-align: center;
+
+                    .upload-progress
+                    {
+                        background-color: #D1D1D1;
+                        color: #FFFFFF;
+                        width: 100px;
+                        position: relative;
+                        height: 14px;
+                        overflow: hidden;
+                        top: 2px;
+
+                        .progress-slider
+                        {
+                            left: 0;
+                            position: absolute;
+                            width: 0;
+                            height: 13px;
+                        }
+
+                        .progress-label
+                        {
+                            left: 0;
+                            font-size: 10px;
+                            position: absolute;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .attachment-error
+            {
+                padding-left: @message-spliter-width;
+                max-width: 95%;
+            }
+
+            &:hover,
+            &.selected
+            {
+                .delete_attachment
+                {
+                    background-position: -20px -20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

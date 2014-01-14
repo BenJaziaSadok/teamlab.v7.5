@@ -1,0 +1,44 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+#emptyContainer .emptyScrCtrl {
+    display: none;
+}
+
+.empty-folder-goto,
+.empty-folder-create,
+.empty-folder-toparent {
+    display: table;
+    margin: 10px 0 0 20px;
+    position: relative;
+}
+
+.empty-folder-goto:after,
+.empty-folder-create:after,
+.empty-folder-toparent:after {
+    background: url("images/btn_emptyfolder.png") no-repeat 0 0 transparent;
+    content: "";
+    display: block;
+    height: 20px;
+    margin-left: -20px;
+    margin-top: -8px;
+    position: absolute;
+    top: 50%;
+    width: 16px;
+}
+.empty-folder-goto:after {
+    background-position: 0 -20px;
+}
+.empty-folder-toparent:after {
+    background-position: 0 -40px;
+}

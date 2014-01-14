@@ -1,0 +1,58 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@import "settings.less";
+
+.loadmask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  background-color: #f4f4f4;
+  z-index: @z-top;
+  min-width: 1007px;
+  min-height: 700px;
+
+  .body{
+    position: relative;
+    top: 44%;
+  }
+
+  .logo{
+    display: inline-block;
+    min-width: 240px;
+    vertical-align: top;
+    background-image: url("@{imaqes-base-url}loader/loading-logo.gif");
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -23px;
+    margin-left: -120px;
+  }
+
+  .text{
+    color: #b2b2b2;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Arial;
+    height: 14px;
+    margin-top: 32px;
+    padding-left: 40px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+}

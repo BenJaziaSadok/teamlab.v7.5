@@ -1,0 +1,351 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.limitedSingleText(@maxWidth) {
+    display: inline-block;
+    max-width: @maxWidth;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+.borderRadius (@value: 3px) {  
+    -webkit-border-radius: @value;
+	-moz-border-radius: @value;
+    border-radius: @value;
+}
+
+.noContentBlock, #empty-feed-filter-ctrl, #empty-feed-list-ctrl {
+    display: none;
+}
+
+#feed-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#feed-list {
+    width: 100%;
+    margin-top: 31px;
+
+    .item {
+        border-top: 1px solid #d6d6d6;
+        padding: 9px 0px 0px 6px;
+
+        &:hover {
+            .content-box .title a,
+            .content-box .author a,
+            .content-box .description .extra-action a,
+            .content-box .grouped-feeds-box .title {
+                text-decoration: underline;
+            }
+
+            .content-box .control-btn,
+            .content-box .description .grouped-feeds-count
+             {
+                border-bottom: 1px dotted #83888d;
+            }
+
+            .content-box .comments-box .comment .comment-content-box .comment-author a {
+                text-decoration: underline;
+            }
+
+            .content-box .comments-box .comment .comment-content-box .reply-comment-btn {
+                border-bottom: 1px dotted #83888d;
+            }
+        }
+
+        .avatar {
+            display: block;
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin-top: 27px;
+        }
+
+        .content-box {
+            margin-left: 59px;
+            padding-bottom: 5px;
+
+            .control-btn {
+                display: inline-block;
+                border-bottom: 1px solid transparent;
+                margin: 0 0 10px;
+                color: #83888d;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .title {
+                margin-bottom: 7px;
+
+                a {
+                    .limitedSingleText(80%);
+                    line-height: 19px;
+                    color: #333;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+
+                span {
+                    .limitedSingleText(100px);
+                    margin-left: 5px;
+                    padding: 2px 5px 2px;
+                    .borderRadius(2px);
+                    color: #648c45;
+                    background-color: #d6eabe;
+                }
+            }
+
+            .description {
+                height: 18px;
+                line-height: 18px;
+                margin: 0px 0px 1px -3px;
+
+                .menu-item-icon {
+                    margin-top: 1px;
+                }
+
+                .product {
+                    color: #333;
+                    font-weight: bold;
+                }
+
+                .location {
+                    .limitedSingleText(60%);
+                    color: #83888d;
+                }
+
+                .action {
+                    margin-left: 2px;
+                    color: #83888d;
+                }
+                .extra-action {
+                    a {
+                        .limitedSingleText(60%);
+                        color: #83888d;
+                        text-decoration: none;
+                    }
+                }
+
+                .grouped-feeds-count {
+                    cursor: pointer;
+                    border-bottom: 1px solid transparent;
+                    margin-left: 5px;
+                }
+            }
+
+            .date {
+                line-height: 16px;
+                height: 16px;
+                color: #83888d;
+
+                .time {
+                    margin-left: 13px;
+                }
+            }
+
+            .author {
+                line-height: 16px;
+                height: 16px;
+                margin-bottom: 13px;
+
+                span {
+                    color: #83888d;
+                }
+
+                span.guest {
+                    color: #333;
+                }
+
+                a {
+                    color: #333;
+                    margin-left: 7px;
+                    max-width: 90%;
+                    overflow: hidden;
+                    -ms-text-overflow: ellipsis;
+                    -o-text-overflow: ellipsis;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    text-decoration: none;
+                }
+            }
+
+            .body {
+                max-width: 90%;
+                overflow: hidden;
+                -ms-text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                margin-bottom: 10px;
+
+                .show-all-btn {
+                    font-weight: bold;
+                    margin-top: 5px;
+                }
+
+                .asccut {
+                    display: none;
+                }
+            }
+
+            .hide-grouped-feeds-btn {
+                display: none;
+            }
+
+            .grouped-feeds-box {
+                display: none;
+                margin: 4px 0 12px;
+
+                .title {
+                    font-size: 13px;
+                    color: #333;
+                    font-weight: bold;
+                    text-decoration: none;
+                    line-height: 26px;
+                }
+            }
+
+            .comment-errorr-msg-box {
+                display: none;
+            }
+
+            .comment-form {
+                display: none;
+                margin: 15px 0;
+
+                textarea {
+                    display: block;
+                    width: 525px;
+                    height: 100px;
+                    margin-bottom: 18px;
+                    resize: none;
+                }
+            }
+
+            .comments-box {
+                .comment {
+                    margin-bottom: 10px;
+                    border-top: 1px solid #d6d6d6;
+                    padding-top: 8px;
+
+                    .comment-avatar {
+                        display: block;
+                        float: left;
+                        width: 50px;
+                        height: 50px;
+                        margin-left: 15px;
+                    }
+
+                    .comment-content-box {
+                        margin-left: 74px;
+
+                        .comment-author {
+                            height: 18px;
+                            line-height: 18px;
+
+                            a {
+                                color: #333;
+                                font-weight: bold;
+                                text-decoration: none;
+                            }
+
+                            span {
+                                color: #83888d;
+                            }
+                        }
+
+                        .comment-body {
+                            margin: 4px 0 6px;
+                            max-width: 100%;
+                            overflow: hidden;
+                            -ms-text-overflow: ellipsis;
+                            -o-text-overflow: ellipsis;
+                            text-overflow: ellipsis;
+                        }
+
+                        .reply-comment-btn {
+                            display: inline-block;
+                            border-bottom: 1px solid transparent;
+                            color: #83888D;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            .feed-content {
+                .feed-title .feed-item-title {
+                    color: #333333;
+                    text-decoration: underline;
+                }
+
+                .feed-author-container .feed-item-author {
+                    text-decoration: underline;
+                }
+            }
+
+            .feed-item-see-all {
+                border-color: #116D9D;
+                color: #116D9D;
+            }
+        }
+    }
+}
+
+#show-next-feeds-btn {	
+	color: #666666;
+    cursor: pointer;
+    display: none;	
+	font-weight: bold;
+	margin: 20px 0 30px 8px;	
+    text-decoration: underline;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+#show-next-feeds-loader {
+    background: url('../images/loader16.gif') no-repeat 2px 7px;
+	display: none;
+	height: 25px;	
+	margin-left: 25px;
+    padding-left: 25px;
+}
+
+.feed-params-hint {
+    float: left;
+    padding-right: 8px;
+    line-height: 20px;
+    color: #83888D;
+    span {
+        .limitedSingleText(200px);
+        display: block;
+    }
+    
+}
+
+.feed-values-hint {
+    float: right;
+    line-height: 20px;
+    span {
+        .limitedSingleText(400px);
+        display: block;
+    }
+}

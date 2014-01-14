@@ -1,0 +1,139 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+#chunkUploadDialog .progress-dialog-header.menu-upload-icon
+{
+    background-position: 24px center;
+    background-repeat: no-repeat;
+    padding-left: 48px;
+}
+
+#chunkUploadDialog .settings-container {
+    line-height: 32px;
+}
+
+#chunkUploadDialog .files-container {
+    max-height: 240px;
+    margin-bottom: 8px;
+    overflow-y: auto;
+}
+.info-container {
+    margin-top: 8px;
+}
+#chunkUploadDialog .info-content {
+    margin-bottom: 8px;
+}
+
+.fu-row .fu-action-cell {
+    text-align: center;
+    width: 80px;
+}
+.fu-row .fu-progress-cell {
+    text-align: center;
+    width: 100px;
+}
+.fu-row .fu-title-cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 190px;
+}
+.fu-row .fu-progress-cell .upload-progress{
+    background-color: #D1D1D1;
+    color: #FFFFFF;
+    width: 100px;
+    position: relative;
+    height: 14px;
+    overflow: hidden;
+}
+.fu-row .fu-progress-cell .upload-progress .progress-slider{
+    left: 0;
+    position: absolute;
+}
+.fu-row .fu-progress-cell .upload-progress .progress-slider.progress-color{
+    width: 0;
+}
+.fu-row .fu-progress-cell .upload-progress .progress-slider.progress-color-anim{
+    width: 100px;
+}
+.fu-row .fu-progress-cell .upload-progress .progress-label{
+    left: 0;
+    font-size: 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.fu-row.upload .share,
+.fu-row.upload .upload-complete,
+.fu-row.upload .upload-error,
+.fu-row.upload .upload-canceled {
+    display: none;
+}
+
+.fu-row.done .abort-file-uploadig,
+.fu-row.done .upload-progress,
+.fu-row.done .upload-error,
+.fu-row.done .upload-canceled {
+    display: none;
+}
+
+.fu-row.error .upload-progress,
+.fu-row.error .upload-complete,
+.fu-row.error .fu-action-cell,
+.fu-row.error .upload-canceled {
+    display: none;
+}
+
+.fu-row.canceled .upload-progress,
+.fu-row.canceled .upload-complete,
+.fu-row.canceled .fu-action-cell,
+.fu-row.canceled .upload-error {
+    display: none;
+}
+
+.fu-row.convert .fu-action-cell,
+.fu-row.convert .upload-complete,
+.fu-row.convert .upload-error,
+.fu-row.convert .upload-canceled {
+    display: none;
+}
+
+.fu-row:hover .linkMedium {
+    text-decoration: underline;
+}
+
+#abortUploadigBtn {
+    float: right;
+    margin-left: 5px;
+}
+
+#uploadSettingsPanel ul.dropdown-content label {
+    white-space: nowrap;
+}
+
+#uploadSettingsSwitcher {
+    cursor: pointer;
+}
+
+.progress-color-anim {
+    background: url("images/uploader_progress.gif") no-repeat scroll 0 0 transparent;
+    width: 100px;
+}
+.progress-color {
+    background: #439CCD;
+    background: linear-gradient(top, #57aedf, #439CCD 50%, #3B95C6 51%, #237faf);
+    background: -o-linear-gradient(top, #57aedf, #439CCD 50%, #3B95C6 51%, #237faf);
+    background: -moz-linear-gradient(top, #57aedf, #439CCD 50%, #3B95C6 51%, #237faf);
+    background: -webkit-linear-gradient(top, #57aedf, #439CCD 50%, #3B95C6 51%, #237faf);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#57aedf', EndColorStr='#237faf')";
+}

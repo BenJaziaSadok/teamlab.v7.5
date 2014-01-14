@@ -1,0 +1,53 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+span[class^='poll_remove_span']
+{
+    display:block;
+    background-image: url("img/delete.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    float:right;
+    font: bold 14px Arial;
+    margin: 6px 3px 0 3px;
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+}
+
+.poll_clearFix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+/* MSIE7- */
+.poll_clearFix {
+    zoom: 1;
+    display:block;
+}
+
+.poll_variantLabel
+{
+	top:4px;	
+	position:relative;
+}
+
+.poll_variantDiv
+{
+	height:16px;
+	padding-bottom:12px;
+    width: 600px;
+}

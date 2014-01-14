@@ -1,0 +1,511 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+#customFieldList, #tagList {
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    min-height: 350px;
+}
+#createNewField {
+    display: inline-block;
+    float: left;
+}
+#dealMilestoneList, #listView {
+    margin: 0px;
+    padding: 0px;
+    min-height: 350px;
+}
+#customFieldList textarea {
+    resize: none;
+}
+#customFieldList .headerCollapse, #customFieldList .headerExpand {
+    color: #333333;
+    cursor: pointer;
+    padding: 0 0 0 20px !important;
+}
+#customFieldList .headerCollapse {
+    background: url("../images/icons.png") 0 -120px no-repeat transparent;
+}
+#customFieldList .headerExpand {
+    background: url("../images/icons.png") 0 -148px no-repeat transparent;
+}
+#customFieldList li, #customFieldList li:hover, #listView li,
+#listView li:hover, #dealMilestoneList li, #dealMilestoneList li:hover {
+    list-style: none outside none;
+    margin: 0 0 -1px -15px;
+    min-height: 50px;
+    position: relative;
+}
+#listView table.item_row, #customFieldList table.field_row,
+#dealMilestoneList table.deal_milestone_row {
+    clear: both;
+    width: 100%;
+    border: none;
+    height: 50px;
+}
+#customFieldList table.field_row td, #listView table.item_row td,
+#dealMilestoneList table.deal_milestone_row td {
+    border-left: none;
+    border-right: none;
+    padding: 5px;
+}
+#manageField dt, #manageDealMilestone dt {
+    clear: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+#manageField dd, #manageDealMilestone dd {
+    margin-bottom: 10px;
+}
+
+#manageItem input, #manageItem textarea,
+#manageDealMilestone dd input, #manageDealMilestone dd textarea {
+    width: 320px;
+}
+
+#manageField dd input {
+    width: 90%;
+}
+#manageField dd select {
+    width: 322px;
+}
+
+#manageField dd .requiredErrorText{
+    margin-right: 27px;
+}
+#addOptionButton {
+    border-bottom-color: #8E908F;
+    color: #272727;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+#customFieldList div.checkbox_list label {
+    display: block;
+}
+
+#manageField dl ul {
+    margin: -2px 0 0;
+    max-height: 200px;
+    overflow: auto;
+    padding: 1px 0;
+}
+
+#manageField dl ul li {
+    padding: 0px;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+#manageField dl ul li label.deleteBtn {
+    background: url("../images/icons.png") 0 -280px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin-top: -1px;
+    vertical-align: middle;
+    width: 16px;
+}
+
+
+#manageField dl ul li:first-child {
+    margin-top: 0px;
+}
+
+#manageField dl dt.field_mask, #manageField dl dd.field_mask {
+    display: none;
+}
+#customFieldActionMenu, #dealMilestoneActionMenu, #listItemActionMenu {
+    z-index: 501;
+}
+
+#customFieldList div.ajax_loader, #customFieldList li:hover div.ajax_loader,
+#listView div.ajax_loader, #listView li:hover div.ajax_loader,
+#dealMilestoneList div.ajax_loader, #dealMilestoneList li:hover div.ajax_loader {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 12px;
+    background-image: url("../images/ajax_loader_small.gif");
+    width: 16px;
+    height: 16px;
+}
+#tagList div.ajax_loader {
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 24px;
+    background-image: url("../images/ajax_loader_small.gif");
+    width: 16px;
+    height: 16px;
+}
+#listView li div.ajax_change_icon {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    left: 22px;
+    background-image: url("../images/progress.gif");
+    width: 32px;
+    height: 32px;
+}
+#manageItem .change_icon, #manageItem .change_color, #manageDealMilestone .change_color {
+    margin-left: 5px;
+}
+
+#customFieldList li div.sort_row_handle, #listView li div.sort_drag_handle,
+#dealMilestoneList li div.sort_drag_handle {
+    background-color: #FFFFFF;
+    background-image: url("../images/drag.png") !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-left: 1px solid #D1D1D1 !important;
+    cursor: move;
+    display: none;
+    left: 0;
+    min-height: 16px;
+    position: absolute;
+    width: 15px;
+    z-index: 500;
+    bottom: 0;
+    top: 0;
+}
+#customFieldList li div.sort_row_handle, #listView li div.sort_drag_handle,
+#dealMilestoneList li div.sort_drag_handle {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+}
+#customFieldList li:hover div.sort_row_handle, #listView li:hover div.sort_drag_handle,
+#dealMilestoneList li:hover div.sort_drag_handle {
+    display: block;
+}
+#customFieldList li:hover, #listView li:hover,
+#dealMilestoneList li:hover {
+    background-color: #F2F2F2;
+    z-index:500;
+}
+
+.colorsPanelSettings {
+    height: 40px;
+    padding: 2px !important;
+    width: 160px;
+}
+.colorsPanelSettings span,
+#listView .currentColor, #dealMilestoneList .currentColor,
+#manageItem .selectedColor, #manageDealMilestone .selectedColor {
+    width: 16px;
+    height: 16px;
+    float:left;
+    cursor:pointer;
+}
+.colorsPanelSettings span,
+#listView .currentColor, #dealMilestoneList .currentColor {
+    margin:2px;
+}
+
+.colorsPanelSettings .style1 {background-color:#f48454;}
+.colorsPanelSettings .style2 {background-color:#ffb45e;}
+.colorsPanelSettings .style3 {background-color:#ffd267;}
+.colorsPanelSettings .style4 {background-color:#b7d269;}
+.colorsPanelSettings .style5 {background-color:#6bbd72;}
+.colorsPanelSettings .style6 {background-color:#77cf9a;}
+.colorsPanelSettings .style7 {background-color:#6ac6dd;}
+.colorsPanelSettings .style8 {background-color:#4682b6;}
+.colorsPanelSettings .style9 {background-color:#6a9ad2;}
+.colorsPanelSettings .style10 {background-color:#8a98d8;}
+.colorsPanelSettings .style11 {background-color:#7e6eb2;}
+.colorsPanelSettings .style12 {background-color:#b58fd6;}
+.colorsPanelSettings .style13 {background-color:#d28cc8;}
+.colorsPanelSettings .style14 {background-color:#e795c1;}
+.colorsPanelSettings .style15 {background-color:#f2a9be;}
+.colorsPanelSettings .style16 {background-color:#df7895;}
+
+.iconsPanelSettings {
+    padding: 4px;
+}
+.iconsPanelSettings label.event_category,
+.iconsPanelSettings label.task_category,
+#listView label.currentIcon {
+    border: solid 1px Transparent;
+    cursor: pointer;
+    float: left;
+    margin: 1px;
+}
+#manageItem label.selectedIcon {
+    border: solid 1px Transparent;
+    margin: -3px;
+}
+
+.iconsPanelSettings label.event_category:hover,
+.iconsPanelSettings label.task_category:hover,
+#listView label.currentIcon:hover {
+    border: 1px solid #D5D5D5;
+    background-color: #F5F5F5;
+}
+
+#emptyCustomFieldContent,
+#emptyListItemContent,
+#emptyDealMilestoneContent,
+#emptyTagContent,
+#emptyTeplateContent {
+    display: none;
+}
+
+#manageDealMilestone ul {
+    display: block;
+    margin-bottom: -10px;
+    margin-top: -5px;
+    padding: 5px;
+}
+#manageDealMilestone ul li {
+    line-height: 9pt;
+    list-style: none outside none;
+    margin-left: 20px;
+    padding: 5px 2px;
+}
+
+#manageDealMilestone li > input {
+    margin-left: -20px;
+    vertical-align: middle;
+    width: auto;
+}
+#manageDealMilestone li > label {
+    vertical-align: bottom;
+}
+#listView .count_link_items > a,
+#dealMilestoneList .count_link_deals > a,
+#tagList .count_link_items > a{
+    text-decoration: none;
+}
+#listView li.with-entity-menu:hover .count_link_items > a,
+#dealMilestoneList li.with-entity-menu:hover .count_link_deals > a,
+#tagList li:hover .count_link_items > a{
+    text-decoration: underline;
+}
+.settingsHeaderWithViewSwitcher {
+    margin-top: 6px;
+}
+.settingsHeaderWithViewSwitcher > a {
+    margin-top: 7px;
+}
+.settingsHeaderWithViewSwitcher > table {
+    float: right;
+}
+/*************************
+* Tags
+**************************/
+#tagList li, #tagList li:hover {
+    border-left: none;
+    border-right: none;
+    list-style: none outside none;
+    margin: 0 0 -1px 0;
+    min-height: 40px;
+    position: relative;
+}
+#tagList .tag_row {
+    clear: both;
+    width: 100%;
+    border: none;
+    height: 40px;
+}
+
+#tagList .title {
+    vertical-align: middle;
+    padding-left: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+}
+.headerTitle {
+    margin-bottom: 5px;
+}
+#createNewTagSettings {
+    display: inline-block;
+    float: left;
+}
+.cbx_AddTagWithoutAskingContainer {
+    display: inline-block;
+    margin-top: 9px;
+    margin-left: 16px;
+}
+/*************************
+* Task Templates
+**************************/
+.templateHeader-splitter
+{
+    margin-bottom: 15px;
+}
+.templateHeaderSmall-splitter
+{
+    margin-bottom: 5px;
+}
+.templateTitle
+{
+    color: #1A6DB3 !important;
+    font-size: 14px;
+    font-weight: bold;
+}
+.divForTemplateTitle
+{
+    max-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#templateConatainerContent
+{
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    min-height: 350px;
+}
+#templateConatainerContent .headerCollapse, #templateConatainerContent .headerExpand
+{
+    color: #1A6DB3;
+    cursor: pointer;
+    padding: 0 0 0 20px !important;
+}
+#templateConatainerContent .headerCollapse
+{
+    background: url("../images/icons.png") 0 -120px no-repeat transparent;
+}
+#templateConatainerContent .headerExpand
+{
+    background: url("../images/icons.png") 0 -148px no-repeat transparent;
+}
+#templateConatainerContent li, #templateConatainerContent li:hover
+{
+    list-style: none outside none;
+    margin-bottom: -1px;
+    min-height: 50px;
+}
+#templateConatainerContent .templateContainer_row
+{
+    width: 100%;
+    height: 50px;
+}
+#templateConatainerContent table.templateContainer_row td
+{
+    border-left: none;
+    border-right: none;
+    padding: 5px;
+}
+#templateConatainerContent img.loaderImg, #templateConatainerContent li:hover img.loaderImg
+{
+    cursor: pointer;
+    margin: 0 2px;
+    width: 16px;
+    height: 16px;
+}
+/*************************
+* Web to Lead Forms and Custom Settings
+**************************/
+.settingsHeader {
+    margin-bottom: 17px;
+    margin-top: 35px;
+}
+.settingsHeaderWithDigit {
+    margin-bottom: 12px;
+    margin-top: 19px;
+}
+.settingsHeaderWithDigit td {
+    vertical-align: top;
+}
+.settingsHeaderWithDigit td label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -6px;
+}
+.panelSplitter {
+    margin-bottom: 10px;
+}
+dl.pm-flexible dt {
+    float: left;
+    text-align: right;
+}
+#propertiesPanel dt {
+    padding-bottom: 15px;
+    width: 100px;
+    padding-top: 2px;
+}
+#propertiesPanel dd {
+    margin-left: 110px;
+    padding-bottom: 15px;
+}
+td.digits {
+    color: #3186AF;
+    float: left;
+    font-family: Verdana;
+    font-size: 46px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+.error_info_panel {
+    background-color: #FEECD6;
+}
+#properties_webFormKey .refreshBtn {
+    background: url("../images/icons.png") 0 -810px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 5px;
+    height: 16px;
+    width: 16px;
+    text-decoration:none;
+}
+
+#sendTestMailPanel .testMailFieldsTable {
+    border-collapse: collapse;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 2px;
+}
+#sendTestMailPanel .testMailFieldsTable td {
+    height: 28px;
+}
+#sendTestMailPanel .testMailFieldsTable .bold {
+    white-space: nowrap;
+}
+#sendTestMailPanel input,
+#sendTestMailPanel textarea {
+    width: 100%;
+}
+#sendTestMailPanel .testMailBodyField {
+    resize:none;
+}
+
+
+#SMTPSettingsPannel {
+    margin-right:24px;
+    min-width: 420px;
+}
+#tbxHost, #tbxHostLogin, #tbxHostPassword, #tbxSenderDisplayName, #tbxSenderEmailAddress {
+    width: 200px;
+}
+#tbxPort {
+    width: 50px;
+    float: left;
+}
+#cbxAuthentication {
+    margin:4px 6px 0 10px;
+    float: left;
+}
+#cbxEnableSSL {
+    float: left;
+    margin-left: 0px;
+    margin-right: 6px;
+}
+#SMTPSettingsPannel>table {
+    margin-left: -4px;
+}

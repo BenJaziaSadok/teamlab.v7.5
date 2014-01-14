@@ -1,0 +1,3 @@
+net start TeamlabOfficeServer
+net start TeamlabOfficeServerMail
+net start TeamlabOfficeServerMailHelper

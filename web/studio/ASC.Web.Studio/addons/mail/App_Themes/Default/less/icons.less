@@ -1,0 +1,38 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@import "settings.less";
+
+[class^="icon-"], [class*=" icon-"] {
+  width: @icon-height;
+  height: @icon-width;
+  margin-top: 1px;
+  line-height: @icon-width;
+  background-image: url("@{base-icon-sprite-url}");
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.icon-mixin (@w, @h) {
+  background-position: (@base-sprite-cell * @w * -1) (@base-sprite-cell * @h * -1);
+}
+
+.icon-unimportant { .icon-mixin(3,0); }
+.icon-important { .icon-mixin(3,1); }
+.icon-attachment { .icon-mixin(0,3); }
+.icon-fromsender { .icon-mixin(1,3); }
+.icon-crm-plus { 
+    .icon-mixin(2,3);
+    vertical-align: text-bottom;
+    height: 14px;
+}

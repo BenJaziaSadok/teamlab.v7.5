@@ -1,0 +1,221 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.pm-projectTeam-projectLeaderCard
+{
+	padding: 8px;
+	width: 360px;
+	border: solid 1px #D1D1D1;
+}
+.pm-projectTeam-projectLeaderCard .managerAvatar {
+    float: left;
+}
+.pm-projectTeam-projectLeaderCard .manager-info {
+    float: left;
+    margin-left: 16px;
+    max-width: 262px;
+    overflow: hidden;
+}
+.pm-projectTeam-projectLeaderCard .manager-info div {
+    margin-top: 8px;
+    text-overflow: ellipsis;
+}
+.pm-projectTeam-projectLeaderCard .manager-info div:first-child {
+    margin-top: 0;
+}
+.pm-projectTeam-projectLeaderCard a.linkHeaderLight {
+    color: #333;
+    text-decoration: none;
+}
+
+.pm-projectTeam-projectLeaderCard a.linkHeaderLight:hover{
+	text-decoration: underline;
+}
+
+.pm-projectTeam-h-line
+{
+	background-color:#D1D1D1;
+    height:1px;
+    line-height:1px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.pm-projectTeam-userContainer
+{
+    padding: 20px 0px;
+}
+.pm-projectTeam-userInfoContainer
+{
+    width: 33%;
+    float: left;
+    overflow: hidden;
+}
+.pm-projectTeam-infoText
+{
+    background:url("../images/common-icons.png") no-repeat 0 -198px;
+    padding: 5px 0 5px 23px;
+}
+.pm-projectTeam-modulePermissionOn,
+.no-access .pm-projectTeam-modulePermissionOn,
+.pm-projectTeam-participantContainer.disable .pm-projectTeam-modulePermissionOn
+{
+    background: url("../images/common-icons.png") no-repeat 0 -118px;
+    padding: 5px 0 5px 23px;
+    cursor:pointer;
+}
+
+.pm-projectTeam-participantContainer.disable .pm-projectTeam-modulePermissionOn
+{
+    cursor: default;
+}
+.pm-projectTeam-modulePermissionOn span
+{
+	border-bottom: 1px dotted #000;
+	color: #000;
+	margin-right: 8px;
+}
+.pm-projectTeam-modulePermissionOff
+{
+	background: url("../images/common-icons.png") no-repeat 0 -95px;
+    padding: 5px 0 5px 20px;
+    cursor:pointer;    
+}
+.pm-projectTeam-modulePermissionOff span
+{
+    border-bottom: 1px dotted #333;
+	color: #333;
+	margin-right: 8px;
+}
+.pm-projectTeam-modulePermissionOff.no-dotted
+{
+    cursor: default;
+}
+.pm-projectTeam-modulePermissionOff.no-dotted span
+{
+    border-color: transparent;
+}
+.no-access .pm-projectTeam-modulePermissionOn span,
+.pm-projectTeam-participantContainer.disable .pm-projectTeam-modulePermissionOn span
+{
+	color: #333;
+	margin-right: 8px;
+}
+.no-access .pm-projectTeam-modulePermissionOff,
+.pm-projectTeam-participantContainer.disable .pm-projectTeam-modulePermissionOff
+{
+    padding: 5px 0 5px 20px;
+    cursor: default;
+}
+.no-access .pm-projectTeam-modulePermissionOn span
+.pm-projectTeam-participantContainer.disable .pm-projectTeam-modulePermissionOff span
+{
+	color: #333;
+	margin-right: 8px;
+}
+.no-access .pm-projectTeam-modulePermissionOn,
+.no-access .pm-projectTeam-modulePermissionOff {
+    cursor: default;
+}
+.no-access .pm-projectTeam-modulePermissionOn span,
+.no-access .pm-projectTeam-modulePermissionOff span,
+.pm-projectTeam-participantContainer.disable .pm-projectTeam-modulePermissionOff span,
+.pm-projectTeam-participantContainer.disable .pm-projectTeam-modulePermissionOn span {
+    border: none;
+}
+
+#team_container {
+    color: #333;
+    border-collapse: collapse;
+    width: 100%;
+}
+.pm-projectTeam-participantContainer > td {
+    border-bottom: 1px solid #D1D1D1;
+    vertical-align: middle;
+    overflow: hidden;
+    padding: 8px 0;
+}
+.pm-projectTeam-participantContainer.open,
+.pm-projectTeam-participantContainer:hover{
+    background-color: #f2f2f2;
+}
+.pm-projectTeam-participantContainer .user-info {    
+    overflow: hidden;
+    padding: 8px;
+}
+.pm-projectTeam-participantContainer .user-info .user-name {
+    font-size: 14px;
+    font-weight:bold;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+ }
+ .pm-projectTeam-participantContainer .user-info a.user-name:hover,
+ .pm-projectTeam-participantContainer:hover .user-info a.user-name {
+     text-decoration: underline;
+ }
+ .pm-projectTeam-participantContainer .user-info .user-info-container {
+ }
+ .pm-projectTeam-participantContainer .user-info .pm-projectTeam-userPhotoContainer {
+      margin-right: 8px;
+      position: relative;
+ }
+ .pm-projectTeam-participantContainer .user-info .status-blocked {
+    display: block;
+    height: 16px;
+    width: 16px;
+    left: 8px;
+    position: absolute;
+    top: 9px;
+    background: url("../images/common-icons.png") no-repeat -2px -148px;
+}
+.pm-projectTeam-participantContainer .user-info .role {
+    left: -2px;
+    position: absolute;
+    bottom: -2px;  
+}
+
+ .pm-projectTeam-participantContainer .user-info .pm-projectTeam-userPhotoContainer,
+ .pm-projectTeam-participantContainer .user-info .user-info-container {
+     float: left;
+ }
+ .pm-projectTeam-participantContainer .user-info span {
+     display: block;
+ }
+ .pm-projectTeam-participantContainer .right-settings {
+    text-align: center;
+}
+.pm-projectTeam-participantContainer .right-settings div {
+    margin: 0 auto;
+}
+.pm-projectTeam-participantContainer .menupoint-container {
+    width: 30px;
+}
+/*----action panel--*/
+.pm-projectTeam-participantContainer .entity-menu{
+    margin: 0 8px;
+}
+
+.pm-projectTeam-participantContainer.open .entity-menu
+{	
+	background-position: center bottom;
+}
+#userActionPanel {
+    width: 165px;
+}
+@media all and (max-width: 1200px) {
+    .pm-projectTeam-participantContainer .splitter {
+        display:none;
+    }
+}

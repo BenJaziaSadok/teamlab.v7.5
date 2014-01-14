@@ -1,0 +1,416 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+html
+{
+    height: 100%;
+    width: 100%;
+}
+
+.h_line {
+    background-color: #D1D1D1;
+    height: 1px;
+    line-height: 1px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+/*******************************************************************************
+   css inline style
+*******************************************************************************/
+.clear {
+    border: 0 !important;
+    display: block !important;
+    clear: both !important;
+    height: 1px !important;
+    line-height: 1px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+.display-none {
+    display: none;
+}
+.visibility-hidden {
+    visibility: hidden;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.user-select-none {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    MozUserSelect: none;
+}
+.text-overflow {
+    text-overflow: ellipsis;
+}
+
+/*******************************************************************************
+   base markup
+*******************************************************************************/
+body {
+    color: #333333;
+    font: normal 12px Arial, Tahoma,sans-serif;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+pre {
+    color: #333333;
+    font-family: Arial, Tahoma,sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+div {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*******************************************************************************
+  content layer
+*******************************************************************************/
+
+#studioPageContent {
+    min-height: 100%;
+    position: relative;
+    *z-index:1!ie;
+}
+.mainPageLayout {
+    margin: 0px auto;
+    min-width: 959px;
+    padding: 24px 24px 0;
+    position: static;
+    text-align: left;
+    width: auto;
+    height: auto;
+}
+
+.mainPageTable {
+    float: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.mainPageTable .mainPageTableSidePanel {
+    border-bottom: medium none;
+    border-left: medium none;
+    border-top: medium none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 240px;
+    padding-right: 24px;
+    vertical-align: top;
+}
+.mainPageTable.with-mainPageTableSidePanel .mainPageContent {
+
+    padding-left: 24px;
+
+}
+#studio_sidePanel {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 240px;
+}
+.mainContainer {
+    overflow: hidden;
+}
+.main-content {
+    height: 100%;
+}
+
+/*******************************************************************************
+    clearfix
+*******************************************************************************/
+.clearFix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* MSIE6- */
+* html .clearFix {
+    height: 1%;
+}
+
+/* MSIE7- */
+.clearFix {
+    zoom: 1;
+    display: block;
+}
+
+.textEdit {
+    border: solid 1px #c7c7c7;
+    font-family: Arial;
+    font-size: 12px;
+    height: 16px;
+}
+
+.pwdLoginTextbox {
+    background-color: #ffffff;
+    border: solid 1px #c7c7c7;
+    color: #434341;
+    font-family: Arial;
+    font-size: 18px;
+    padding: 8px 20px;
+}
+
+textarea {
+    border: 1px solid #c7c7c7;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.comboBox {
+    border: solid 1px #c7c7c7;
+    font-family: Arial;
+}
+
+.comboBoxHiddenBorder {
+    border-width: 0px;
+    margin: 1px;
+}
+.comboBoxHiddenBorder:hover, .comboBoxHiddenBorderFocused {
+    border: solid 1px #c7c7c7;
+    margin: 0px;
+}
+
+:disabled,
+input.disabled, 
+textarea.disabled,
+option.disabled,
+/* fix ie8 */
+input[disabled="disabled"] {
+    background-color: #efefef;
+    color: #666562;
+}
+input:focus {
+    outline: none;
+}
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border: solid 1px #3186af;
+}
+/* fix ie10 */
+input[type="checkbox"][disabled="disabled"] {
+    background-color: transparent;
+}
+/*******************************************************************************
+    popup box with error message
+*******************************************************************************/
+
+.errorText {
+    color: #cc3300;
+}
+.errorBox {
+    background: #FFECE3 url('imagescss/alert_16.png') 10px 10px no-repeat;
+    color: #666668 !important;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 5px 0px;
+    padding: 10px 10px 10px 30px !important;
+    vertical-align: middle;
+}
+.warnBox {
+    background:#FBFAD5 url('imagescss/warning-sing.png') 10px 10px no-repeat;
+    color: #666668 !important;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 5px 0px;
+    padding: 10px 10px 10px 30px;
+    vertical-align: middle;
+}
+/*******************************************************************************
+    Success popup box
+*******************************************************************************/
+.okText {
+    color: #74af00;
+}
+.okBox {
+    background-color: #E5EFD1;
+    border: 1px solid #dddddd;
+    color: #74af00;
+    font-weight: bolder;
+    padding: 8px 11px;
+    margin: 5px 0px;
+}
+.operationInfoBox {
+    background: #EEF6FD url('imagescss/info_16.gif') 10px 10px no-repeat;
+    color: #666668 !important;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 7px 36px 10px;
+    vertical-align: middle;
+}
+
+
+/*******************************************************************************
+    Links
+*******************************************************************************/
+
+/*all links*/
+a, a:visited, a:hover, a:active  {
+    font-weight: normal;
+    font-size: 12px;
+    color: #116d9d;
+    font-family: Arial, Tahoma, sans-serif;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: none;
+}
+
+/*blue header link 16*/
+a.linkHeaderLight, a.linkHeaderLight:visited, a.linkHeaderLight:active  {
+    color: #333 !important;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+a.linkHeaderLight:hover {
+    text-decoration: none;
+}
+
+/*big blue header link 18*/
+a.linkHeaderLightBig, a.linkHeaderLightBig:visited ,a.linkHeaderLightBig:active {
+    font-family: Arial;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+}
+a.linkHeaderLightBig:hover {
+    text-decoration: underline;
+}
+
+/*header link as common header*/
+a.linkHeader, a.linkHeader:visited, a.linkHeader:hover, a.linkHeader:active {
+    color: #333333;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+a.linkHeader:hover {
+    text-decoration: underline;
+}
+a.linkHeader:active {
+    text-decoration: none;
+}
+
+/*---------gray profile and so on links----*/
+a.linkDescribe, a.linkDescribe:visited ,a.linkDescribe:active  {
+    color: #646567;
+    font-family: Arial,sans-serif;
+    font-size: 11px;
+    text-decoration: underline;
+}
+a.linkDescribe:hover {
+    text-decoration: none;
+}
+
+a.linkText, a.linkText:visited,a.linkText:active {
+    font-size: 12px;
+    color: #333333;
+    font-family: Arial, Tahoma,sans-serif;
+    text-decoration: none;
+}
+a.linkText:hover {
+    text-decoration: underline;
+}
+
+.userLink {
+    padding: 0;
+    display: inline-block;
+    white-space:nowrap;
+}
+
+a.linkAction, a.linkAction:visited,a.linkAction:active  {
+    color: #333;
+    font-size: 12px !important;
+    text-decoration: underline;
+}
+a.linkAction:hover {
+    text-decoration: none;
+}
+
+
+/*-------------------------Backgrounds--------------------------*/
+
+.tintLight {
+    background-color: #ffffff;
+}
+.tintGray {
+    background-color: #f0f0f0;
+}
+.tintMedium {
+    background-color: #fff;
+}
+.tintDangerous {
+    background-color: #fff6df;
+}
+.moveBackground {
+    background-image: url('imagescss/move.png');
+    background-repeat: repeat;
+    cursor: move;
+}
+.moveHoverBackground {
+    background-image: url('imagescss/move.gif');
+    background-repeat: no-repeat;
+    background-color: #edf6fd;
+    background-position: center 2px;
+    cursor: move;
+}
+.moveDarkBackground {
+    background-image: url('imagescss/move2.png');
+    background-repeat: repeat;
+    cursor: move;
+}
+
+
+/*----------------Header Panels------------------------*/
+.headerPanel-splitter {
+    margin-bottom: 16px;
+}
+.headerPanelSmall-splitter {
+    margin-bottom: 8px;
+}
+
+/*----------------Borders and Corners------------------*/
+.borderBase
+{
+    border: solid 1px #d1d1d1;
+}
+
+.borderLight
+{
+    border: solid 1px #dbdfe2;
+}
+
+.cornerAll
+{
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}

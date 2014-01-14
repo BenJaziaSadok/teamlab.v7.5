@@ -1,0 +1,72 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+table.MainBlogsTable
+{
+    width: 100%;
+    border-bottom: 1px dotted #D1D1D1;
+}
+table.MainBlogsTable td.avatarContainer
+{
+    width: 85px;
+}
+
+.ContentMainBlog
+{
+    margin: 12px 8px 0;
+}
+
+.TagsMainBlog
+{
+    margin: 20px 8px 0;
+}
+.TagsImgMainBlog
+{
+    margin-bottom:-2px;
+    margin-right:2px;
+}
+
+.BlogsBodyBlock {
+    padding-left: 0px; 
+}
+
+.navigationLinkBox.news {
+    padding: 10px 0 5px;
+}
+
+#tableForNavigation {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.navigationLinkBox .tl-combobox {
+    background: url("images/comboarrow_bottom.png") no-repeat scroll right center transparent;
+    margin-bottom: 1px;
+    vertical-align: middle;
+}
+
+.navigationLinkBox .tl-combobox .combobox-title .inner-text {
+    border-bottom: 1px dotted #666666;
+    color: #666666;
+}
+.table-border-dotted {
+     border-bottom: 1px dotted #D1D1D1;
+}
+
+.MainBlogsTable .author-title {
+    display: inline-block;
+}
+.MainBlogsTable .author-name {
+    display: inline-block;
+    margin-left: 12px;
+}

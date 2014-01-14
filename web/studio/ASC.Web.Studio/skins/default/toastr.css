@@ -1,0 +1,172 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.toast-title {
+    font-weight: bold;
+}
+
+.toast-message {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.toast-message a,
+.toast-message label {
+    color: #000;
+}
+
+.toast-message a:hover {
+    text-decoration: underline;
+}
+
+
+.toast-top-full-width {
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-bottom-full-width {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-top-left {
+    top: 12px;
+    left: 12px;
+}
+
+.toast-top-right {
+    right: 12px;
+    top: 60px;
+}
+
+.toast-bottom-right {
+    right: 12px;
+    bottom: 12px;
+}
+
+.toast-bottom-left {
+    bottom: 12px;
+    left: 12px;
+}
+
+#toast-container {
+    position: fixed;
+    z-index: 999999;
+}
+
+#toast-container > div {
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #000;
+    margin: 0 0 6px;
+    padding: 15px 15px 15px 50px;
+    width: 300px;
+}
+
+.toast {
+    background-color: #030303;
+}
+
+.toast-success {
+    background-color: #cae796;
+}
+
+.toast-error {
+    background-color: #ffbfaa;
+}
+
+.toast-info {
+    background-color: #f1da92;
+}
+
+.toast-warning {
+    background-color: #F89406;
+}
+
+.toast-success:hover {
+    background-color: #bcdf7e;
+}
+
+.toast-error:hover {
+    background-color: #ffa98d;
+}
+
+.toast-info:hover {
+    background-color: #eed27b;
+}
+
+#toast-container > :hover {
+    -moz-box-shadow: 1px 2px 4px #D1D1D1;
+    -webkit-box-shadow: 1px 2px 4px #D1D1D1;
+    box-shadow: 1px 2px 4px #D1D1D1;
+    cursor: pointer;
+}
+
+#toast-container > .toast-info {
+    background-image: url("imagescss/toast_icon03.png");
+}
+
+#toast-container > .toast-error {
+    background-image: url("imagescss/toast_icon01.png");
+}
+
+#toast-container > .toast-success {
+    background-image: url("imagescss/toast_icon02.png");
+}
+
+#toast-container > .toast-warning {
+    background-image: url("imagescss/toast_icon01.png");
+}
+
+/*Responsive Design*/
+
+@media all and (max-width: 240px) {
+    #toast-container > div {
+        padding: 8px 8px 8px 50px;
+        width: 108px;
+    }
+}
+
+@media all and (min-width: 241px) and (max-width: 320px) {
+    #toast-container > div {
+        padding: 8px 8px 8px 50px;
+        width: 128px;
+    }
+}
+
+@media all and (min-width: 321px) and (max-width: 480px) {
+    #toast-container > div {
+        padding: 8px 8px 8px 50px;
+        width: 192px;
+    }
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    #toast-container > div {
+        padding: 15px 15px 15px 50px;
+        width: 300px;
+    }
+}
+
+/* overrides */
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+    width: 100%;
+    margin: 1px 0 1px 0;
+}

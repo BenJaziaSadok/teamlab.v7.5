@@ -1,0 +1,159 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@import "settings.less";
+
+.messages {
+  @border-style: @messages-border-style;
+  @muted-font-color: @messages-muted-font-color;
+
+  width: 100%;
+  table-layout: fixed;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .message {
+    height: @row-height;
+    border-bottom: @border-style;
+
+    .a-mixin () {
+      > a {
+        height: @row-height;
+        line-height: @row-height;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:active{
+          background-color: @messages-selected-row_bg;
+        }
+      }
+    }
+    
+    .centered-childs () {
+      * {
+        margin: auto;
+        display: block;
+      }
+    }
+
+    &:hover,
+    &.selected {
+      background-color: @messages-selected-row_bg;
+
+      .tagArrow {
+        background-position: right -19px;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &.new {
+      .from .author,
+      .from .chain-counter,
+      .subject a {
+        font-weight: bold;
+      }
+    }
+
+    /* zero cell padding */
+    > * {
+      padding: 0;
+    }
+
+    .checkbox {
+      cursor: pointer;
+      width: @row-height * 0.75;
+
+      input {
+          margin-left: 9px;
+          float: none;
+      }
+    }
+
+    .importance {
+      width: @row-height;
+      cursor: pointer;
+      
+      .centered-childs();
+    }
+
+    .from {
+      width: @row-height * 6;
+      word-wrap: break-word;
+
+      .a-mixin();
+
+      .author {
+        max-width: @row-height * 5;
+        float: left;
+        height: @row-height;
+        line-height: @row-height;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .chain-counter {
+        padding: 0 floor((@row-height - @icon-height) / 4);
+        display: inline-block;
+      }
+    }
+
+    .subject {
+      .a-mixin();
+
+      a .more-tags {
+        margin:0 10px 0 5px;
+        background: url('../Images/dot.gif') 13px 14px repeat-x;
+        color: #333;
+        cursor: pointer;
+        font-weight: normal;
+      }
+
+      .tag {
+        float: left;
+        margin: floor((@row-height - 19px) / 2) 5px floor((@row-height - 19px) / 2) 0;
+      }
+    }
+
+    .attachment {
+      width: @row-height;
+      
+      .a-mixin();
+      .centered-childs();
+      
+      > a > [class^="icon-"], [class*=" icon-"] {
+        margin-top: floor((@row-height - @icon-height) / 2);
+      }
+    }
+
+    .date,
+    .time {
+      width: @row-height * 2;
+      text-align: right;
+      color: @muted-font-color;
+      word-wrap: break-word;
+
+      .a-mixin();
+    }
+
+    .time {
+      padding-right: floor((@row-height - @icon-height) / 2);
+    }
+  }
+}

@@ -1,0 +1,286 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*-----Portal document uploader---------*/
+#popupDocumentUploader {
+	display: none;
+}
+/*-header---*/
+#popupDocumentUploader .popupContainerBreadCrumbs {
+	padding: 10px 10px;
+	border-bottom: 1px solid #ccc;
+	color: #666668;
+}
+#popupDocumentUploader .popupContainerBreadCrumbs a 
+{
+	color: #666668;
+}
+#popupDocumentUploader .popupContainerBreadCrumbs a.root,
+#popupDocumentUploader .popupContainerBreadCrumbs a.root:hover
+{
+	text-decoration: none;
+}
+#popupDocumentUploader .popupContainerBreadCrumbs a.current {
+	font-weight: bold;
+	text-decoration: none;
+	cursor: default;
+}
+#popupDocumentUploader .mainContainerClass .infoPanel {
+	display: none;
+}
+#popupDocumentUploader .mainContainerClass {
+	border-color:#444;
+}
+
+/*-body---*/
+p.containerCheckAll {
+	padding-left: 10px;
+}
+p.containerCheckAll {
+	width: 100%;
+	overflow: hidden;
+	margin-top: 7px;
+}
+p.containerCheckAll #checkAll, p.containerCheckAll label {
+	margin-right: 8px;
+	display: inline;
+}
+p.containerCheckAll a {
+	color: #333333;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+#popupDocumentUploader .fileContainer {
+	height: 410px;
+	overflow: hidden;
+	position: relative;
+	border:none;
+}
+#popupDocumentUploader .fileContainer .loader {
+	width: 50px;
+	display: block;
+    margin: auto;
+    padding-top:177px;
+}
+#popupDocumentUploader .fileContainer ul.fileList
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#popupDocumentUploader  .fileContainer ul.fileList li {
+	display: block;
+	padding: 2px 8px;
+	cursor: pointer;
+    border-bottom: 1px solid #d1d1d1;
+}
+#popupDocumentUploader  .fileContainer ul.fileList li[id] {
+    padding: 3px 8px;
+}
+#popupDocumentUploader  .fileContainer ul.fileList li:hover 
+{
+	background-color:#f2f2f2;
+}
+
+#popupDocumentUploader  .fileContainer ul.fileList li input {
+	display: inline-block;
+	margin-top: 5px;
+	margin-right: 10px;
+	cursor: pointer
+}
+/*----empty list Files---*/
+
+#emptyFileList .noContentBlock.emptyScrCtrl {
+    width: auto;
+}
+/*---file type----*/
+.fileContainer ul.fileList li span.folder {
+	display: block;
+	background-position: 1px -39px;
+	padding-left: 30px;
+	margin-left: 25px;
+    padding-top: 4px;
+    width: auto;
+    white-space: nowrap;
+}
+.fileContainer ul.fileList li label {
+	display:inline-block;
+	padding-top:4px;
+	padding-left:25px;
+	white-space:nowrap;
+}
+
+/*******************************************************************************
+    Tree
+*******************************************************************************/
+#filesViewContainer
+{
+    width: 370px;
+    max-height: 410px;
+    overflow: hidden;
+    padding: 0;
+    margin-left:10px;
+}
+#filesViewContainer:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#treeViewContainer 
+{
+    width: 210px;
+    max-height: 410px;
+    overflow: hidden;
+    padding: 0;
+    margin-right: 10px;
+}
+#treeViewContainer:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.page-menu .menu-list .menu-sub-list #treeViewContainer {
+    margin-left: 24px;
+}
+#treeViewPanelSelector {
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+    max-height: 410px;
+    max-width: 850px;
+    overflow: auto;
+    padding: 15px 19px 19px;
+    position: absolute;
+    z-index: 700;
+    box-shadow: 0 0 8px #D1D1D1;
+    -moz-box-shadow: 0 0 8px #D1D1D1;
+    -webkit-box-shadow: 0 0 8px #D1D1D1;
+}
+#treeViewPanelSelector .popup-corner {
+    left: 21.5px;
+}
+#treeViewPanelSelector .select-folder-header {
+    margin-bottom: 5px;
+}
+.jstree {
+    background-color: transparent;
+    max-width: 800px;
+    overflow: auto;
+    padding: 5px 20px 5px 5px;
+}
+.jstree ul,
+.jstree li {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.jstree li {
+    line-height: 18px;
+    margin-left: 18px;
+    min-height: 18px;
+    white-space: nowrap;
+}
+.jstree > ul > li {
+    margin-left: 0px;
+}
+.jstree > ul > li > a {
+    font-size: 14px;
+}
+.jstree .jstree-open > ul {
+    display: block;
+}
+.jstree .jstree-closed > ul {
+    display: none;
+}
+.jstree .jstree-icon {
+    background-color: transparent;
+    background-image: url("images/tree_action.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 12px;
+}
+.jstree .jstree-empty > .jstree-icon.jstree-expander {
+    visibility: hidden;
+}
+.jstree .jstree-open > .jstree-icon.jstree-expander {
+    background-position: -20px 0;
+}
+.jstree .jstree-closed > .jstree-icon.jstree-expander {
+    background-position: -2px 0;
+}
+.jstree .jstree-closed > .jstree-icon.jstree-expander.jstreeLoadNode {
+    background-image: url("images/loader_12.gif");
+    background-position: center;
+}
+.jstree a {
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    line-height: 16px;
+    margin: 1px 0;
+    padding: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.jstree a:focus {
+    outline: none;
+}
+.jstree a:hover {
+    text-decoration: underline;
+}
+.jstree a.selected {
+    background-color: #f2f2f2;
+    color: #116D9D;
+}
+.jstree a .jstree-icon {
+    background-position: -33px 0;
+    margin-right: 3px;
+    height: 16px;
+    width: 16px;
+}
+.jstree a .jstree-icon.myFiles {
+    background-image: url("images/myfiles.png");
+    background-position: center;
+}
+.jstree a .jstree-icon.corporateFiles {
+    background-image: url("images/corporatefiles.png");
+    background-position: center;
+}
+.jstree a .jstree-icon.shareformeFiles {
+    background-image: url("images/sharedforme.png");
+    background-position: center;
+}
+.jstree a .jstree-icon.projectFiles {
+    background-image: url("images/projectfiles.png");
+    background-position: center;
+}
+.jstree a .jstree-icon.trashFiles {
+    background-image: url("images/trash_container.png");
+    background-position: center;
+}
+.jstree a .jstree-icon.settings {
+    background-image: url("images/settings.png");
+    background-position: center;
+}
+.jstree a.jstree-close-project:hover {
+    background-color: #FFF;
+    border: 1px solid #FFF;
+}

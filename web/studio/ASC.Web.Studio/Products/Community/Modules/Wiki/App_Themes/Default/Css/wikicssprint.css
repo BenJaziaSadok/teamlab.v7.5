@@ -1,0 +1,83 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+body, #studioPageContent
+{
+	background-color:White !important;
+}
+
+.studioTopNavigationPanel, .studioHeaderPanel, .studioHeaderUpPanel, .studioHeaderFooterPanel, #studio_sidePanel, #studio_sidePanelUpHeight20,
+ #studio_onlineUsersBlock, .wikiCredits, #wikiCommentsDiv
+ {
+ 	display:none !important;
+ }
+ 
+
+#studioPageContent {
+  padding:0 !important;
+} 
+ 
+.mainPageLayout
+{
+	
+	text-align:left;
+	margin:0 !important;
+	width:100% !important;
+}
+
+ .mainContainerClass
+{
+	border: none !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.mainContainerClass .containerHeaderBlock
+{
+	display:none;
+	
+}
+
+.mainContainerClass .containerBodyBlock
+{
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.wikiBody
+{
+	padding:0 !important;
+	margin:0 !important;
+}
+
+div.wiki
+{
+	background-color:White !important;
+}
+
+
+.wiki .editsection
+{
+	display:none;
+}
+
+.PrintHeader
+{
+	display:block !important;
+}
+	
+a.button.blue.big,
+a.button.gray.big
+{
+    margin-top: 10px;
+}

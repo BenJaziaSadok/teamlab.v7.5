@@ -1,0 +1,176 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Web;
+using ASC.Web.Studio.Core;
+using AjaxPro;
+using ASC.Core;
+using ASC.Notify.Recipients;
+using ASC.Web.Community.Wiki.Common;
+using WikiNotifySource = ASC.Web.UserControls.Wiki.WikiNotifySource;
+
+namespace ASC.Web.Community.Wiki
+{
+    [Flags]
+    public enum WikiNavigationActionVisible
+    {
+        None = 0x000,
+        AddNewPage = 0x001,
+        UploadFile = 0x002,
+        EditThePage = 0x004,
+        ShowVersions = 0x008,
+        PrintPage = 0x010,
+        DeleteThePage = 0x020,
+        SubscriptionOnNewPage = 0x040,
+        SubscriptionThePage = 0x080,
+        SubscriptionOnCategory = 0x100,
+        CreateThePage = 0x200
+    }
+
+    [AjaxNamespace("MainWikiAjaxMaster")]
+    public partial class WikiMaster : System.Web.UI.MasterPage
+    {
+        public delegate string GetDelUniqIdHandle();
+
+        public event GetDelUniqIdHandle GetDelUniqId;
+
+        public delegate WikiNavigationActionVisible GetNavigateActionsVisibleHandle();
+
+        private static IDirectRecipient IAmAsRecipient
+        {
+            get { return (IDirectRecipient)WikiNotifySource.Instance.GetRecipientsProvider().GetRecipient(SecurityContext.CurrentAccount.ID.ToString()); }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Page.RegisterStyleControl(VirtualPathUtility.ToAbsolute("~/products/community/modules/wiki/app_themes/default/css/wikicss.css"));
+            Utility.RegisterTypeForAjax(GetType(), Page);
+        }
+
+        public void PrintInfoMessage(string info, InfoType infoType)
+        {
+            MainWikiContainer.Options.InfoMessageText = info;
+            MainWikiContainer.Options.InfoType = infoType;
+        }
+
+        protected string MasterResolveUrlLC(string url)
+        {
+            return this.ResolveUrlLC(url);
+        }
+
+        public string GetDeleteUniqueId()
+        {
+            if (GetDelUniqId == null)
+                return string.Empty;
+
+            return GetDelUniqId();
+        }
+
+        public string CurrentPageCaption
+        {
+            get { return MainWikiContainer.CurrentPageCaption; }
+            set { MainWikiContainer.CurrentPageCaption = value; }
+        }
+
+        [AjaxMethod(HttpSessionStateRequirement.ReadWrite)]
+        public bool SubscribeOnNewPage(bool isSubscribe)
+        {
+            var subscriptionProvider = WikiNotifySource.Instance.GetSubscriptionProvider();
+            if (IAmAsRecipient == null)
+            {
+                return false;
+            }
+            if (!isSubscribe)
+            {
+
+                subscriptionProvider.Subscribe(
+                    Constants.NewPage,
+                    null,
+                    IAmAsRecipient
+                    );
+                return true;
+            }
+            else
+            {
+                subscriptionProvider.UnSubscribe(
+                    Constants.NewPage,
+                    null,
+                    IAmAsRecipient
+                    );
+                return false;
+            }
+        }
+
+        [AjaxMethod(HttpSessionStateRequirement.ReadWrite)]
+        public bool SubscribeOnEditPage(bool isSubscribe, string pageName)
+        {
+            pageName = HttpUtility.HtmlDecode(pageName);
+            var subscriptionProvider = WikiNotifySource.Instance.GetSubscriptionProvider();
+            if (IAmAsRecipient == null)
+            {
+                return false;
+            }
+            if (!isSubscribe)
+            {
+
+                subscriptionProvider.Subscribe(
+                    Constants.EditPage,
+                    pageName,
+                    IAmAsRecipient
+                    );
+                return true;
+            }
+            else
+            {
+                subscriptionProvider.UnSubscribe(
+                    Constants.EditPage,
+                    pageName,
+                    IAmAsRecipient
+                    );
+                return false;
+            }
+        }
+
+        [AjaxMethod(HttpSessionStateRequirement.ReadWrite)]
+        public bool SubscribeOnPageToCat(bool isSubscribe, string catName)
+        {
+
+            var subscriptionProvider = WikiNotifySource.Instance.GetSubscriptionProvider();
+            if (IAmAsRecipient == null)
+            {
+                return false;
+            }
+            if (!isSubscribe)
+            {
+
+                subscriptionProvider.Subscribe(
+                    Constants.AddPageToCat,
+                    catName,
+                    IAmAsRecipient
+                    );
+                return true;
+            }
+            else
+            {
+                subscriptionProvider.UnSubscribe(
+                    Constants.AddPageToCat,
+                    catName,
+                    IAmAsRecipient
+                    );
+                return false;
+            }
+        }
+    }
+}

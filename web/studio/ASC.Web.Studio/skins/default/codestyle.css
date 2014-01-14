@@ -1,0 +1,78 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.codestyle,
+.codestyle pre {
+    font-size: small;
+    color: black;
+    font-family: Consolas, "Courier New", Courier, Monospace;
+    background-color: #ffffff;
+    margin: 8px 0;
+}
+.codestyle ul,
+.codestyle pre {
+    list-style-type: none;
+    margin: 0;
+}
+.codestyle table {
+    border: 1px none Black;
+    width: 100%;
+}
+.codestyle table td {
+    padding: 5px 3px;
+}
+.codestyle table td.lines {
+    border-right: 1px none black;
+    text-align: right;
+}
+.codestyle table td.tdcode pre {
+    width: 670px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.codestyle .rem {
+    color: #008000;
+}
+.codestyle .kwrd {
+    color: #0000ff;
+}
+.codestyle .str {
+    color: #006080;
+}
+.codestyle .op {
+    color: #0000c0;
+}
+.codestyle .preproc {
+    color: #cc6633;
+}
+.codestyle .asp {
+    background-color: #ffff00;
+}
+.codestyle .html {
+    color: #800000;
+}
+.codestyle .attr {
+    color: #ff0000;
+}
+.codestyle .alt {
+    background-color: #f4f4f4;
+    width: 100%;
+    margin: 0;
+}
+.codestyle .lnum {
+    color: #606060;
+}
+.codestyle ol li,
+.codestyle ul li {
+    white-space: pre-wrap;
+}

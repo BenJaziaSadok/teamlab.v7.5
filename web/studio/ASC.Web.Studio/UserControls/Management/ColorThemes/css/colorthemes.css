@@ -1,0 +1,40 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+       Color Themes
+*******************************************************************************/
+.preview-theme-image.default {
+    background-position: 0 0;
+}
+.preview-theme-image.pure-orange {
+    background-position: 0 -246px;
+}
+.preview-theme-image.dark-green {
+    background-position: 0 -492px;
+}
+.preview-theme-image.deep-blue {
+    background-position: 0 -738px;
+}
+.preview-theme-image.wild-pink {
+    background-position: 0 -984px;
+}
+.preview-theme-image.bright-blue {
+    background-position: 0 -1230px;
+}
+.preview-theme-image {
+    background: url('img/themes_previews_sprite.png') no-repeat 0 0 transparent;
+    height: 245px;
+    margin: 20px 0 10px 0;
+    width: 335px;
+}

@@ -1,0 +1,120 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+ListCasesView.ascx
+*******************************************************************************/
+#caseList {
+    min-height: 400px;
+}
+#caseFilterContainer, #emptyContentForCasesFilter, #casesEmptyScreen, #tableForCasesNavigation {
+    display: none;
+}
+#divForCasesPager {
+    display: inline-block;
+    clear: right;
+}
+#totalCasesOnPage {
+    margin-right: 20px;
+}
+#casesHeaderMenu {
+    display: block;
+    width: auto;
+}
+#caseTable>tbody>tr {
+    height: 44px;
+}
+#caseTable input[type="checkbox"] {
+    margin: 15px 0 15px 2px;
+}
+/*******************************************************************************
+CasesDetailsView.ascx
+*******************************************************************************/
+
+#CaseTabs {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#caseProfile {
+    margin-top: -15px;
+}
+#caseProfile tr.headerToggleBlock {}
+
+#caseParticipantPanel {
+    display: none;
+    margin-bottom: 16px;
+    width: 500px;
+}
+
+/*******************************************************************************
+CasesActionView.ascx
+*******************************************************************************/
+#crm_caseMakerDialog .case_info{
+    margin-top:5px;
+    width: 700px;
+}
+#crm_caseMakerDialog .crm-actionButtonsBlock{
+    min-width: 750px;
+}
+@media all and (max-width: 1200px) {
+    #crm_caseMakerDialog .crm-actionButtonsBlock {
+       min-width: 670px;
+    }
+    #crm_caseMakerDialog .case_info {
+       width: 670px;
+    }
+}
+#crm_caseMakerDialog dl dt{
+    margin: 5px 0 5px;
+}
+#crm_caseMakerDialog .case_info dt.headerToggleBlock {
+    margin: 24px 0 8px;
+}
+#crm_caseMakerDialog .requiredField .headerPanelSmall {
+    margin: 5px 0 7px;
+}
+
+#crm_caseMakerDialog dl dd {
+    clear: both;
+    position: relative;
+    width: 100%;
+}
+#crm_caseMakerDialog .case_info dl input[type="checkbox"] {
+    margin: 0 2px 0 0;
+    vertical-align: middle;
+}
+
+#membersCasesSelectorsContainer > div {
+    margin-bottom: 4px;
+    position: relative;
+}
+#membersCasesSelectorsContainer .delete_member {
+    background: url("../images/icons.png") 0 -280px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin: 2px;
+    position: absolute;
+    right: -25px;
+    top: 0;
+    width: 16px;
+}
+#membersCasesSelectorsContainer .add_new_member {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+#crm_caseMakerDialog #tagsContainer {
+    position: inherit;
+}

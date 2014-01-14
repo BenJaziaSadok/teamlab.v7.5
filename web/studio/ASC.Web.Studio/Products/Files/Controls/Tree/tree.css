@@ -1,0 +1,155 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+    Tree
+*******************************************************************************/
+#treeViewContainer {
+    max-height: 650px;
+    overflow: hidden;
+    padding: 0 0 0 4px;
+}
+#treeViewContainer:hover {
+    overflow-y: auto;
+}
+#treeViewContainer.jstree-inprojects {
+    max-height: 500px;
+}
+.page-menu .menu-list .menu-sub-list #treeViewContainer {
+    margin-left: 24px;
+}
+#treeViewPanelSelector {
+    max-height: 520px;
+    max-width: 850px;
+    overflow: auto;
+    position: absolute;
+    z-index: 700;
+}
+#treeViewPanelSelector .corner-top {
+    left: 22px;
+}
+#treeViewPanelSelector .select-folder-header {
+    margin-bottom: 5px;
+}
+.jstree {
+    background-color: transparent;
+    max-width: 800px;
+    overflow: auto;
+    padding: 5px 20px 5px 5px;
+}
+.jstree ul,
+.jstree li {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.jstree li {
+    line-height: 18px;
+    margin-left: 18px;
+    min-height: 18px;
+    white-space: nowrap;
+}
+.jstree > ul > li {
+    margin-left: 0;
+}
+.jstree > ul > li > a {
+    font-size: 14px;
+}
+.jstree-inprojects > ul > li > a {
+    font-size: 12px;
+}
+.jstree-open > ul {
+    display: block;
+}
+.jstree-closed > ul {
+    display: none;
+}
+.jstree-icon {
+    background: url("../../controls/tree/images/tree_action.png") 0 0 no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 10px;
+}
+.jstree-empty > .jstree-icon.jstree-expander {
+    visibility: hidden;
+}
+.jstree-open > .jstree-icon.jstree-expander {
+    background-position: -20px 0;
+}
+.jstree-closed > .jstree-icon.jstree-expander.jstree-load-node {
+    background-image: url("../../controls/tree/images/loader_12.gif");
+    background-position: center;
+}
+.jstree a {
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    line-height: 16px;
+    margin: 1px 0;
+    outline: none;
+    padding: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.jstree a:hover {
+    text-decoration: underline;
+}
+.jstree a.selected {
+    background-color: #F2F2F2;
+}
+.jstree a.selected,
+.jstree li.parent-selected > a {
+    color: #116D9D;
+    font-weight: normal;
+}
+li.jstree-closed.parent-selected > a {
+    background-color: #F2F2F2;
+}
+a .jstree-icon {
+    background-position: -40px 0;
+    margin-right: 3px;
+    height: 16px;
+    width: 16px;
+}
+a .jstree-icon.myFiles {
+    background-position: -60px 0;
+}
+a .jstree-icon.corporateFiles {
+    background-position: -80px 0;
+}
+a .jstree-icon.shareformeFiles {
+    background-position: -100px 0;
+}
+a .jstree-icon.projectFiles {
+    background-position: -120px 0;
+}
+a .jstree-icon.trashFiles {
+    background-position: -140px 0;
+}
+ a.jstree-close-project:hover {
+    background-color: #FFF;
+    border: 1px solid #FFF;
+}
+/*******************\
+    New
+\*******************/
+.page-menu .is-new {
+    display: none;
+}

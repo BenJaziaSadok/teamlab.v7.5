@@ -1,0 +1,60 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.groupSelectorContainer
+{
+    display:none;
+    position:absolute;
+    z-index:99;
+    width:300px;
+    height:230px;
+    padding: 10px;
+}
+.groupSelectorContainer.groupSelectorContainerMobile
+{
+    height: auto;
+    width: auto;
+}
+.groupSelectorContainer .filterBox
+{
+    padding:2px;
+}
+
+.groupSelectorContainer .filterBox input
+{
+    float:left;
+    width:170px;
+    margin-right:10px;
+}
+
+.groupSelectorContainer .grpselector_groupList {
+    display: block;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin:10px 0px;
+}
+.groupSelectorContainer .grpselector_groupList .group {
+    padding:4px;
+    cursor:pointer;
+}
+.groupSelectorContainer .grpselector_groupList .group:hover
+{
+    background-color:#f2f2f2;
+}
+.groupSelectorBox {
+    position: relative;
+}
+.groupSelectorBox .mobileSelectList {
+    width: 230px;
+}

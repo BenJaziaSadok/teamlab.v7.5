@@ -1,0 +1,131 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+#studio_sharingSettingsDialog {
+    display: none;
+}
+#sharingSettingsItems {
+    height: 255px;
+    min-height: 255px;
+    overflow: auto;
+}
+#sharingSettingsDialogBody.with-message #sharingSettingsItems {
+    height: 186px;
+    min-height: 186px;
+}
+body.mobile #sharingSettingsItems {
+    height: auto !important;
+    overflow: visible !important;
+}
+#studio_sharingSettingsDialog .removeItem {
+    cursor: pointer;
+}
+#studio_sharingSettingsDialog .sharingItem {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 10px 20px 7px 20px;
+}
+#studio_sharingSettingsDialog .sharingItem .name {
+    float: left;
+    overflow: hidden;
+    width: 315px;
+}
+#studio_sharingSettingsDialog .sharingItem .action {
+    float: right;
+    text-align: right;
+    width: 140px;
+}
+#studio_sharingSettingsDialog .sharingItem .remove {
+    float: right;
+    width: 16px;
+    margin-left: 10px;
+}
+#studio_sharingSettingsDialog .add-to-sharing-links {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    padding: 20px 0;
+}
+#studio_sharingSettingsDialog #shareUserSelector {
+    float: left;
+}
+#studio_sharingSettingsDialog .groupSelectorBox {
+    float: left;
+    margin-left: 16px;
+}
+
+/*----------------custome select------------------------*/
+#studio_sharingSettingsDialog div.action div.title {
+    border-bottom: 1px dotted;
+    color: #1A6DB3;
+    cursor: pointer;
+    float: right;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#studio_sharingSettingsDialog div.action ul.options {
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    list-style: none;
+    margin: -7px -5px;
+    padding: 0;
+    right: -2px;
+    width: auto !important;
+}
+#studio_sharingSettingsDialog div.action li.option {
+    height: 20px;
+    margin: 2px;
+    overflow: hidden;
+    padding: 3px 4px 0;
+    white-space: nowrap;
+}
+#studio_sharingSettingsDialog div.action li.option:hover {
+    background-color: #E8E9E9 !important;
+}
+#studio_sharingSettingsDialog div.action li.option.selected {
+    font-weight: bold;
+}
+#sharingSettingsItems .tl-combobox .combobox-container {
+    max-width: 220px;
+    min-width: 120px;
+    width: auto;
+}
+
+/****************************************\
+    Share Message
+\****************************************/
+#shareMessagePanel {
+    border-bottom: 1px solid #d1d1d1;
+    padding: 16px 0;
+}
+#shareMessagePanel label {
+    margin-right: 7px;
+}
+#shareMessagePanel input {
+    margin-left: 0;
+    margin-right: 5px;
+}
+#shareMessage {
+    display: none;
+    height: 50px;
+    margin-top: 16px;
+    max-width: 546px;
+    min-height: 50px;
+    min-width: 546px;
+    resize: none;
+    width: 100%;
+}
+#sharingSettingsDialogBody.with-message #shareMessage {
+    display: inline;
+}

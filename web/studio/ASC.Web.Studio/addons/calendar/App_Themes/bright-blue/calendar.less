@@ -1,0 +1,37 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@color-calendar: #3a83db;
+@bg-color-calendar: #eff6ff;
+@bg-color-hover-calendar: #e8f2ff;
+@import "../../UserControls/fullcalendar/css/fullcalendar.less";
+
+@bg-hover-mini-cld: #eff6ff;
+@bg-active-mini-cld: #629ade;
+@border-active-mini-cld: #2464b1;
+@text-active-mini-cld: #fff;
+
+.asc-datepicker .ui-state-hover, 
+.asc-datepicker .ui-widget-content .ui-state-hover, 
+.asc-datepicker .ui-widget-header .ui-state-hover, .asc-datepicker .ui-state-focus, 
+.asc-datepicker .ui-widget-content .ui-state-focus, .asc-datepicker .ui-widget-header .ui-state-focus {
+     border: 1px solid @color-calendar !important;
+     background: @bg-hover-mini-cld none 50% 50% repeat-x !important;
+}
+.asc-datepicker .ui-state-active, 
+.asc-datepicker .ui-widget-content .ui-state-active, 
+.asc-datepicker .ui-widget-header .ui-state-active {
+     border: 1px solid @border-active-mini-cld !important; 
+     background: @bg-active-mini-cld none 50% 50% repeat-x !important;
+     color: @text-active-mini-cld !important;
+}

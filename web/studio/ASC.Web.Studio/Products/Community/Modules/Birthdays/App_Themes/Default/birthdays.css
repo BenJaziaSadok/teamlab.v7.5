@@ -1,0 +1,89 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/* Birthdays page */
+.birthday-content-splitter {
+    margin-bottom: 16px;
+}
+.birthday-header {
+    color: #333333;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+}
+.birthday-date {
+    text-align: center;
+}
+.user-card-list {
+    border-left: 1px dotted #D1D1D1;
+    display: inline-block;
+    padding-left: 8px;
+}
+.user-card,
+.small-user-card {
+    float: left;
+    margin: 4px;
+    width: 330px;
+}
+.user-card .user-avatar {
+    padding: 4px;
+    float: left;
+}
+.user-card .user-info {
+    float: left;
+    margin: 8px 0 0 16px;
+    width: 200px;
+    overflow: hidden;
+}
+.user-card .user-info-title {
+    margin: 8px 0;
+}
+.small-user-card .user-avatar {
+    float: left;
+}
+.small-user-card .user-info {
+    float: left;
+    margin: 4px 0 0 16px;
+    width: 260px;
+    overflow: hidden;
+}
+.small-user-card .user-info-title {
+    margin-top: 8px;
+}
+.birthday-remind {
+    padding-top: 2px;
+    display: none;
+}
+.birthday-remind-active {
+    background-color: #F7E3AC;
+    color: #DA9038;
+    padding: 2px 8px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    display: none;
+}
+.birthday-remind-active a {
+    background: url("images/white_cross.png") no-repeat scroll 0 0 transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 8px;
+    margin-left: 4px;
+    width: 8px;
+}
+.tableBase tr:hover .small-user-card:not(.active) .birthday-remind {
+    display: inline-block;
+}
+.small-user-card.active .birthday-remind-active {
+    display: inline-block;
+}

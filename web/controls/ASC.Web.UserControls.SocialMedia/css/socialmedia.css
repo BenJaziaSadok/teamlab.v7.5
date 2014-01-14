@@ -1,0 +1,62 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.sm_message_line
+{
+    border-top: solid 1px #D1D1D1;
+    padding: 5px 0;
+}
+.sn_userName
+{
+    color: Black !important;
+}
+
+.sn_user_icon
+{
+    float: left;
+    width: 34px;
+    margin: 0 15px;
+}
+
+.sn_message_icon
+{
+    float: left;
+    width: 30px;
+    text-align: center;
+}
+.sn_message_block
+{
+    float: left;
+    width: 90%;
+}
+.sn_message_text
+{
+    margin: 2px 0;
+}
+.sn_small_img
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.facebookLinkDescription
+{
+    color: gray;
+    font-size: 90%;
+}
+
+.sm_UserActivityView_ErrorDescription
+{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}

@@ -1,0 +1,628 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+    studio-top-panel
+*******************************************************************************/
+@textTopPanel:#c5c5c5;
+
+.studio-top-panel {
+    background: @bg-header;
+    color: @textTopPanel;
+    height: 44px;
+    padding-top: 4px;
+    z-index: 1;
+
+    & > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        & > li {
+            float: left;
+        }
+    }
+
+    .studio-top-logo {
+        margin: 8px 24px 0 0;
+        /*******************************************************************************
+    top logo
+*******************************************************************************/
+        a.top-logo {
+            display: block;
+            text-decoration: none;
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                text-decoration: none;
+            }
+
+            img {
+                border: medium none;
+            }
+        }
+    }
+    /*******************************************************************************
+    product-menu
+*******************************************************************************/
+    .product-menu {
+        cursor: pointer;
+        padding: 4px 0 5px;
+        margin: 8px 24px 0 0;
+
+        .active-icon {
+            background: url("@{img-change-url}dropdown-menu-icons.png") no-repeat 0 15px transparent;
+            display: inline-block;
+            float: left;
+            height: 16px;
+            margin: 2px 5px 0 0;
+            vertical-align: middle;
+            width: 16px;
+
+            &.projects {
+                background-position: 0 -27px;
+            }
+
+            &.crm {
+                background-position: 0 -79px;
+            }
+
+            &.documents {
+                background-position: 0 -131px;
+            }
+
+            &.community {
+                background-position: 0 -183px;
+            }
+
+            &.people {
+                background-position: 0 -235px;
+            }
+
+            &.tools {
+                background-position: 0 -287px;
+            }
+
+            &.mail {
+                background-position: 0 -339px;
+            }
+
+            &.calendar {
+                background-position: 0 -391px;
+            }
+
+            &.feed {
+                background-position: 0 -444px;
+            }
+
+            &.settings {
+                background-position: 0 -495px;
+            }
+
+            &.talk {
+                background-position: 0 -548px;
+            }
+        }
+
+        &.with-subitem {
+            padding-right: 15px;
+            position: relative;
+
+            &:after {
+                .arrow-down(5px, #cbcbcc);
+                margin-top: -3px;
+            }
+        }
+
+        .product-cur-link {
+            color: @textTopPanel;
+            float: left;
+            font-size: 14px;
+            font-weight: bold;
+            max-width: 110px;
+            outline: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .studio-action-panel {
+        cursor: default;
+        padding: 6px 20px 11px 15px;
+
+        .dropdown-content {
+            .dropdown-item {
+                display: block;
+                line-height: 28px;
+            }
+
+            .dropdown-item-seporator {
+                border-top: 1px dotted @textColor;
+                margin: 5px 0 2px;
+                width: auto;
+            }
+        }
+        /*******************************************************************************
+   Icons for the moduls list
+*******************************************************************************/
+        &.modules .dropdown-content li {
+            background: url("@{img-change-url}dropdown-menu-icons.png") no-repeat 0 6px transparent;
+            padding-left: 21px;
+
+            &.projects {
+                background-position: 0 6px;
+            }
+
+            &.crm {
+                background-position: 0 -46px;
+            }
+
+            &.documents {
+                background-position: 0 -98px;
+            }
+
+            &.community {
+                background-position: 0 -149px;
+            }
+
+            &.people {
+                background-position: 0 -202px;
+            }
+
+            &.tools {
+                background-position: 0 -254px;
+            }
+
+            &.mail {
+                background-position: 0 -305px;
+            }
+
+            &.calendar {
+                background-position: 0 -358px;
+            }
+
+            &.feed {
+                background-position: 0 -410px;
+            }
+
+            &.settings {
+                background-position: 0 -462px;
+            }
+
+            &.tarrifs {
+                background-position: 0 -566px;
+            }
+
+            &.talk {
+                background-position: 0 -514px;
+            }
+        }
+    }
+    /*******************************************************************************
+   staff box
+*******************************************************************************/
+    .staff-profile-box,
+    .user-profile-box {
+        float: right;
+        margin: 7px 0 0 20px;
+        padding: 5px 10px;
+        position: relative;
+        z-index: 100;
+    }
+
+    .staff-profile-box {
+        cursor: pointer;
+        padding-right: 15px;
+        position: relative;
+
+        &:after {
+            .arrow-down(5px, #cbcbcc);
+            margin-top: -3px;
+        }
+
+        .usr-prof {
+            display: inline-block;
+            max-width: 220px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+/*******************************************************************************
+   Addon Item Box
+*******************************************************************************/
+
+    .top-item-box {
+        float: right;
+        padding: 4px;
+
+        .inner-text {
+            .borderRadius();
+            background: url("@{img-change-url}top-studio-menu.png") no-repeat 0 0 @bg-header-icons;
+            cursor: pointer;
+            display: block !important;
+            height: 32px;
+            outline: none;
+            position: relative;
+            text-decoration: none;
+            width: 32px;
+
+            .inner-label {
+                bottom: 2px;
+                color: #fff;
+                display: none;
+                font: 8px/7px Tahoma;
+                height: 8px;
+                padding: 1px 3px;
+                position: absolute;
+                right: 2px;
+            }
+        }
+
+            &.has-led .inner-label,
+            .inner-text.has-led .inner-label {
+                .borderRadius();
+                .bg-header-icon-lable();
+                display: block;
+            }
+
+        &.tariffs .inner-text {
+            background-position: 0 0;
+
+            &:hover {
+                background-position: 0 -32px;
+            }
+        }
+
+        &.calendar .inner-text {
+            background-position: -32px 0;
+
+            &:hover {
+                background-position: -32px -32px;
+            }
+        }
+
+        &.talk .inner-text {
+            background-position: -64px 0;
+
+            &:hover {
+                background-position: -64px -32px;
+            }
+        }
+
+        &.mail .inner-text {
+            background-position: -96px 0;
+
+            &:hover {
+                background-position: -96px -32px;
+            }
+        }
+
+        &.feed .inner-text {
+            background-position: -128px 0;
+
+            &:hover {
+                background-position: -128px -32px;
+            }
+        }
+
+        &.search .inner-text {
+            background-position: -160px 0;
+
+            &:hover {
+                background-position: -160px -32px;
+            }
+        }
+
+        &.settings .inner-text {
+            background-position: -192px 0;
+
+            &:hover {
+                background-position: -192px -32px;
+            }
+        }
+
+        &.video .inner-text {
+            background-position: -224px 0;
+
+            &:hover {
+                background-position: -224px -32px;
+            }
+        }
+    }
+    /*******************************************************************************
+   trial period
+*******************************************************************************/
+    .studio-top-trial-period {
+        margin: 13px 0 0 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        a {
+            color: #e5ae1a;
+            font-size: 14px;
+            outline: none;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    /*******************************************************************************
+   searching
+*******************************************************************************/
+    #studio_searchPopupPanel {
+        width: 290px;
+
+        .header-base.small {
+            margin-bottom: 10px;
+        }
+
+        .dropdown-content {
+            max-height: 500px;
+            overflow-y: hidden;
+
+            .search-input-box {
+                margin: 5px 0;
+
+                .search-input {
+                    float: left;
+                    height: 20px;
+                    margin-right: 4px;
+                    padding: 1px;
+                    width: 238px;
+                }
+
+                .search-btn {                    
+                    height: 24px;
+                    position: relative;
+                    width: 40px;
+
+                    &:after {
+                        content: "";
+                        position:absolute;
+                        width: 16px;
+                        height: 16px;
+                        background: url("@{imagesBaseUrl}zoom_white.png") no-repeat;
+                        top: 4px;
+                        right: 13px;
+                    }
+                }
+            }
+        }
+
+        .search-option-box {
+            float: left;
+            font-size: 11px;
+            height: 22px;
+            color: @textColor;
+            width: 145px;
+
+            input[type="checkbox"] {
+                margin: 0 3px 2px 0;
+                vertical-align: middle;
+            }
+        }
+
+        .dropdown-item-seporator {
+            margin: 12px 0;
+        }
+    }
+    /*******************************************************************************
+   FeedReader
+*******************************************************************************/
+    #drop-feeds-box {
+        color: @textColor;
+        line-height: 16px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+    }
+
+    #studio_dropFeedsPopupPanel {
+        #drop-feeds-box {
+            width: 405px;
+            max-width: 405px;
+            
+            .list {
+                max-height: 350px;
+                overflow-y: auto;
+            }
+
+            .item {
+                border-bottom: 1px solid @borderColor;
+                padding-top: 4px;
+
+                &:hover {
+                    .content-box .title,
+                    .content-box .description .extra-action a {
+                        text-decoration: underline;
+                    }
+                }
+
+                .avatar {
+                    float: left;
+                    height: 100%;
+
+                    img {
+                        height: 36px;
+                        margin: 3px 8px 0 0;
+                        width: 36px;
+                    }
+                }
+
+                .description {
+                    .product {
+                        font-weight: bold;
+                    }
+
+                    .location, .action {
+                        color: @textColorGrayDark;
+                    }
+
+                    .extra-action {
+                        a {
+                            .limitedSingleText(90%);
+                            color: @textColorGrayDark;
+                            text-decoration: none;
+                        }
+                    }
+
+                    .location {
+                        .limitedSingleText(80%);
+                    }
+                }
+
+                .content-box {
+                    margin-left: 44px;
+
+                    .title {
+                        .limitedSingleText(330px);
+                        color: #333;
+                        cursor: pointer;
+                        font-size: 12px;
+                        text-decoration: none;
+                    }
+
+                    .date {
+                        margin-top: 2px;
+                        overflow: hidden;
+                        -ms-text-overflow: ellipsis;
+                        -o-text-overflow: ellipsis;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+
+                        span {
+                            color: @textColorGrayDark;
+                            display: inline-block;
+                            margin-bottom: 5px;
+                            margin-right: 3px;
+                            -ms-text-overflow: ellipsis;
+                            -o-text-overflow: ellipsis;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+
+            .loader {
+                margin-left: 100px;
+                height: 32px;
+                padding-left: 40px;
+                background: url("@{imagesBaseUrl}loader.gif") no-repeat;
+
+                span {
+                    color: @textColorGrayDark;
+                    display: inline-block;
+                    font-family: Arial;
+                    font-size: 13px;
+                    margin-top: 10px;
+                }
+            }
+
+            .feeds-readed-msg {
+                display: none;
+                margin-top: 5px;
+            }
+
+            .see-all-btn {
+                color: @textColorGrayDark;
+                display: none;
+                font-size: 12px;
+                font-weight: bold;
+                margin-top: 13px;
+                margin-bottom: 7px;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    /*******************************************************************************
+   video guides
+*******************************************************************************/
+    .video-popup-panel {
+        .drop-list {
+            margin-bottom: 10px;
+            max-height: 350px;
+            max-width: 300px;
+            overflow: auto;
+            width: 300px;
+
+            .video-list {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    background: url("@{imagesBaseUrl}video_icon.png") left center no-repeat;
+                    border-bottom: 1px solid @borderColor;
+                    color: @textColor;
+                    list-style: none;
+                    padding: 10px 10px 10px 30px;
+                }
+            }
+        }
+
+        a.video-link {
+            color: @textColorBlackDark;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:last-child {
+                float: right;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1200px) {
+
+    .studio-top-panel {
+        .staff-profile-box {
+            .usr-prof {
+                display: none;
+            }
+            .userLink {
+                background: url("@{imagesBaseUrl}user_icon_header.png") 0 bottom no-repeat transparent;
+                height:12px;
+                padding-top: 3px;
+                width: 12px;
+            }            
+        }
+        .product-menu ~ .top-item-box {
+            &.tariffs,
+            &.settings {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .studio-top-panel  .top-item-box .inner-text {  background-image: url("@{img-change-url}top-studio-menu_retina.png"); background-size: 258px 64px;}
+    .studio-top-panel .product-menu .active-icon { background-image: url("@{img-change-url}dropdown-menu-icons_retina.png"); background-size: 16px 624px; }
+    .studio-top-panel .studio-action-panel.modules .dropdown-content li {  background-image: url("@{img-change-url}dropdown-menu-icons_retina.png"); background-size: 16px 624px; }
+}
+

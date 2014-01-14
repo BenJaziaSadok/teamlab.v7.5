@@ -1,0 +1,461 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+#studioPageContent .mainPageLayout:last-child {
+     padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+ }
+
+#moveTaskOutMilestone .small-button-container
+{
+    margin-top: 16px;
+}
+.gantt-hint
+{
+    display: inline-block;
+    position: absolute;
+    border: 1px solid #838383;
+    padding: 4px;
+    background-color: #fff;
+    font-size:11px;
+}
+/*-------Gantt chart top panel-----*/
+.gantt-chart-top-panel, .addition {
+    margin: 0;
+    background-color: #f2f2f2;
+}
+.gantt-chart-top-panel {
+    padding:24px;
+    height: 32px;
+    z-index: 3;
+}
+.addition {
+    background-color:#E9E9E9;
+    padding: 9px 24px;
+    z-index: 2;
+    height: 17px;
+    border-bottom: 1px solid #C8C8C8;
+}
+.gantt-chart-top-panel .menu-actions {
+    float: left;
+    width: auto;
+    margin: 0;
+}
+.addition .tl-combobox .combobox-container {
+    max-width: 300px;
+    z-index: 10;
+}
+/*---buttons----*/
+.gantt-chart-top-panel .menu-actions .menu-upload-button {
+    margin-left: 4px;
+}
+.gantt-chart-top-panel.page-menu .undo-button,
+.gantt-chart-top-panel.page-menu .redo-button,
+.addition .print, .addition .refresh {
+    padding: 0;
+    display: inline-block;
+    background-image: url("../images/gantt-icons.png");
+    background-repeat: no-repeat;
+}
+.addition .print,
+.addition .refresh {
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    background-position:-38px 0;
+}
+.addition .refresh {
+    margin-right: 8px;
+    background-position: -38px -17px;
+}
+/*---*/
+.gantt-chart-zoom-container.menu-actions,
+.zoom-presets {
+    float: right;
+}
+.gantt-chart-zoom-container.menu-actions {
+    margin-left: 48px;
+}
+.gantt-chart-zoom-container.menu-actions .menu-upload-button {
+    margin-left: 0;
+}
+.gantt-chart-zoom {
+    min-width: 70px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    margin-left: 2px;
+    margin-right: 16px;
+}
+
+.zoom-presets {
+    margin-left: 16px;
+    padding-top: 8px;
+    font-size: 12px;
+    position: relative;
+}
+.zoom-presets .preset {
+    display: inline-block;
+    margin-left: 16px;
+    border-bottom: 1px dotted #333;
+    cursor: pointer;
+}
+.zoom-presets .scale-conteiner {
+    margin-left: 8px;
+    width: 80px;
+    display: inline-block;
+}
+
+    .zoom-presets .tl-combobox
+    {
+        max-width: 95%;
+    }
+    .zoom-presets .tl-combobox .combobox-title,
+    .zoom-presets .tl-combobox .combobox-title .inner-text
+    {
+        max-width: 80px;
+    }
+.zoom-presets .combobox-title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*---filter panel-----*/
+
+.filter-container {
+    float:left;
+}
+.filter-container {
+    width: 90%;
+}
+    .filter-container .task-filter-container {
+        margin-right: 48px;
+        display: inline-block;
+        vertical-align: text-top;
+        position: relative;
+        z-index:4;
+    }
+
+.filter-container .tl-combobox .combobox-container .combobox-options
+{
+    max-height: 250px;
+}
+    .filter-container .tl-combobox .combobox-container .combobox-options .option-item.separator {
+        border-top: 1px dotted #838383;
+        padding-top: 4px;
+        margin-top: 5px;
+    }
+    .filter-container input,
+    .filter-container label {
+        cursor: pointer;
+    }
+    .filter-container input {
+        float:left;
+        margin: 2px 6px 0 0;
+        padding: 0;
+    }
+.task-filter-container .tl-combobox
+{
+    width: 100%;
+    max-width: 250px;
+}
+
+.mode-button-container {
+    float: right;
+}
+.HelpCenterSwitcher
+{
+    margin:0 0 0 8px;
+}
+
+.gantt-legend.studio-action-panel {
+    padding: 16px 22px;
+    right: 11px;
+    top: 152px;
+    max-width: 426px;
+}
+    .gantt-legend.studio-action-panel .to-full-help
+    {
+        position: absolute;
+        right: 24px;
+        top: 18px;
+    }
+    .gantt-legend .header-base
+    {
+        margin-bottom: 12px;
+    }
+    .gantt-legend.studio-action-panel .dropdown-content.cell
+    {
+        float:left;
+        margin: 8px 16px 16px 0;
+        width: 184px;
+    }
+    .gantt-legend.studio-action-panel .dropdown-content .dropdown-item,
+    .gantt-legend.studio-action-panel .gantt-colors div
+    {
+        margin-top: 3px;
+        text-decoration: none;
+        cursor: default;
+        padding-left: 24px;
+        background: transparent url("../images/gantt-legend.png") center no-repeat;
+    }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.edit {
+            background-position: 0 2px;
+        }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.delete {
+            background-position: 0 -22px;
+        }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.close {
+            background-position: 0 -46px;
+        }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.addlink {
+            background-position: 0 -70px;
+        }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.addMilestoneTask {
+            background-position: 0 -94px;
+        }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.fitToScreen {
+            background-position: 0 -118px;
+        }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.open {
+            background-position: 0 -142px;
+        }
+        .gantt-legend.studio-action-panel .dropdown-content .dropdown-item.responsible {
+            background-position: 0 -166px;
+        }
+       
+
+.gantt-legend.studio-action-panel .gantt-colors td
+{
+    width: 184px;
+}
+.gantt-legend.studio-action-panel .gantt-colors
+{
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+    .gantt-legend.studio-action-panel .gantt-colors td
+    {
+        padding-right:11px;
+    }
+        .gantt-legend.studio-action-panel .gantt-colors td div
+        {
+            width: 134px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+.gantt-legend.studio-action-panel .gantt-colors .closed
+{
+    background-position: 0 -192px;
+}
+.gantt-legend.studio-action-panel .gantt-colors .create
+{
+    background-position: 0 -264px;
+}
+.gantt-legend.studio-action-panel .gantt-colors .active
+{
+    background-position: 0 -216px;
+}
+.gantt-legend.studio-action-panel .gantt-colors .invalid
+{
+    background-position: 0 -288px;
+}
+.gantt-legend.studio-action-panel .gantt-colors .overdue
+{
+    background-position: 0 -240px;
+}
+.gantt-legend.studio-action-panel .gantt-colors .priority
+{
+    background-position: 0 -312px;
+}
+.gantt-legend.studio-action-panel .gantt-colors .infinity {
+    background-position: 0 -336px;
+}
+.gantt-legend.studio-action-panel .gantt-colors .key {
+    background-position: 0 -359px;
+}
+/*------actions help panel ------*/
+.gantt-actions
+{
+    padding:16px;
+    position: fixed;
+    z-index: 5;
+    bottom: 24px;
+    right: 24px;
+}
+    .gantt-actions .cancelButton,
+    .gantt-empty-screen .cancelButton
+    {
+        background-color: transparent;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .gantt-actions td {
+        border:none;
+        font-size: 11px;
+        padding-top: 5px;
+        width: 250px;
+        vertical-align: top;
+    }
+        .gantt-actions tr:first-child td
+        {
+            padding-top:0;
+        }
+        .gantt-actions tr td:last-child
+        {
+            padding-left: 16px;
+            font-style:italic;
+        }
+
+/*---mode buttons---*/ /*--locked--*/
+    .mode-button-container .mode {
+        display: inline-block;
+        cursor: pointer;
+        height: 16px;
+        width: 16px;
+        background: transparent url("../images/gantt_mode_butts.png") no-repeat;
+    }
+    .mode-button-container .mode.full-screen {
+        background-position: 0 -14px;
+    }
+    .mode-button-container .mode.full-screen.active {
+        background-position: 0 0;
+    }
+    .mode-button-container .mode.left-panel {
+        background-position: -14px -14px;
+    }
+    .mode-button-container .mode.left-panel.active {
+        background-position: -14px 0;
+    }
+
+.vertical-align-top {
+    vertical-align: top;
+}
+#parentTaskName {
+    display: inline-block;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+}
+.link-type-select {
+    margin-top: 12px;
+}
+.task-select {
+    margin-top: 16px;
+}
+/*---change status combobox---*/
+#statusListContainer.studio-action-panel {
+    padding: 8px 20px 8px 6px;
+}
+.studio-action-panel #statusList li.dropdown-item {
+    padding-left: 22px;
+    background: url('../images/projects_entity_statuses.png') no-repeat 2px center;
+}
+.studio-action-panel #statusList li.dropdown-item.open {
+    background-position: 0 -58px;
+}
+.studio-action-panel #statusList li.dropdown-item.closed {
+	background-position: 0 -79px;
+}
+
+/*-----Responsible selector------*/
+#responsiblesContainer.studio-action-panel .dropdown-content
+{
+    max-height: 232px;
+    max-width: 190px;
+}
+.studio-action-panel .dropdown-content li.check-value
+{
+    padding-top: 10px;
+    white-space: nowrap;
+}
+    .studio-action-panel .dropdown-content li.check-value input
+    {
+        padding: 0;
+        margin-right: 8px;
+    }
+    .studio-action-panel .dropdown-content li.check-value input,
+    .studio-action-panel .dropdown-content li.check-value label{
+            cursor: pointer;
+            vertical-align: middle;
+    }
+.studio-action-panel .small-button-container
+{
+    margin-top: 16px;
+}
+/*----Gantt chart---*/
+.gantt-canvas, .fake-background {
+    top: 164px;
+    position: absolute;
+}
+.fake-background{
+    width:30px;
+}
+.fake-background.gray{
+    background-color:#f2f2f2;
+}
+.gantt-canvas {
+    left: 24px;
+    z-index: 0;
+}
+.gantt-canvas.layer1 {
+    z-index: 1;
+}
+       
+.hitStyle {
+    cursor: pointer;
+}
+.defaultstyle {
+    cursor: default;
+}
+
+.gantt-empty-screen {
+    top:272px;
+    left:30%;
+    padding: 24px 24px 24px 153px;
+    position: absolute;
+    background: #fff url("../images/icon_empty_gantt.png") no-repeat 25px 26px !important;
+    z-index: 5;
+}
+.gantt-empty-screen .header-empty-screen {
+    font-size: 14px;
+    font-weight: bold;
+}
+.gantt-empty-screen p{
+    max-width: 500px;
+    line-height: 16px;
+}
+
+@media print
+{
+    @page { size: landscape; }
+    .studio-top-panel,
+    .gantt-chart-top-panel,
+    .mode-button-container{
+        display: none;
+    }
+    .gantt-canvas, .fake-background {
+        top: 44px;
+        position: absolute;
+    }
+}

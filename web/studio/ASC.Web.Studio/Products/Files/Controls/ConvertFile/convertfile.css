@@ -1,0 +1,148 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+    Convert&Dowload
+*******************************************************************************/
+.cnvrt-list-file-block {
+    padding: 10px 0;
+}
+.cnvrt-list-file-block .tl-combobox {
+    max-width: 100%;
+    display: none;
+}
+.cnvrt-list-file-block .tl-combobox .combobox-container {
+    margin: 0;
+    width: auto;
+}
+.cnvrt-list-file-block .tl-combobox .combobox-container .container-top {
+    right: 8px;
+}
+.cnvrt-list-file-block .tl-combobox .combobox-container .combobox-options {
+    max-height: none;
+}
+.cnvrt-file-block {
+    border-left: medium none;
+    border-right: medium none;
+    margin-bottom: -1px;
+    min-height: 30px;
+}
+.cnvrt-file-block:hover {
+    background-color: #f2f2f2;
+}
+.cnvrt-file-block-active {
+    background-color: #fafafa;
+}
+.cnvrt-file-block-body {
+    border-top: 1px dotted #D1D1D1;
+    padding-left: 20px;
+}
+.cnvrt-file-block-open .cnvrt-file-block-body {
+    display: block;
+}
+.cnvrt-file-block-closed .cnvrt-file-block-body {
+    display: none;
+}
+.cnvrt-status-content {
+    background-color: transparent;
+    background-image: url("images/tree_action.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: left;
+    height: 30px;
+    width: 20px;
+}
+.cnvrt-file-block-open .cnvrt-status-content {
+    background-position: -12px 5px;
+}
+.cnvrt-file-block-closed .cnvrt-status-content {
+    background-position: 5px 5px;
+}
+.cnvrt-cbx-content {
+    float: left;
+    margin-top: 6px;
+}
+.cnvrt-format-icon-content {
+    float: left;
+    margin: 4px 5px 5px;
+}
+.cnvrt-title-content {
+    float: left;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 210px;
+}
+.cnvrt-title-content .file-extension {
+    font-weight: bold;
+}
+.cnvrt-file-block-head .cnvrt-format-icon-content,
+.cnvrt-file-block-head .cnvrt-title-content {
+    cursor: pointer;
+    font-size: 14px;
+}
+.cnvrt-tooltip-content {
+    color: #808080;
+    display: none;
+    float: left;
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: right;
+    width: 110px;
+}
+.cnvrt-format-title-content {
+    float: right;
+    margin-top: 8px;
+    width: 130px;
+}
+.cnvrt-format-title {
+    display: none;
+}
+
+.cnvrt-file-block-active .tl-combobox {
+    display: inline-block;
+}
+.cnvrt-file-block-active .tl-combobox .combobox-title .inner-text {
+    border-bottom-width: 0;
+}
+.cnvrt-file-block-active:hover .tl-combobox .combobox-title .inner-text {
+    border-bottom-width: 1px;
+}
+
+.cnvrt-file-block-active .cnvrt-file-block-head .cnvrt-tooltip-content,
+.cnvrt-file-block-active .cnvrt-file-row-active .cnvrt-tooltip-content {
+    display: block;
+}
+
+/***********************************\
+    Convert and Open
+\***********************************/
+#copyConvertDescript {
+    background: url("images/convert_alert.png") no-repeat center left transparent;
+    font-size: 14px;
+    min-height: 100px;
+    padding-left: 120px;
+}
+#confirmCopyConvert .files-progress-box {
+    border: none;
+    display: block;
+    margin-left: auto;
+    padding: 0;
+}
+#confirmCopyConvert .confirm-store-panel {
+    font-size: 12px;
+    margin: 0;
+    padding-top: 16px;
+    background-color: inherit;
+}

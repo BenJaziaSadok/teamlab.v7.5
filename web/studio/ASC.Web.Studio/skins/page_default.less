@@ -1,0 +1,92 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.greating-modules-block {
+	margin-top: 22px;
+    text-align: center;
+
+    .docs-default-page 	{
+	    display: inline-block;
+	    margin: 38px 55px 53px;
+	    text-align: left;
+	    width: 630px;	
+
+		.title {
+		    display: block;
+		    margin: 0 0 11px 0;
+		    padding:170px 0 0 15px;
+
+		    a {
+		    	font-size: 36px;
+		    }
+		}
+		.description {
+			display: block;
+		    line-height: 20px;
+		    padding-left: 15px;
+		}
+		.docs-default-logo {
+		    background: no-repeat url('default/images/documents.png') top center transparent;
+		    height: 323px;
+		    float: left;
+		    width: 330px;
+
+		    &:hover + .title a {
+			    font-weight: normal;
+			    text-decoration: underline;
+			}
+		}
+	}
+
+	.default-list-products {
+	    display: inline-block;
+	    margin-bottom: 25px;
+
+	    .product {
+		    float: left;
+		    margin-right: 80px;
+		    width: 100px;
+		
+			.image-link:hover + h2 a {
+			    text-decoration: underline;
+			}
+
+			img {
+			    border: none;
+			    display: block;
+			    width: auto;
+			}
+			.title {
+			    text-align: center;
+			}
+
+			.description {
+				clear: right;
+			    display: block;
+			    line-height: 20px;
+			    margin: 10px 0 0 136px;
+			}
+			.links {
+			    color: #333;
+			    display: inline-block;			    
+			    margin: 5px 0;
+		    }
+		}
+	}
+}
+
+@media all and (max-width: 1200px) {
+    .greating-modules-block .docs-default-page {
+        margin: 15px 55px 10px;
+    }
+}

@@ -1,0 +1,116 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@import 'settings.less';
+
+.crm_popup {
+    .search_panel {
+        margin-top: @base-distance /2;
+        width: @search_panel_width;
+        height: 18px;
+
+        .search_input {
+            width: @search_input_width;
+            height: 16px;
+            border: medium none;
+            margin: 0px;
+        }
+
+        .ui-menu {
+            width: 453px !important;
+        }
+    }
+
+    .label {
+        font-weight: bold;
+    }
+
+    .linked_table_parent {
+        margin-top: 3.5*@base-distance;
+        max-height: 210px;
+        padding-bottom: 1px; /*Fix for correct view in IE browsers. If u delete it scroll will show in crmLinkPopup*/
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .linked_contacts_table {
+            width: 100%;
+
+            tr {
+                height: @row-height;
+
+                td {
+                    border-left: none;
+                    border-right: none;
+
+                    &.linked_entity_row_avatar_column {
+                        width: 40px;
+
+                        .case {
+                            background: url("@{base-icon-sprite-url}") no-repeat 0 -120px;
+                            height: 40px;
+                        }
+
+                        .opportunities {
+                            background: url("@{base-icon-sprite-url}") no-repeat -40px -120px;
+                            height: 40px;
+                        }
+                    }
+
+
+                    &.linked_entity_row_title_column {
+                        padding-left: @base-distance;
+                    }
+
+                    &.linked_entity_row_button_column {
+                        width: 20px;
+
+                        .unlink_entity {
+                            background: url("@{base-icon-sprite-url}") -20px 0 no-repeat;
+                            width: 16px;
+                            height: 16px;
+
+                            &:hover {
+                                background-position: -20px -20px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    background: @full-view-row-bg;
+                }
+            }
+        }
+    }
+
+
+    .entity-type {
+        margin-top: @base-distance /2;
+        width: 120px;
+    }
+
+    .loader {
+        height: 42px;
+        width: 32px;
+        margin: auto;
+    }
+
+    .buttons {
+        margin-top: 2*@base-distance;
+    }
+
+    td {
+        border: solid 1px @popup-search-input-color;
+    }
+}

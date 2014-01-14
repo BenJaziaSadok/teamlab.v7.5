@@ -1,0 +1,114 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.select-action,
+.select-action a,
+.select-action input,
+.select-action span,
+.select-action div {
+    cursor: default !important;
+}
+.popup-modal {
+    display: none;
+}
+.may-row-to.row-to {
+    background-color: #F9EEC2;
+}
+.files-popup-win {
+    display:none;
+}
+.stick-panel {
+    position: fixed;
+    top: 0;
+    z-index: 255;
+}
+#fileSidePanelSpacer {
+    margin: 0;
+}
+
+.studio-action-panel .corner-top.corner-left {
+    left: -5px;
+    top: 21px;
+    -webkit-transform: rotate(-90deg); /* Chrome y Safari */
+    -moz-transform: rotate(-90deg); /* Firefox */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+    -o-transform: rotate(-90deg); /* Opera */
+}
+.ajax-progress-loader {
+    background: url("images/ajax_progress_loader.gif") no-repeat 0 0 transparent;
+    height: 13px;
+    width: 208px;
+}
+/*******************************************************************************
+    Selector
+*******************************************************************************/
+#filesSelector {
+    background-color: #6CA3BF;
+    border: 1px solid #034;
+    cursor: default;
+    display: block;
+    height: 0;
+    opacity: 0.3;
+    position: absolute;
+    width: 0;
+    z-index: 254;
+}
+
+/*******************\
+    WebKit scrollbar
+\*******************/
+.webkit-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+.webkit-scrollbar::-webkit-scrollbar-button {
+    display: none;
+}
+.webkit-scrollbar::-webkit-scrollbar-track,
+.webkit-scrollbar::-webkit-scrollbar-thumb {
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.webkit-scrollbar::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+.webkit-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #bfbfbf;
+    min-height: 28px;
+}
+
+/*******************************************************************************
+    Mobile
+*******************************************************************************/
+body.mobile #confirmRemoveList,
+body.mobile #overwriteList {
+    max-height: none !important;
+}
+body.mobile #treeViewPanelSelector,
+body.mobile .jstree {
+    max-height: none !important;
+    max-width: none !important;
+}
+body.mobile div.blockUI.blockOverlay {
+    min-width: 1000px;
+    width: 100%;
+}
+/*******************************************************************************
+    CreateNewButton - hack for IE7
+*******************************************************************************/
+*:first-child+html .page-menu .menu-actions .menu-main-button {
+    width: 130px;
+}
+

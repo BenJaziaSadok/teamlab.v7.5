@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask AssemblyFile="MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.AssemblyInfo" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <BuildTargets Condition=" '$(BuildTargets)' == ''  ">Build</BuildTargets>
+    <SignAssemblies Condition=" '$(SignAssemblies)' == ''  ">false</SignAssemblies>
+    <ASCDir>..\..\</ASCDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Core -->
+    <ProjectToBuild Include="$(ASCDir)common\ASC.Common\ASC.Common.csproj" />
+    <ProjectToBuild Include="$(ASCDir)common\ASC.Core.Common\ASC.Core.Common.csproj" />
+    <ProjectToBuild Include="$(ASCDir)common\ASC.Data.Storage\ASC.Data.Storage.csproj" />
+    <ProjectToBuild Include="$(ASCDir)common\ASC.Data.Backup\ASC.Data.Backup.csproj" Condition=" Exists( '$(ASCDir)common\ASC.Data.Backup\' ) " />
+    <ProjectToBuild Include="$(ASCDir)common\ASC.Data.Backup.Restore\ASC.Data.Backup.Restore.csproj" Condition=" Exists( '$(ASCDir)common\ASC.Data.Backup.Restore\' ) " />
+    <ProjectToBuild Include="$(ASCDir)common\ASC.Notify.Textile\ASC.Notify.Textile.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\host\ASC.Web.Host\ASC.Web.Host.csproj " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.TeamLabSvc\ASC.TeamLabSvc\ASC.TeamLabSvc.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Feed\ASC.Feed.csproj" />
+    <!-- Jabber -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Jabber\ASC.Xmpp.Core\ASC.Xmpp.Core.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Jabber\ASC.Xmpp.Common\ASC.Xmpp.Common.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Jabber\ASC.Xmpp.Server\ASC.Xmpp.Server.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Jabber\ASC.Xmpp.Host\ASC.Xmpp.Host.csproj" />
+    <!-- Push -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.PushService\ASC.PushService.csproj" Condition=" Exists( '$(ASCDir)module\ASC.PushService\' ) " />
+    <!-- Full Text Index -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.FullTextIndex\ASC.FullTextIndex\ASC.FullTextIndex.csproj" />
+    <!-- Web -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Thrdparty\DotNetOpenAuth.ApplicationBlock\DotNetOpenAuth.ApplicationBlock.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Thrdparty\ASC.Thrdparty\ASC.Thrdparty.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Thrdparty\ASC.FederatedLogin\ASC.FederatedLogin.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api\ASC.Api.Core.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)dev_tools\TMResourceManager\Data\TMResourceData.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\core\ASC.Web.Core\ASC.Web.Core.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\ASC.Web.Studio.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Specific\ASC.Specific.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <!-- Notify -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Notify\ASC.Notify\ASC.Notify.csproj" />
+    <!-- Community -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Community\ASC.Web.Community.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Community\Modules\Blogs\ASC.Web.Community.Blogs.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Community\Modules\Forum\ASC.Web.Community.Forum.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Community\Modules\Bookmarking\ASC.Web.Community.Bookmarking.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Community\Modules\News\ASC.Web.Community.News.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Community\Modules\Wiki\ASC.Web.Community.Wiki.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Community\Modules\Birthdays\ASC.Web.Community.Birthdays.csproj" />
+    <!-- Files -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Files\ASC.Web.Files.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Files.Thirdparty\ASC.Files.Thirdparty.csproj" Condition="Exists('$(ASCDir)module\ASC.Files.Thirdparty\ASC.Files.Thirdparty.csproj')" />
+    <!-- SocialMedia -->
+    <ProjectToBuild Include="$(ASCDir)web\controls\ASC.Web.UserControls.SocialMedia\ASC.Web.UserControls.SocialMedia.csproj" />
+    <!-- Exists condition for open source build -->
+    <!-- CRM -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\CRM\ASC.Web.CRM.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Studio\Products\CRM\' ) " />
+    <!-- PM -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Projects\ASC.Projects.Core\ASC.Projects.Core.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Projects\ASC.Projects.Data\ASC.Projects.Data.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Projects\ASC.Projects.Engine\ASC.Projects.Engine.csproj" />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Projects\ASC.Web.Projects.csproj" />
+    <!-- People-->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\People\ASC.Web.People.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Studio\Products\People\' ) " />
+    <!-- Tools -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Tools\ASC.Web.Tools.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Studio\Products\Tools\' ) " />
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\Products\Tools\Modules\FoodManagement\ASC.Web.Tools.FoodManagement.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Studio\Products\Tools\' ) " />
+    <!-- Mail ActiveUp -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Dns\ActiveUp.Net.Dns.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Dns\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Common\ActiveUp.Net.Common.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Common\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Groupware\ActiveUp.Net.Groupware.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Groupware\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Imap4\ActiveUp.Net.Imap4.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Imap4\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Nntp\ActiveUp.Net.Nntp.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Nntp\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.OpenPGP\ActiveUp.Net.OpenPGP.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.OpenPGP\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Pop3\ActiveUp.Net.Pop3.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Pop3\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Smtp\ActiveUp.Net.Smtp.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Smtp\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Mail\ActiveUp.Net.Mail.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.Mail\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.WhoIs\ActiveUp.Net.WhoIs.csproj" Condition=" Exists( '$(ASCDir)module\ASC.MailSystem\ClassLibrary\ActiveUp.Net.WhoIs\' ) " />
+    <!-- Mail Core -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Mail\ASC.Mail.Core\Net\ASC.Mail.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Mail\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Mail.Aggregator\ASC.Mail.Aggregator\ASC.Mail.Aggregator.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Mail.Aggregator\' ) " />
+    <!-- Mail Services -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Mail.Aggregator\ASC.Mail.Aggregator.CollectionService\ASC.Mail.Aggregator.CollectionService.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Mail.Aggregator\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Mail.Aggregator\ASC.Mail.Watchdog.Service\ASC.Mail.Watchdog.Service.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Mail.Aggregator\' ) " />
+    <!-- Mail Site -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\addons\mail\ASC.Web.Mail.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Studio\addons\mail\ASC.Web.Mail.csproj' ) " />
+    <!-- Autoreply -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Mail\ASC.Mail.Autoreply\ASC.Mail.Autoreply.csproj" />
+    <!-- Api -->
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Employee\ASC.Api.Employee.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Community\ASC.Api.Community.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Documents\ASC.Api.Documents.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Projects\ASC.Api.Projects.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Settings\ASC.Api.Settings.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Calendar\ASC.Api.Calendar.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.CRM\ASC.Api.CRM.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Feed.Aggregator\ASC.Feed.Aggregator.csproj" />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Feed\ASC.Api.Feed.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Mail\ASC.Api.Mail.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Portal\ASC.Api.Portal.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\' ) " />
+    <ProjectToBuild Include="$(ASCDir)module\ASC.Api\ASC.Api.Push\ASC.Api.Push.csproj" Condition=" Exists( '$(ASCDir)module\ASC.Api\ASC.Api.Push' ) " />
+    <!-- Talk -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\addons\talk\ASC.Web.Talk.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Studio\addons\talk\ASC.Web.Talk.csproj' ) " />
+    <!-- Calendar -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Studio\addons\calendar\ASC.Web.Calendar.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Studio\addons\calendar\ASC.Web.Calendar.csproj' ) " />
+    <!-- Mobile -->
+    <ProjectToBuild Include="$(ASCDir)web\studio\ASC.Web.Mobile\ASC.Web.Mobile.csproj" Condition=" Exists( '$(ASCDir)web\studio\ASC.Web.Mobile\ASC.Web.Mobile.csproj' ) " />
+    <!--Uploader-->
+    <ProjectToBuild Include="$(ASCDir)web\services\ASC.Web.Upload\ASC.Web.Upload.csproj" Condition=" Exists( '$(ASCDir)web\services\ASC.Web.Upload\ASC.Web.Upload.csproj' ) " />
+    <!-- Thumbnail service -->
+    <ProjectToBuild Include="$(ASCDir)web\services\ASC.Thumbnail\ASC.Thumbnail.csproj" Condition=" Exists( '$(ASCDir)web\services\ASC.Thumbnail\ASC.Thumbnail.csproj' ) " />
+  </ItemGroup>
+  <Target Name="Build">
+    <Message Text="$(BuildTargets) projects:" />
+    <Message Text="-  %(ProjectToBuild.Filename)%(ProjectToBuild.Extension)" />
+    <Message Text="  " />
+    <Exec Command="taskkill /F /IM w3wp.exe" IgnoreExitCode="true" ContinueOnError="true" />
+    <CreateItem Include="$(ASCDir)\_ci\msbuild\">
+      <Output ItemName="AlToolPath" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="$(ASCDir)\_ci\additionals\private\ASC.snk">
+      <Output ItemName="SNKPath" TaskParameter="Include" />
+    </CreateItem>
+    <MSBuild Projects="@(ProjectToBuild)" Targets="$(BuildTargets)" Properties="Configuration=$(Configuration);AlToolPath=%(AlToolPath.FullPath);KillAsp=0;SignAssembly=$(SignAssemblies);AssemblyOriginatorKeyFile=%(SNKPath.FullPath);" RebaseOutputs="true" StopOnFirstFailure="true" />
+    <ItemGroup>
+      <AdditionalWebStudioFiles Include="$(ASCDir)redistributable\asc\ASC.Api.*.dll;$(ASCDir)redistributable\asc\ASC.Specific.dll;$(ASCDir)redistributable\asc\ASC.Feed.dll;$(ASCDir)redistributable\asc\ASC.Feed.Aggregator.dll" />
+      <AdditionalWebStudioFiles Include="$(ASCDir)redistributable\asc\ASC.Mail.Aggregator.dll;$(ASCDir)redistributable\asc\ASC.ActiveUp.Net.Common.dll;$(ASCDir)redistributable\asc\ASC.ActiveUp.Net.Dns.dll;$(ASCDir)redistributable\asc\ASC.ActiveUp.Net.Imap4.dll;$(ASCDir)redistributable\asc\ASC.ActiveUp.Net.Mail.dll;$(ASCDir)redistributable\asc\ASC.ActiveUp.Net.Pop3.dll;$(ASCDir)redistributable\asc\ASC.ActiveUp.Net.Smtp.dll" />
+      <AdditionalWebStudioFiles Include="$(ASCDir)redistributable\asc\ASC.Files.Thirdparty.dll" Condition="Exists('$(ASCDir)redistributable\asc\ASC.Files.Thirdparty.dll')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(AdditionalWebStudioFiles)" DestinationFolder="$(ASCDir)web\studio\ASC.Web.Studio\bin" />
+  </Target>
+  <Target Name="SetAssemblyInfo">
+    <Message Text="%(ProjectToBuild.Filename)" />
+    <AssemblyInfo CodeLanguage="CS" OutputFile="%(ProjectToBuild.RootDir)%(ProjectToBuild.Directory)Properties\AssemblyInfo.cs" AssemblyProduct="Teamlab" AssemblyTitle="%(ProjectToBuild.Filename)" AssemblyCompany="Ascensio System SIA" AssemblyCopyright="Ascensio System SIA 2012" AssemblyTrademark="Teamlab" AssemblyVersion="1.0.0.0" AssemblyFileVersion="1.0.0.0" />
+  </Target>
+</Project>

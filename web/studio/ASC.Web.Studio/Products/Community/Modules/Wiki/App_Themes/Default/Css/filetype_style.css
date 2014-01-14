@@ -1,0 +1,51 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.ftUnknown, .ftArchive, .ftVideo, .ftAudio, .ftImage, .ftSpreadsheet, .ftPresentation, .ftDocument
+{
+	background-position: 7px center !important;
+	background-repeat:no-repeat;
+}
+
+.ftUnknown
+{
+	background-image:url('../images/filetype/file_na.png');
+}
+.ftArchive
+{
+	background-image:url('../images/filetype/file_zip.png');
+}
+.ftVideo
+{
+	background-image:url('../images/filetype/file_mpg.png');
+}
+.ftAudio
+{
+	background-image:url('../images/filetype/file_sound.png');
+}
+.ftImage
+{
+	background-image:url('../images/filetype/file_image.png');
+}
+.ftSpreadsheet
+{
+	background-image:url('../images/filetype/file_xls.png');
+}
+.ftPresentation
+{
+	background-image:url('../images/filetype/file_ppt.png');
+}
+.ftDocument
+{
+	background-image:url('../images/filetype/file_txt.png');
+}

@@ -1,0 +1,92 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+#treeViewPanelSelector {
+    z-index: 700;
+}
+/*******************************************************************************
+        Import Table
+*******************************************************************************/
+table.fl-tablebase {
+    border-collapse: collapse;
+    width: 100%;
+}
+table.fl-tablebase thead td {
+    color: #82878D;
+    font-size: 12px;
+}
+table.fl-tablebase tbody td {
+    border-left: none;
+    border-right: none;
+    vertical-align: middle;
+}
+table.fl-tablebase tbody td div.import-title {
+    width: 500px;
+    overflow: hidden;
+}
+table.fl-tablebase tbody td div.import-author {
+    width: 120px;
+    overflow: hidden;
+}
+#importDialog table.fl-tablebase td {
+    padding: 4px;
+}
+div.import-data-table {
+    height: 300px;
+    overflow: auto;
+    padding: 8px 10px;
+}
+.import-data-check {
+    width: 30px;
+    text-align: center;
+}
+.import-data-check input {
+    cursor: pointer;
+}
+.import-data-author {
+    width: 125px;
+}
+.import-data-date {
+    white-space: nowrap;
+    width: 125px;
+}
+#importToFolder {
+    padding: 8px 0;
+}
+#importToFolderBtn {
+    margin: 0 2px -3px;
+}
+a.import-tree {
+    background: url("images/tree.png") no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+/*******************************************************************************
+   Import Panel
+*******************************************************************************/
+
+#importLoginDialog .containerBodyBlock input {
+    margin-top: 4px;
+    width: 350px;
+}
+#importLoginDialog .field-panel {
+    margin-bottom: 15px;
+}
+/*******************************************************************************
+    Mobile
+*******************************************************************************/
+body.mobile div.import-data-table {
+    width: auto !important;
+}

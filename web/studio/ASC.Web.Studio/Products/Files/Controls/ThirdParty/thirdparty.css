@@ -1,0 +1,225 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.BoxNet {
+    background-image: url("images/thirdparty_boxnet.png") !important;
+}
+.BoxNetBig {
+    background-image: url("images/box_net.png") !important;
+}
+.DropBox {
+    background-image: url("images/thirdparty_dropbox.png") !important;
+}
+.DropBoxBig {
+    background-image: url("images/drop_box.png") !important;
+}
+.Google {
+    background-image: url("images/thirdparty_google.png") !important;
+}
+.GoogleBig {
+    background-image: url("images/google_drive.png") !important;
+}
+.SkyDrive {
+    background-image: url("images/thirdparty_skydrive.png") !important;
+}
+.SkyDriveBig {
+    background-image: url("images/sky_drive.png") !important;
+}
+
+/*******************************************************************************
+    Third Party
+*******************************************************************************/
+#thirdPartyNamePass,
+#thirdPartyGetToken {
+    margin-bottom: 25px;
+}
+#thirdPartyName,
+#thirdPartyPass {
+    margin-top: 4px;
+    width: 350px;
+    height: 20px;
+}
+#thirdPartyPassText {
+    margin-top: 15px;
+}
+#thirdPartyTitle {
+    background-position: 7px -23px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: 1px solid #C7C7C7;
+    height: 22px;
+    margin-top: 4px;
+    padding-left: 30px;
+    width: 315px;
+}
+#thirdPartyLabelCorporate {
+    display: block;
+    line-height: 23px;
+    margin-top: 12px;
+}
+#thirdPartyCorporate {
+    float: left;
+    margin-right: 7px;
+    margin-top: 5px;
+}
+/*******************************************************************************
+    Top menu
+*******************************************************************************/
+#addThirdPartyPanel a {
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
+}
+/*******************************************************************************
+    Content
+*******************************************************************************/
+.file-row .thumb-folder .provider-key {
+    background-color: transparent;
+    background-position: 0 -52px;
+    background-repeat: no-repeat;
+    bottom: 0;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    width: 18px;
+}
+#filesMainContent.compact .thumb-folder .provider-key,
+.files-news-panel .thumb-folder .provider-key {
+    background-position: 0 -80px;
+    height: 14px;
+    width: 14px;
+}
+.jstree .third-party-entry .jstree-icon {
+    background-position: 0 0;
+}
+.without-third-party .jstree .third-party-entry {
+    display: none;
+}
+
+/*******************************************************************************
+    Setting thirdParty
+*******************************************************************************/
+#thirdPartyAccountContainer,
+#emptyThirdPartyContainer {
+    display: none;
+    min-width: 600px;
+    overflow: hidden;
+}
+.third-party-connect-account-container {
+    float: left;
+}
+.emptyScrCtrl .emptyScrTd .emptyScrBttnPnl label {
+    font-size: 13px;
+}
+.empty-container-add-account {
+    background-position: 0 -52px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    padding: 0 0 5px 25px;
+}
+#thirdPartyAccountList {
+    margin: 20px 0;
+}
+.account-row {
+    border-left: medium none;
+    border-right: medium none;
+    margin-bottom: -1px;
+}
+.account-row:hover .account-header-container {
+    background-color: #E6E6E6;
+}
+.account-row:hover .account-settings-container {
+    background-color: #F2F2F2;
+}
+.account-header-container {
+    padding: 5px 10px;
+    height: 40px;
+}
+.account-icon {
+    background-position: 0 -104px;
+    background-repeat: no-repeat;
+    float: left;
+    height: 40px;
+    width: 40px;
+}
+.account-popup-icon {
+    height: 100px;
+    margin: 16px 0;
+    width: 100px;
+}
+.account-provider-title {
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 40px;
+    padding-left: 10px;
+    width: 100px;
+}
+.account-customer-title {
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 10px;
+    width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.account-settings-container {
+    border-top: 1px dotted #D1D1D1;
+    display: none;
+    padding: 15px 0;
+}
+.account-log-pass-container {
+    display: none;
+    width: 500px;
+    margin: 0 auto;
+}
+.account-folder-settings-container {
+    width: 500px;
+    margin: 0 auto;
+}
+.account-field-row {
+    margin-bottom: 10px;
+}
+.account-field-title {
+    float: left;
+    line-height: 20px;
+    width: 100px;
+    text-align: right;
+}
+.account-field-body {
+    float: left;
+    margin-left: 10px;
+    width: 300px;
+}
+.account-field-body .textEdit {
+    width: 300px;
+}
+.account-field-body label {
+    font-size: 11px;
+    display: block;
+    margin-left: 7px;
+    margin-top: 7px;
+}
+.account-field-body label input {
+    float: left;
+    margin: 0 5px 0 0;
+}
+.account-action-container {
+    margin-left: 110px;
+}
+.account-row .menu-small {
+    float: right;
+}

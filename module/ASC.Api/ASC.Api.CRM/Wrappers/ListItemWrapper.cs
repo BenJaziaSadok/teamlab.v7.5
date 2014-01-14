@@ -1,0 +1,404 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+#region Import
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using ASC.CRM.Core;
+using ASC.CRM.Core.Entities;
+using ASC.Web.CRM.Configuration;
+using ASC.Web.Core.Utility.Skins;
+
+#endregion
+
+namespace ASC.Api.CRM.Wrappers
+{
+    #region History Category
+
+    [DataContract(Name = "historyCategoryBase", Namespace = "")]
+    public class HistoryCategoryBaseWrapper : ListItemWrapper
+    {
+        public HistoryCategoryBaseWrapper():base(0)
+        {
+
+        }
+
+        public HistoryCategoryBaseWrapper(ListItem listItem)
+            : base(listItem)
+        {
+            if (!String.IsNullOrEmpty(listItem.AdditionalParams))
+                ImagePath = WebImageSupplier.GetAbsoluteWebPath(listItem.AdditionalParams, ProductEntryPoint.ID);
+        }
+
+        [DataMember]
+        public String ImagePath { get; set; }
+
+        public static HistoryCategoryBaseWrapper GetSample()
+        {
+           return new HistoryCategoryBaseWrapper
+                       {
+                           ID = 30,
+                           Title = "Lunch",
+                           SortOrder = 10,
+                           Color = String.Empty,
+                           Description = "",
+                           ImagePath = "path to image"
+                       };
+        }
+    }
+
+    [DataContract(Name = "historyCategory", Namespace = "")]
+    public class HistoryCategoryWrapper : HistoryCategoryBaseWrapper
+    {
+        public HistoryCategoryWrapper():base()
+        {
+
+        }
+
+        public HistoryCategoryWrapper(ListItem listItem)
+            : base(listItem)
+        {
+
+        }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public int RelativeItemsCount { get; set; }
+
+        public static new HistoryCategoryWrapper GetSample()
+        {
+           return new HistoryCategoryWrapper
+                       {
+                           ID = 30,
+                           Title = "Lunch",
+                           SortOrder = 10,
+                           Color = String.Empty,
+                           Description = "",
+                           ImagePath = "path to image",
+                           RelativeItemsCount = 1
+                       };
+        }
+    }
+
+    #endregion
+
+    #region Deal Milestone
+
+    [DataContract(Name = "opportunityStagesBase", Namespace = "")]
+    public class DealMilestoneBaseWrapper : ListItemWrapper
+    {
+        public DealMilestoneBaseWrapper()
+            : base(0)
+        {
+
+        }
+
+        public DealMilestoneBaseWrapper(DealMilestone dealMilestone)
+            : base(dealMilestone.ID)
+        {
+            SuccessProbability = dealMilestone.Probability;
+            StageType = dealMilestone.Status;
+            Color = dealMilestone.Color;
+            Description = dealMilestone.Description;
+            Title = dealMilestone.Title;
+        }
+
+        [DataMember]
+        public int SuccessProbability { get; set; }
+
+        [DataMember]
+        public DealMilestoneStatus StageType { get; set; }
+
+        public static DealMilestoneBaseWrapper GetSample()
+        {
+            return new DealMilestoneBaseWrapper
+            {
+                ID = 30,
+                Title = "Discussion",
+                SortOrder = 2,
+                Color = "#B9AFD3",
+                Description = "The potential buyer showed his/her interest and sees how your offering meets his/her goal",
+                StageType = DealMilestoneStatus.Open,
+                SuccessProbability = 20
+            };
+        }
+
+    }
+
+    [DataContract(Name = "opportunityStages", Namespace = "")]
+    public class DealMilestoneWrapper :  DealMilestoneBaseWrapper
+    {
+        public DealMilestoneWrapper()
+            : base()
+        {
+
+        }
+
+        public DealMilestoneWrapper(DealMilestone dealMilestone)
+            : base(dealMilestone)
+        {
+
+        }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public int RelativeItemsCount { get; set; }
+
+        public static new DealMilestoneWrapper GetSample()
+        {
+             return new DealMilestoneWrapper
+            {
+                ID = 30,
+                Title = "Discussion",
+                SortOrder = 2,
+                Color = "#B9AFD3",
+                Description = "The potential buyer showed his/her interest and sees how your offering meets his/her goal",
+                StageType = DealMilestoneStatus.Open,
+                SuccessProbability = 20,
+                RelativeItemsCount = 1
+            };
+          
+        }
+    }
+
+    #endregion
+
+    #region Task Category
+
+    [DataContract(Name = "taskCategoryBase", Namespace = "")]
+    public class TaskCategoryBaseWrapper : ListItemWrapper
+    {
+        public TaskCategoryBaseWrapper()
+            :base(0)
+        {
+
+        }
+
+        public TaskCategoryBaseWrapper(ListItem listItem)
+            : base(listItem)
+        {
+            ImagePath = WebImageSupplier.GetAbsoluteWebPath(listItem.AdditionalParams, ProductEntryPoint.ID);
+        }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public String ImagePath { get; set; }
+
+        public static TaskCategoryBaseWrapper GetSample()
+        {
+            return new TaskCategoryBaseWrapper
+            {
+                ID = 30,
+                Title = "Appointment",
+                SortOrder = 2,
+                Description = "",
+                ImagePath = "path to image"
+            };
+        }
+    }
+
+    [DataContract(Name = "taskCategory", Namespace = "")]
+    public class TaskCategoryWrapper : TaskCategoryBaseWrapper
+    {
+        public TaskCategoryWrapper()
+            :base()
+        {
+
+        }
+
+        public TaskCategoryWrapper(ListItem listItem)
+            : base(listItem)
+        {
+
+        }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public int RelativeItemsCount { get; set; }
+
+        public static new TaskCategoryWrapper GetSample()
+        {
+            return new TaskCategoryWrapper
+            {
+                ID = 30,
+                Title = "Appointment",
+                SortOrder = 2,
+                Description = "",
+                ImagePath = "path to image",
+                RelativeItemsCount = 1
+            };
+        }
+    }
+
+    #endregion
+
+    #region Contact Status
+
+    [DataContract(Name = "contactStatusBase", Namespace = "")]
+    public class ContactStatusBaseWrapper : ListItemWrapper
+    {
+        public ContactStatusBaseWrapper():
+            base(0)
+        {
+
+        }
+
+        public ContactStatusBaseWrapper(ListItem listItem)
+            : base(listItem)
+        {
+
+        }
+
+        public static ContactStatusBaseWrapper GetSample()
+        {
+            return new ContactStatusBaseWrapper
+            {
+                ID = 30,
+                Title = "Cold",
+                SortOrder = 2,
+                Description = ""
+            };
+            
+        }
+    }
+
+    [DataContract(Name = "contactStatus", Namespace = "")]
+    public class ContactStatusWrapper : ContactStatusBaseWrapper
+    {
+        public ContactStatusWrapper():
+            base()
+        {
+
+        }
+
+        public ContactStatusWrapper(ListItem listItem)
+            : base(listItem)
+        {
+
+        }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public int RelativeItemsCount { get; set; }
+
+        public static new ContactStatusWrapper GetSample()
+        {
+            return new ContactStatusWrapper
+            {
+                ID = 30,
+                Title = "Cold",
+                SortOrder = 2,
+                Description = "",
+                RelativeItemsCount = 1
+            };
+            
+        }
+    }
+
+    #endregion
+
+    #region Contact Type
+
+    [DataContract(Name = "contactTypeBase", Namespace = "")]
+    public class ContactTypeBaseWrapper : ListItemWrapper
+    {
+        public ContactTypeBaseWrapper():
+            base(0)
+        {
+
+        }
+
+        public ContactTypeBaseWrapper(ListItem listItem)
+            : base(listItem)
+        {
+
+        }
+
+        public static ContactTypeBaseWrapper GetSample()
+        {
+            return new ContactTypeBaseWrapper
+            {
+                ID = 30,
+                Title = "Client",
+                SortOrder = 2,
+                Description = ""
+            };
+            
+        }
+    }
+
+    [DataContract(Name = "contactType", Namespace = "")]
+    public class ContactTypeWrapper : ContactTypeBaseWrapper
+    {
+        public ContactTypeWrapper():
+            base()
+        {
+
+        }
+
+        public ContactTypeWrapper(ListItem listItem)
+            : base(listItem)
+        {
+
+        }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public int RelativeItemsCount { get; set; }
+
+        public static new ContactTypeWrapper GetSample()
+        {
+            return new ContactTypeWrapper
+            {
+                ID = 30,
+                Title = "Client",
+                SortOrder = 2,
+                Description = "",
+                RelativeItemsCount = 1
+            };
+            
+        }
+    }
+
+    #endregion
+
+
+    [DataContract(Name = "listItem", Namespace = "")]
+    public abstract class ListItemWrapper : ObjectWrapperBase
+    {
+        protected ListItemWrapper(int id)
+            : base(id)
+        {
+
+        }
+
+        protected ListItemWrapper(ListItem listItem)
+            : base(listItem.ID)
+        {
+            Title = listItem.Title;
+            Description = listItem.Description;
+            Color = listItem.Color;
+            SortOrder = listItem.SortOrder;
+        }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public String Title { get; set; }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public String Description { get; set; }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public String Color { get; set; }
+
+        [DataMember(IsRequired = false, EmitDefaultValue = false)]
+        public int SortOrder { get; set; }
+    }
+}

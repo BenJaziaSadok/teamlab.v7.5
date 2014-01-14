@@ -1,0 +1,3 @@
+net stop TeamlabOfficeServer
+net stop TeamlabOfficeServerMail
+net stop TeamlabOfficeServerMailHelper

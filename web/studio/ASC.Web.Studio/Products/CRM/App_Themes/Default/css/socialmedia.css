@@ -1,0 +1,204 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/* User Controls ListFacebookUserInfoView.ascx, ListTwitterUserInfoView.ascx */
+#sm_tbl_UserList {
+    border-collapse: collapse;
+    padding: 0px;
+    width: 100%;
+}
+#sm_tbl_UserList .sm_tbl_UserList_clmnAvatar {
+    width: 50px;
+    text-align: center;
+    padding: 5px 0;
+}
+#sm_tbl_UserList .sm_tbl_UserList_clmnUserName {
+    padding: 5px 0 5px 10px;
+}
+#sm_tbl_UserList .sm_tbl_UserList_clmnBtRelate {
+    width: 80px;
+    padding: 5px 5px 5px 10px;
+}
+/* User controls TwitterUserInfoView.ascx, FacebookUserInfoView.ascx */
+#sm_RelationWindow_InternalContainer {
+    width: 100%;
+}
+#sm_RelationWindow_InternalContainer .sm_RelationWindow_BackButton {
+    margin: -10px 0 5px 0;
+}
+#sm_RelationWindow_InternalContainer .sm_RelationWindow_Avatar {
+    float: left;
+    width: 50%;
+    height: 250px;
+    max-height: 400px;
+    overflow: auto;
+}
+#sm_RelationWindow_InternalContainer .sm_RelationWindow_Items {
+    float: right;
+    width: 50%;
+    max-height: 400px;
+}
+/* User control User Search View.ascx */
+#sm_tbl_UserSearchSettings {
+    border-collapse: collapse;
+    padding: 0px;
+    width: 100%;
+    empty-cells: show;
+    margin-bottom: 10px;
+}
+#divSearchResults {
+    overflow: auto;
+    max-height: 400px;
+    width: 100%;
+}
+/* ContactDetailsView - Window with user avatars*/
+#divLoadPhotoFromSocialMedia {
+    width: 100%;
+    height: 50px;
+    margin-top: -16px;
+}
+#divLoadPhotoWindow h4 {
+    margin-bottom: 5px;
+}
+
+#divLoadPhotoFromPC .fileUploadDscr {
+    margin-left: 12px;
+}
+#divLoadPhotoFromPC .fileUploadError {
+    color: #CC0000;
+    display: none;
+    font: 12px Tahoma;
+    margin-left: 12px;
+}
+#divImagesHolder {
+    width: 100%;
+    height: 70px;
+    overflow: auto;
+    display: none;
+}
+#divImagesHolder > div.describe-text {
+    margin-top: 4px;
+}
+#divLoadPhotoDefault {
+    margin-top: 10px;
+}
+#divAjaxImageContainerPhotoLoad {
+    margin-left: 220px;
+    display: none;
+    position: absolute;
+    top: 185px;
+}
+.ImageHolderOuter {
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    vertical-align: top;
+    cursor: pointer;
+    border: 1px solid white;
+}
+.ImageHolderOuter img {
+    padding: 2px;
+}
+.ImageHolderOuter img:hover {
+    border: 2px solid #1A6DB3 !important;
+    padding: 0px;
+}
+.AvatarImage {
+    width: 50px;
+    height: 50px;
+}
+/* ContactActionView */
+
+#divSMProfilesWindow {
+    display: none;
+    width: 420px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#divSMProfilesWindow .cancel_cross {
+    background: url("../images/icons.png") 0 -760px no-repeat transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    right: -5px;
+    top: -5px;
+    width: 16px;
+    position: absolute;
+}
+
+#divSMProfilesWindow .divNoProfiles {
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+}
+#divSMProfilesWindow .divWait, #divSMContactsSearchContainer .divWaitForSearching {
+    text-align: center;
+    display: none;
+}
+#divSMContactsSearchContainer .divWaitForAdding {
+    display: none;
+}
+#divSMProfilesWindow .divHeader {
+    margin:15px;
+    text-align: center;
+    position: relative;
+}
+   
+#divSMProfilesWindow div.popup-corner-left {
+    background: url("../images/icons.png") -20px -518px no-repeat transparent;
+    height: 15px;
+    margin-left: -9px;
+    margin-top: 25px;
+    position: absolute;
+    width: 12px;
+}
+
+#divSMProfilesWindow .divSMProfilesWindowBody {
+    margin: 10px;
+    max-height: 200px;
+    min-height: 30px;
+    overflow: auto;
+}
+
+#divSMContactsSearchContainer .divNoProfiles{
+    display: none;
+    text-align: center; 
+    line-height: 50px;
+}
+
+.crunhbaseLink {
+    background: url("../images/crunchbase.png") no-repeat;
+    display: inline-block;
+    height: 21px;
+    line-height: 21px;
+    padding-left: 27px;
+    vertical-align: middle;
+}
+
+#tblCompanyFields {
+    margin-left: 20px;
+}
+#tblCompanyFields tr {
+    line-height: 24px;
+    height: 24px;
+    vertical-align: top;
+}
+#tblCompanyFields td input[type="checkbox"] {
+    padding: 1px;
+    vertical-align: middle;
+    margin-top: -1px;
+}

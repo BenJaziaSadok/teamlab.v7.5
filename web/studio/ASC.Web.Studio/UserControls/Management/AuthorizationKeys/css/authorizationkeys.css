@@ -1,0 +1,55 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.auth-service-text {
+    margin-bottom: 38px;
+}
+
+.auth-service-block {
+    width: 850px;
+    margin-bottom: 45px;
+}
+
+.auth-service-item {
+    float: left;
+    margin: 0 58px 43px 0;
+}
+.auth-service-name {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.auth-service-id {
+    display: block;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+.auth-service-key {
+    display: block;
+    width: 350px;
+}
+
+.auth-service-block .button {
+    float: left;
+}
+
+@media all and (max-width: 1200px) {
+    .auth-service-block {        
+        width: 690px;
+    }
+    .auth-service-key {      
+        width: 280px;
+    }
+}

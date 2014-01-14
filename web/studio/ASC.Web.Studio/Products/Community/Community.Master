@@ -1,0 +1,24 @@
+﻿<%@ Assembly Name="ASC.Web.Community" %>
+
+<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masters/BaseTemplate.master" CodeBehind="Community.Master.cs" Inherits="ASC.Web.Community.CommunityMasterPage" %>
+<%@ MasterType TypeName="ASC.Web.Studio.Masters.BaseTemplate" %>
+<%@ Register TagPrefix="ucc" Namespace="ASC.Web.Studio.Controls.Common" Assembly="ASC.Web.Studio" %>
+
+<asp:Content ContentPlaceHolderID="HeaderContent" runat="server">
+    <asp:ContentPlaceHolder ID="CommunityPageHeader" runat="server" />
+    <ucc:feedcontrol runat="server" title="Teamlab Community" AutoFill="true" />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="TopContent" runat="server">
+    <asp:ScriptManager runat="server" EnableScriptGlobalization="True" EnableScriptLocalization="True" EnableCdn="True" />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="PageContent" runat="server">
+    <asp:ContentPlaceHolder ID="CommunityPageContent" runat="server" />
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="SidePanel" runat="server">
+    <asp:PlaceHolder ID="_sideNavigation" runat="server" />
+    <asp:ContentPlaceHolder ID="CommunitySidePanel" runat="server" />
+</asp:Content>
+

@@ -1,0 +1,210 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+ListTaskView.ascx
+*******************************************************************************/
+.activeTaskTitles{
+    color: #1A6DB3 !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+.lateTaskTitles{
+    color: #CC3333 !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+.closedTaskTitles{
+    color: #83888D !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+#taskList .divForTaskTitle{
+    max-width: 600px;
+    overflow: hidden;
+    padding-left: 1px;
+    text-overflow: ellipsis;
+}
+#taskList .divForEntity{
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#taskList .divForUser {
+    overflow: hidden;
+    width: 116px;
+}
+#taskList .divForUser:not(.removedUser) span{
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 12px;
+    margin-bottom: 1px;
+    white-space: nowrap;
+}
+#taskList tr:hover .divForUser:not(.removedUser) span{
+    padding-top:1px;
+    border-bottom: 1px dotted #000000;
+}
+
+#taskList .divForEntity .crm-peopleInfoCardLink,
+#taskList .divForEntity .crm-companyInfoCardLink{
+    display: inline;
+}
+#taskFilterContainer {
+    display:none;
+    margin-bottom: 20px;
+}
+
+#taskTable tbody tr{
+    height: 50px;
+    width: 100%;
+}
+#taskTable tbody td{
+    text-align: left;
+}
+#taskTable thead td{
+    height:0px;
+    padding:0px;
+}
+.taskRow{
+    min-height: 50px;
+    border-top:medium none;
+    border-right:medium none;
+    border-left:medium none;
+}
+#taskTable .ajax_edit_task{
+    margin-left: 10px;
+}
+#totalTasksOnPage {
+    margin-right: 20px;
+}
+/*******************************************************************************
+TaskListView: custom contactSelector filter
+*******************************************************************************/
+
+
+#selector_taskContactSelectorForFilter{
+    display: inline-block;
+    margin: 1px 0 0 0;
+}
+#selector_taskContactSelectorForFilter > div{
+    margin: 0 !important;
+}
+#selectorContent_taskContactSelectorForFilter_0{
+    margin: 0 !important;
+    width: 250px;
+}
+#selectorContent_taskContactSelectorForFilter_0 table td{
+    border: 0 none;
+}
+#infoContent_taskContactSelectorForFilter_0 > table{
+    line-height: 12px;
+}
+#infoContent_taskContactSelectorForFilter_0 > table .splitter{
+    display: inline-block;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#infoContent_taskContactSelectorForFilter_0 > table .crm-editLink{
+    position: relative;
+    top: -4px;
+}
+#selectorContent_taskContactSelectorForFilter_0 .textEdit{
+    height:14px;
+    font-size: 12px;
+}
+#searchImg_taskContactSelectorForFilter_0,
+#loaderImg_taskContactSelectorForFilter_0,
+#selectorContent_taskContactSelectorForFilter_0 > table .crossButton{
+    height: 14px;
+}
+
+#tasksAdvansedFilter div.advansed-filter-container div.advansed-filter-filters div.filter-item-custom-contact span.selector-wrapper{
+    max-width: 260px;
+}
+
+/*******************************************************************************
+taskActionMenu and taskStatusesMenu
+*******************************************************************************/
+
+#taskStatusListContainer li {
+    background-position: 2px center;
+    background-repeat: no-repeat;
+    padding-left: 22px;
+}
+#taskStatusListContainer li.open,
+#taskTable .changeStatusCombobox .open, #taskTable .changeStatusCombobox .overdue {
+    background: url("../images/icons.png") 0 -535px no-repeat transparent;
+}
+#taskStatusListContainer li.closed,
+#taskTable .changeStatusCombobox .closed {
+    background: url("../images/icons.png") 0 -555px no-repeat transparent;
+}
+#taskStatusListContainer li.selected {
+}
+
+#taskTable tr .check {
+   margin-left: 4px;
+}
+#taskTable tr .changeStatusCombobox {
+    border: 1px solid transparent;
+    display: block;
+    height: 22px;
+    margin-top: 3px;
+    text-align: center;
+    width: 38px;
+}
+#taskTable .changeStatusCombobox.canEdit {
+    background: url("../images/tr_off.png") no-repeat scroll 24px 9px white;
+    border: 1px solid #D1D1D1;
+    cursor: pointer;
+}
+#taskTable .changeStatusCombobox.canEdit {
+    -moz-border-radius:3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+#taskTable tr:hover .changeStatusCombobox.canEdit,
+#taskTable .changeStatusCombobox.canEdit.selected {
+    background: url("../images/tr_on.png") no-repeat scroll 24px 9px, #F6F6F6; 
+    background: url("../images/tr_on.png") no-repeat scroll 24px 9px, -moz-linear-gradient(bottom , #CECECE, #F6F6F6);/* Firefox 3.6+ */
+    background: url("../images/tr_on.png") no-repeat scroll 24px 9px, -webkit-linear-gradient(bottom, #CECECE, #F6F6F6); /* Chrome 10+, Safari 5.1+ */
+    background: url("../images/tr_on.png") no-repeat scroll 24px 9px, -o-linear-gradient(bottom, #CECECE, #F6F6F6); /* Opera 11.10+ */
+    background: url("../images/tr_on.png") no-repeat scroll 24px 9px, -ms-linear-gradient(center bottom, #CECECE, #F6F6F6); /* IE10 */
+    background: url("../images/tr_on.png") no-repeat scroll 24px 9px, linear-gradient(bottom, #CECECE, #F6F6F6); /* CSS3 */
+    border-color: #A8A8A8;
+}
+
+#taskTable .changeStatusCombobox span {
+    display: block;
+    height: 16px;
+    margin: 0 0 3px 4px;
+    width: 16px;
+}
+/*******************************************************************************
+TaskActionView.ascx
+*******************************************************************************/
+#taskDeadline {
+    width: 75px;
+}
+#addTaskPanel .connectWithContactContainer {
+    max-height:145px;
+    overflow-y:auto;
+}
+#taskAlertInterval {
+    min-width: 130px;
+}

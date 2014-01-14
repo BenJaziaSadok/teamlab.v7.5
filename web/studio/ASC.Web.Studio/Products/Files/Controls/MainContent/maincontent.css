@@ -1,0 +1,994 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+/*******************************************************************************
+    header
+*******************************************************************************/
+#filesListUp {
+    background: url("images/to-up.png") no-repeat scroll 0 5px transparent;
+    color: #666;
+    cursor: pointer;
+    display: none;
+    float: right;
+    font-size: 11px;
+    max-width: 50px;
+    overflow: hidden;
+    padding: 3px 25px 0 16px;
+    white-space: nowrap;
+}
+.stick-panel #filesListUp {
+    display: list-item;
+}
+#pageNavigatorHolder {
+    display: none;
+    padding-top: 20px;
+    text-align: center;
+}
+#filesSelectorPanel .corner-top {
+    left: 22px;
+}
+/*************************************************************
+    Info Panel
+*************************************************************/
+.files-info-panel {
+    background: url("images/info_16.png") no-repeat 10px 10px #EEF6FD;
+    color: #666668;
+    display: none;
+    font-size: 13px;
+    left: 50%;
+    margin: 0;
+    max-width: 900px;
+    overflow: hidden;
+    padding: 10px 10px 10px 35px;
+    position: fixed;
+    top: 0;
+    vertical-align: middle;
+    z-index: 700;
+}
+.files-info-panel.warn {
+    background: url("images/warning-sing.png") no-repeat 10px 13px #FBFAD5;
+}
+/*************************************************************
+    Loading
+*************************************************************/
+.file-row.checkloading .checkbox {
+    background: url("images/throbber.gif") no-repeat 0 0;
+    margin-bottom: 2px;
+    margin-top: 6px;
+}
+/*******************************************************************************
+    switchViewFolder
+*******************************************************************************/
+#switchViewFolder {
+    float: right;
+}
+#switchToNormal,
+#switchToCompact {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url("images/switch_view.png");
+    display: inline-block;
+    height: 21px;
+    width: 24px;
+}
+#switchToNormal {
+    margin-right: -3px;
+}
+#switchViewFolder.compact #switchToNormal {
+    background-position: 0 -26px;
+    cursor: pointer;
+}
+#switchViewFolder.compact #switchToNormal:hover {
+    background-position: 0 -52px;
+}
+#switchToCompact {
+    background-position: -29px -26px;
+    cursor: pointer;
+}
+#switchToCompact:hover {
+    background-position: -29px -52px;
+}
+#switchViewFolder.compact #switchToCompact {
+    background-position: -29px 0;
+    cursor: default;
+}
+/*******************************************************************************
+   Advansed Filter
+*******************************************************************************/
+#filterContainer {
+    height: 30px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+/*******************************************************************************
+    Content Menu
+*******************************************************************************/
+/*content border 1px for dragdrop*/
+ul.contentMenu {
+    margin-right: 1px;
+    margin-left: 1px;
+}
+/*************************************************************
+   To Parent Folder
+*************************************************************/
+#toParentFolder {
+    border-bottom: 1px solid #D1D1D1;
+    display: none;
+    line-height: 32px;
+    margin-bottom: -1px;
+    height: 32px;
+}
+#toParentFolderLink {
+    background: url("images/to-up.png") no-repeat 8px -10px transparent;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 5px 5px 32px;
+    text-decoration: none;
+}
+/*************************************************************
+   Main Content
+*************************************************************/
+#mainContent {
+    border: 1px solid transparent;
+    min-height: 450px;
+    min-width: 660px;
+    overflow: hidden;
+}
+#mainContent.selected {
+    border: 1px dashed #bbb;
+}
+#filesMainContent {
+    display: none;
+    margin: 0 0 20px;
+    padding: 0;
+}
+.file-row div {
+    float: left;
+}
+.file-row {
+    border-bottom: 1px solid #d1d1d1;
+    list-style: none outside none;
+    padding: 6px 0 5px;
+    z-index: 100;
+}
+.file-row,
+.file-row a,
+.file-row span,
+.file-row div,
+.file-row input {
+    outline: none;
+}
+.row-selected {
+    background-color: #f2f2f2;
+}
+.row-over:hover {
+    background-color: #e5e5e5;
+}
+.file-row .thumb-file,
+.file-row .thumb-folder {
+    cursor: pointer;
+    margin: 2px 16px 0 0;
+    overflow: hidden;
+    position: relative;
+}
+.file-row .checkbox {
+    margin: 8px 8px 0 4px;
+    height: 28px;
+    width: 28px;
+}
+.file-row.new-folder .checkbox,
+.file-row.new-file .checkbox,
+.file-row.row-rename .checkbox,
+.file-row.new-folder .menu-small,
+.file-row.new-file .menu-small,
+.file-row.row-rename .menu-small,
+.file-row.checkloading.new-folder .checkbox,
+.file-row.checkloading.new-file .checkbox,
+.file-row.checkloading.row-rename .checkbox,
+.file-row.checkloading .checkbox input,
+.file-row.checkloading .menu-small,
+.file-row.checkloading .share-action,
+.file-row.checkloading .pencil {
+    visibility: hidden;
+}
+.file-row.checkloading.new-folder .entry-title,
+.file-row.checkloading.new-file .entry-title,
+.file-row.checkloading.row-rename .entry-title {
+    margin: 6px 0 8px;
+}
+* + html .file-row .checkbox input {
+    padding: 0;
+    margin: -1px 0 0 0;
+}
+.file-row .entry-title {
+    float: none;
+    z-index: 90;
+    color: #333;
+    font-family: Arial;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.file-row .entry-title,
+.file-row .entry-descr {
+    width: 413px;
+}
+.file-row.row-rename .entry-title,
+#filesMainContent.compact .file-row.row-rename .entry-title,
+.file-row.row-rename .entry-descr {
+    width: 290px;
+}
+.file-row .entry-title .name {
+    max-width: 249px;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.file-row.folder-row .entry-title .name {
+    max-width: 349px;
+}
+.file-row.row-rename .entry-title .name,
+.file-row.folder-row.row-rename .entry-title .name 
+{
+    max-width: 280px;
+}
+.file-row .entry-title .name a {
+    cursor: pointer;
+    color: #333;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+}
+.file-row .entry-title .name a .file-extension {
+    color: #A2A2A2;
+    display: inline;
+    font-size: 14px;
+    font-weight: normal;
+}
+.file-row.row-over:hover .entry-title .name a {
+    text-decoration: underline;
+}
+.trashFiles .file-row.row-over:hover .entry-title .name a {
+    text-decoration: none;
+}
+#filesMainContent .file-row .input-rename {
+    font-size: 16px;
+    height: 18px;
+    cursor: text;
+    color: #333;
+    font-family: Arial;
+    font-weight: bold;
+    width: 260px;
+}
+.row-rename div.entry-info {
+    width: 300px;
+}
+#filesMainContent .new-folder .input-rename,
+#filesMainContent .new-file .input-rename,
+#filesMainContent .row-rename .input-rename {
+    margin-top: 7px;
+}
+.rename-action {
+    margin-top: 10px;
+}
+.new-folder .name-aplly,
+.new-file .name-aplly,
+.row-rename .name-aplly {
+    background: url("images/name_action.png") no-repeat scroll 0 0 transparent;
+}
+.new-folder .name-cancel,
+.new-file .name-cancel,
+.row-rename .name-cancel {
+    background: url("images/name_action.png") no-repeat scroll -19px 0 transparent;
+}
+.new-folder .name-aplly,
+.new-file .name-aplly,
+.row-rename .name-aplly,
+.new-folder .name-cancel,
+.new-file .name-cancel,
+.row-rename .name-cancel {
+    height: 16px;
+    width: 16px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.row-rename .entry-title .name a,
+.row-rename .entry-descr,
+.row-rename .pencil,
+.row-rename .version,
+.row-rename .is-original,
+.row-rename .is-new,
+.row-rename .share-action,
+.row-rename .entry-descr-compact,
+.file-row.new-folder .entry-descr,
+.file-row.new-file .entry-descr,
+.file-row.new-file .pencil,
+.file-row.new-file .share-action {
+    display: none !important;
+}
+.file-row .version {
+    background-color: #e6e6e6;
+    color: #83888d;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 2px 5px;
+    margin: 0 0 0 8px;
+    max-width: 60px;
+    overflow: hidden;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+.row-over:hover .version {
+    background-color: #d9d9d9;
+}
+.file-row .is-original {
+    cursor: default;
+    font-size: 10px;
+    padding: 2px 5px;
+    margin: 0 0 0 8px;
+    max-width: 40px;
+    overflow: hidden;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    background-color: #e6e6e6;
+    color: #83888d;
+    max-width: 60px;
+}
+.row-over:hover .is-original {
+    background-color: #d9d9d9;
+}
+.file-row .entry-descr,
+.file-row .entry-descr-compact {
+    color: #787878;
+    font-family: Arial;
+    font-size: 10px;
+    cursor: default;
+    float: none;
+    z-index: 90;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.file-row .entry-descr .create-by,
+.file-row .entry-descr-compact {
+    display: inline-block;
+    max-width: 280px;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+.file-row .entry-descr-compact {
+    display: none;
+    float: right;
+    font-size: 12px;
+    margin-left: 8px;
+    margin-top: 7px;
+    text-overflow: ellipsis;
+    text-align: right;
+    width: 140px;
+}
+.file-row.cannot-edit .entry-descr .create-by {
+    max-width: 405px;
+}
+.file-editing {
+    display: none;
+}
+.file-row.on-edit .file-edit {
+    display: none !important;
+}
+
+.file-row.on-edit .file-editing {
+    cursor: default;
+    display: block;
+}
+.file-row.on-edit.can-coauthoring .file-editing {
+    cursor: pointer;
+}
+.menu-small {
+    margin: 8px 10px 0 16px;
+}
+.row-over:hover .menu-small,
+.account-row:hover .menu-small,
+.row-selected.row-lonely-select .menu-small {
+    background-position: center bottom;
+}
+.file-row .pencil {
+    float: left;
+    margin: 2px 0 0 8px;
+}
+.row-over:hover .pencil,
+.file-row .pencil.file-editing {
+    background-position: 0 -19px;
+}
+.file-row.can-coauthoring .pencil.file-editing {
+    background-position: 0 -38px;
+}
+li.without-share .share-action {
+    visibility: hidden;
+}
+ul.without-share .share-action {
+    display: none;
+}
+.share-action {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #999999;
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 5px 0 0 8px;
+    max-width: 85px;
+    overflow: hidden;
+    padding: 4px 12px;
+    white-space: nowrap;
+}
+.compact .share-action {
+    margin-top: 1px;
+}
+.file-row .menu-small,
+.file-row .share-action {
+    float: right;
+}
+.row-over:hover .share-action {
+    background: #E9EAEA;
+    border: 1px solid #BFBFBF;
+    color: #666666;
+    cursor: pointer;
+    background: linear-gradient(top, #F3F3F3, #E9EAEA 50%, #E8E9E9 51%, #DEDEDE);
+    background: -o-linear-gradient(top , #F3F3F3, #E9EAEA 50%, #E8E9E9 51%, #DEDEDE);
+    background: -moz-linear-gradient(top , #F3F3F3, #E9EAEA 50%, #E8E9E9 51%, #DEDEDE);
+    background: -ms-linear-gradient(top , #F3F3F3, #E9EAEA 50%, #E8E9E9 51%, #DEDEDE);
+    background: -webkit-linear-gradient(top , #F3F3F3, #E9EAEA 50%, #E8E9E9 51%, #DEDEDE);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#F3F3F3', EndColorStr='#DEDEDE')";
+}
+.row-over:hover .share-action:hover {
+    background: #EFEFEF;
+    background: linear-gradient(top, #F3F3F3, #EFEFEF 50%, #EFEFEF 51%, #EBEBEB);
+    background: -o-linear-gradient(top, #F3F3F3, #EFEFEF 50%, #EFEFEF 51%, #EBEBEB);
+    background: -moz-linear-gradient(top, #F3F3F3, #EFEFEF 50%, #EFEFEF 51%, #EBEBEB);
+    background: -ms-linear-gradient(center top , #F3F3F3, #EFEFEF 50%, #EFEFEF 51%, #EBEBEB);
+    background: -webkit-linear-gradient(top, #F3F3F3, #EFEFEF 50%, #EFEFEF 51%, #EBEBEB);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f3f3f3', EndColorStr='#ebebeb')";
+}
+.share-action > span{
+    background: url("images/share.png") no-repeat 0 0 transparent;
+    display: inline-block;
+    float: left;
+    height: 16px;
+    margin-right: 4px;
+    width: 16px;
+}
+.row-over:hover .share-action.share-button > span,
+.share-open .share-action.share-button > span {
+    background-position: 0 -19px;
+}
+.corporateFiles .share-button {
+    display: none;
+}
+.access-button {
+    display: none;
+}
+.corporateFiles .access-button {
+    display: inline;
+}
+.corporateFiles .share-action.access-button > span {
+    background-position: -19px 0;
+}
+.corporateFiles .row-over:hover .share-action.access-button > span,
+.corporateFiles .share-open .share-action.access-button > span {
+    background-position: -19px -19px;
+}
+/*******************************************************************************
+   compact view
+*******************************************************************************/
+#filesMainContent.compact .file-row.checkloading .checkbox {
+    height: 26px;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+#filesMainContent.compact .file-row {
+    padding: 2px 0 1px;
+}
+#filesMainContent.compact .checkbox {
+    height: 24px;
+    margin-top: 4px;
+}
+#filesMainContent.compact .file-row .entry-title .name {
+    max-width: 111px;
+    padding-top: 6px;
+}
+#filesMainContent.compact .file-row.folder-row .entry-title .name {
+    max-width: 207px;
+}
+#filesMainContent.compact .file-row.row-rename .entry-title .name {
+    max-width: 280px;
+}
+#filesMainContent.compact .file-row .entry-title {
+    margin: 0;
+    float: left;
+    width: 273px;
+}
+#filesMainContent.compact .file-row .entry-descr-compact {
+    display: block;
+}
+#filesMainContent.compact .file-row .entry-descr {
+    display: none
+}
+#filesMainContent.compact .file-row .entry-title .name a {
+    font-size: 12px;
+}
+#filesMainContent.compact .file-row .entry-title .name a .file-extension {
+    font-size: 11px;
+}
+#filesMainContent.compact .thumb-file
+#filesMainContent.compact .thumb-folder {
+    margin-top: 3px;
+}
+#filesMainContent.compact .input-rename {
+    margin-top: -3px;
+    font-size: 12px;
+}
+#filesMainContent.compact .rename-action {
+    margin-top: 6px;
+}
+#filesMainContent.compact .name-aplly,
+#filesMainContent.compact .name-cancel {
+    margin-left: 4px;
+}
+#filesMainContent.compact .pencil {
+    margin-top: 6px;
+}
+#filesMainContent.compact .menu-small {
+    margin-top: 4px;
+}
+#filesMainContent.compact #contentVersions {
+    margin: 4px 0;
+}
+#filesMainContent.compact .file-row .version,
+#filesMainContent.compact .file-row .is-original,
+#filesMainContent.compact .file-row .is-new {
+    margin-top: 4px;
+}
+/*******************************************************************************
+    Error in content
+*******************************************************************************/
+.file-row.error-entry {
+    background-color: #FFECE3;
+}
+.file-row.error-entry .entry-title .name a {
+    color: #666668;
+}
+.file-row.error-entry .entry-descr {
+    color: #aa2c2c;
+}
+.file-row.error-entry .share-action,
+.file-row.error-entry .pencil,
+.file-row.error-entry .menu-small {
+    display: none !important;
+}
+/*******************************************************************************
+    Mouse moving
+*******************************************************************************/
+.file-mouse-move {
+    cursor: alias !important;
+}
+.file-mouse-copy {
+    cursor: copy !important;
+}
+#filesMovingTooltip {
+    background-color: #FFFFE1;
+    border: 1px solid #333;
+    color: #333;
+    cursor: move;
+    display: block;
+    font-family: Arial;
+    font-size: 10px;
+    height: auto;
+    margin-left: 5px;
+    max-width: 500px;
+    padding: 5px 10px;
+    position: absolute;
+    word-wrap: break-word;
+    z-index: 301;
+}
+#filesMovingTooltip, #ie#fix {
+    cursor: alias;
+}
+* + html #filesMovingTooltip {
+    cursor: move;
+}
+/*******************************************************************************
+     Dialog window
+*******************************************************************************/
+
+div.files-remove-list {
+    border: 1px solid #D1D1D1;
+    line-height: 20px;
+    margin: 15px 0 0;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 10px 10px;
+}
+.files-remove-list > dl {
+    margin: 0;
+}
+dd.confirm-remove-folders,
+dd.confirm-remove-files {
+    padding: 0;
+    margin-left: 0;
+}
+dd.confirm-remove-folders label,
+dd.confirm-remove-files label {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+dt.confirm-remove-folders,
+dt.confirm-remove-files {
+    font-weight: bold;
+    margin-top: 10px;
+}
+#confirmRemoveTextDescription,
+#confirmRemoveSharpBoxTextDescription {
+    padding: 10px 0 0;
+}
+#overwriteMessage {
+    overflow: hidden;
+}
+#overwriteList {
+    border: 1px solid #D1D1D1;
+    line-height: 20px;
+    list-style-type: none;
+    margin: 15px 0 0;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 15px;
+}
+#overwriteList li {
+    width: 330px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/*******************************************************************************
+     Progress
+*******************************************************************************/
+.files-progress-box {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.files-progress-box.progress-dialog-body {
+    padding: 16px 24px;
+}
+.files-progress-box .asc-progress-wrapper {
+    margin: 5px 0;
+    width: 90%;
+    float: left;
+}
+.files-progress-box .asc-progress-percent {
+    float: left;
+    height: 14px;
+    margin: 4px 0 4px 4px;
+    text-align: right;
+    width: 40px;
+}
+
+/*******************************************************************************
+    versions
+*******************************************************************************/
+#contentVersions {
+    border-top: 1px solid #e5e5e5;
+    width: 100%;
+    margin-top: 10px;
+}
+.row-over:hover #contentVersions,
+.row-selected #contentVersions {
+    border-top-color: #FFF;
+}
+#contentVersions table {
+    width: 100%;
+}
+.versionsTitle th {
+    font-size: 14px;
+    padding: 12px 5px 10px;
+}
+.version-row {
+    border-bottom: 1px solid #D1D1D1;
+    color: #323232;
+    height: 16px;
+    padding: 5px;
+    width: 100%;
+}
+.version-row:hover {
+    background-color: #e5e5e5;
+}
+.row-over:hover .version-row:hover {
+    background-color: #f2f2f2;
+}
+.version-row td {
+    height: 30px;
+    white-space: nowrap;
+}
+.version-row div {
+    padding: 0 5px;
+}
+.version-row a {
+    color: #323232;
+}
+.version-row .fade-td {
+    background-color: #fff;
+    width: 36px;
+}
+.row-selected .version-row .fade-td {
+    background-color: #f2f2f2;
+}
+.row-over:hover .version-row .fade-td {
+    background-color: #e5e5e5;
+}
+.version-row .version-num {
+    color: #787878;
+    font-weight: bold;
+    text-align: center;
+    width: 55px;
+}
+.version-row .version-datetime {
+    width: 140px;
+}
+.version-row .version-datetime b {
+    margin-right: 8px;
+}
+.version-row .version-author .userLink {
+    color: #787878;
+    white-space: normal;
+}
+.version-row .version-size {
+    color: #787878;
+    width: 1px;
+}
+.version-row .version-operation {
+    width: 90px;
+}
+.version-row .version-restore {
+    width: 1px;
+    padding-right: 10px;
+}
+.version-row .version-restore a {
+    font-size: 11px;
+    margin-left: 7px;
+}
+.version-row .version-download,
+.version-row .version-preview {
+    background: url("images/version_operation.png") no-repeat center 0 transparent;
+    cursor: pointer;
+    display: none;
+    float: right;
+    height: 16px;
+    margin-right: 8px;
+    padding: 0;
+    width: 16px;
+}
+.version-row .version-preview {
+    background-position: center -20px;
+}
+.version-row:hover .version-download,
+.version-row:hover .version-preview {
+    display: block;
+}
+#contentVersions .not-preview .version-preview {
+    display: none;
+}
+/*******************************************************************************
+    Tooltip
+*******************************************************************************/
+#entryTooltip {
+    line-height: 20px;
+    margin: 6px 0 0 -13px;
+    z-index: 254;
+}
+#entryTooltip dt {
+    color: #9CA0A4;
+    float: left;
+    width: 130px;
+}
+#entryTooltip dd {
+    margin-left: 135px;
+}
+#entryTooltip .corner-top {
+    left: 20px;
+}
+
+/*******************************************************************************
+    progress dialog with actions
+*******************************************************************************/
+.progress-dialog-container {
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    width: 500px;
+    z-index: 300;
+}
+.progress-dialog {
+    border: 1px solid #D1D1D1;
+    width: 500px;
+    margin-top: 16px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.progress-dialog-header {
+    background-color: #E2E2E2;
+    color: #333333;
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 4px 24px;
+    cursor: default;
+}
+.progress-dialog-header .actions-container {
+    float: right;
+    margin: 10px 4px;
+}
+.progress-dialog-body {
+    background-color: #FFFFFF;
+    padding: 0 24px 16px;
+}
+.progress-dialog .actions-container.maximize {
+    display: none;
+}
+.progress-dialog.min .progress-dialog-body {
+    display: none;
+}
+.progress-dialog.min .actions-container.minimize {
+    display: none;
+}
+.progress-dialog.min .actions-container.maximize {
+    display: block;
+}
+
+/*******************************************************************************
+    Panel with new items
+*******************************************************************************/
+.files-news-panel {
+    margin: -16px 0 0 16px;
+}
+.files-news-panel .file-row:hover {
+    background-color: #e5e5e5;
+}
+.files-news-panel .thumb-file,
+.files-news-panel .thumb-folder {
+    margin-top: 0;
+}
+.files-news-panel .entry-info,
+.files-news-panel .file-row .entry-title .name,
+.files-news-panel .file-row.folder-row .folder-row .entry-title .name {
+    max-width: 200px;
+}
+.files-news-panel .file-row .entry-title .name {
+    padding-top: 4px;
+}
+.files-news-panel .file-row .entry-title .name a {
+    font-size: 12px;
+}
+.files-news-panel .file-row .entry-title .name a .file-extension {
+    font-size: 11px;
+}
+.files-news-panel .entry-title {
+    width: auto;
+}
+#filesNewsList {
+    width: 260px;
+}
+#filesNewsMarkRead {
+    display: inline-block;
+    margin-top: 16px;
+}
+/*******************************************************************************
+    Mobile
+*******************************************************************************/
+body.mobile #contentVersions .version-preview {
+    display: block;
+}
+body.mobile #foldersDownload,
+body.mobile #filesDownload,
+body.mobile #filesConvert,
+body.mobile #buttonDownload,
+body.mobile #buttonConvert,
+body.mobile #mainDownload,
+body.mobile #mainConvert,
+body.mobile #contentVersions .version-download {
+    display: none !important;
+}
+/***************************************\
+    Width
+\***************************************/
+@media (min-width: 1260px) and (max-width: 1420px) {
+    .file-row .entry-title,
+    .file-row .entry-descr {
+        width: 600px;
+    }
+    .file-row .entry-title .name {
+        max-width: 440px;
+    }
+    .file-row.folder-row .entry-title .name {
+        max-width: 505px;
+    }
+    
+    #filesMainContent.compact .file-row .entry-title {
+        width: 514px;
+    }
+    #filesMainContent.compact .file-row .entry-title .name {
+        max-width: 352px;
+    }
+    #filesMainContent.compact .file-row.folder-row .entry-title .name {
+        max-width: 448px;
+    }
+}
+@media (min-width: 1420px) and (max-width: 1620px) {
+    .file-row .entry-title,
+    .file-row .entry-descr {
+        width: 752px;
+    }
+    .file-row .entry-title .name {
+        max-width: 592px;
+    }
+    .file-row.folder-row .entry-title .name {
+        max-width: 657px;
+    }
+    
+    #filesMainContent.compact .file-row .entry-title {
+        width: 666px;
+    }
+    #filesMainContent.compact .file-row .entry-title .name {
+        max-width: 504px;
+    }
+    #filesMainContent.compact .file-row.folder-row .entry-title .name {
+        max-width: 600px;
+    }
+}
+@media (min-width: 1620px) {
+    .file-row .entry-title,
+    .file-row .entry-descr {
+        width: 952px;
+    }
+    .file-row .entry-title .name {
+        max-width: 792px;
+    }
+    .file-row.folder-row .entry-title .name {
+        max-width: 857px;
+    }
+    
+    #filesMainContent.compact .file-row .entry-title {
+        width: 866px;
+    }
+    #filesMainContent.compact .file-row .entry-title .name {
+        max-width: 704px;
+    }
+    #filesMainContent.compact .file-row.folder-row .entry-title .name {
+        max-width: 800px;
+    }
+}

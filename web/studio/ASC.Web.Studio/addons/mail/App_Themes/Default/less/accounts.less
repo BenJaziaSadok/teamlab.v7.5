@@ -1,0 +1,90 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+@import 'settings.less';
+
+.accounts_list {
+    @border-style: @messages-border-style;
+    width: 100%;
+    table-layout: fixed;
+    .row {
+        height: @row-height;
+        border-bottom: @border-style;
+
+        /* zero cell padding */
+        > * {
+            padding: 0;
+        }
+        
+        td
+        {
+            word-wrap: break-word;
+
+            span
+            {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                max-width: 95%;
+                display: inline-block;
+            }
+        }
+        .address {
+            .accountname {
+                margin-left: @message-spliter-width;
+            }
+        }
+        .notify_column {
+            .notification {
+                display: none;
+                color: #83888d;
+                cursor: default;
+                float: right;
+            }
+        }
+        .menu_column {
+            width: @row-height;
+            padding-right: @message-spliter-width;
+            .menu {
+                background-color: transparent;
+                background: url("@{base-icon-sprite-url}") no-repeat 0 -90px;
+                width: 24px;
+                height: 24px;
+                float: right;
+                right: 0px;
+                cursor: pointer;
+                margin-left: 24px;
+                display: inline-block;
+            }
+            .menu.active {
+                background-position: -30px -90px;
+            }
+        }
+        &:hover,
+        &.selected {
+            background-color: @messages-selected-row_bg;
+            .notification {
+                display: inline-block;
+            }
+            .menu {
+                background-position: -30px -90px;
+            }
+        }
+        &.disabled {
+            .address .accountname {
+                color: gray;
+                background: none;
+            }
+        }
+    }
+}

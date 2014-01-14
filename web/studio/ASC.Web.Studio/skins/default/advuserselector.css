@@ -1,0 +1,117 @@
+/* 
+ * 
+ * (c) Copyright Ascensio System Limited 2010-2014
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * http://www.gnu.org/licenses/agpl.html 
+ * 
+ */
+
+.adv-userselector-selector {
+    width: 18px;
+    float: left;
+    height: 20px;
+    cursor: pointer;
+}
+.adv-userselector-selector-container {
+    height: 20px;
+    border: 1px solid #C7C7C7;
+    padding-left: 5px;
+    background-color: #fff;
+}
+.adv-userselector-deps {
+    position: relative;
+    display: block;
+    z-index: 100;
+    width: 49%;
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.adv-userselector-users {
+    position: relative;
+    display: block;
+    z-index: 100;
+    width: 50%;
+    height: 200px;
+    float:left;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.adv-userselector-dep {
+    min-height: 14px;
+    height: auto;
+    padding: 4px;
+    position: relative;
+    z-index: 100;
+}
+.adv-userselector-user {
+    min-height: 40px;
+    height: auto;
+    position: relative;
+    z-index: 100;
+}
+.adv-userselector-dep:hover {
+    background-color: #F2F2F2;
+    cursor:pointer;
+}
+.adv-userselector-user:hover {
+    background-color: #F2F2F2;
+    cursor:pointer;
+}
+
+.adv-userselector-userHover {
+}
+.adv-userselector-user .user {
+    font-weight: bold;
+    padding:4px 0 0 40px;
+}
+.adv-userselector-userFocused {
+    background-color: #DEDEDE;
+}
+
+.adv-userselector-DepsAndUsersContainer {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    margin-top: -1px;
+    min-width: 500px;
+    max-width: 800px;
+    height: 200px;
+    background-color: #FFF;
+    border: 1px solid rgb(199, 199, 199);
+    padding: 10px;
+}
+
+*:first-child+html .adv-userselector-DepsAndUsersContainer {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    margin-top: -1px;
+    width: 500px;
+    height: 200px;
+    background-color: #FFF;
+    border: 1px solid rgb(199, 199, 199);
+    padding: 10px;
+}
+.adv-userselector-dep.select {
+    background-color: #F2F2F2;
+}
+.adv-userselector-inputContainer input {
+    border: medium none;
+    outline: medium none;
+    padding: 1 !important;
+    width: 100% !important;
+    height: 16px;
+}
+.adv-userselector-inputContainer input:focus {
+    border: medium none !important;
+    outline: medium none !important;
+    padding: 1 !important;
+    width: 100% !important;
+    height: 16px;
+}
